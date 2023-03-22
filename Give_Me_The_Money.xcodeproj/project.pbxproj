@@ -15,7 +15,10 @@
 		930F377E29BDDF1100457CAD /* Give_Me_The_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F377D29BDDF1100457CAD /* Give_Me_The_MoneyTests.swift */; };
 		930F378829BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F378729BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift */; };
 		930F378A29BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */; };
-		933CE9ED29BF1C3B007A3558 /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* MainTabbar.swift */; };
+		933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */; };
+		934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */; };
+		934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCF29CADBE800490EF6 /* AppConstant.swift */; };
+		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		DB6005C1C56B0AED08F4298E /* Pods_Give_Me_The_MoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */; };
 		FA5EAB471EC6506EFCF6A440 /* Pods_Give_Me_The_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */; };
 		FD39ED4C3734B90198164380 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C7C49A71EBF912D01F2661 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework */; };
@@ -54,7 +57,10 @@
 		930F378329BDDF1100457CAD /* Give_Me_The_MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Give_Me_The_MoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		930F378729BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_The_MoneyUITests.swift; sourceTree = "<group>"; };
 		930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_The_MoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		933CE9EC29BF1C3B007A3558 /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
+		933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAddButton.swift; sourceTree = "<group>"; };
+		934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIColor.swift; sourceTree = "<group>"; };
+		934F1DCF29CADBE800490EF6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		965873CC6823E7AA268322E8 /* Pods-Give_Me_The_Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money/Pods-Give_Me_The_Money.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEA039234D006AB6F7AA5EA /* Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB42367972F8D145339F3B54 /* Pods-Give_Me_The_MoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 		930F376529BDDF0E00457CAD /* Give_Me_The_Money */ = {
 			isa = PBXGroup;
 			children = (
+				934F1DCF29CADBE800490EF6 /* AppConstant.swift */,
+				934F1DCC29CACAD700490EF6 /* Extension */,
 				933CE9EA29BF1C13007A3558 /* View */,
 				930F376629BDDF0F00457CAD /* AppDelegate.swift */,
 				930F376829BDDF0F00457CAD /* SceneDelegate.swift */,
@@ -178,9 +186,18 @@
 		933CE9EB29BF1C26007A3558 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				933CE9EC29BF1C3B007A3558 /* MainTabbar.swift */,
+				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
+				93F0133029CB0D3A003731C1 /* SideAddButton.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		934F1DCC29CACAD700490EF6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,9 +438,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				933CE9ED29BF1C3B007A3558 /* MainTabbar.swift in Sources */,
+				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* ViewController.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
+				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
+				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
+				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

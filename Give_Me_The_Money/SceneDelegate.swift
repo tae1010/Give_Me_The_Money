@@ -14,9 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        // 스토리보드x, 기본 배경 흰색
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
+        window.backgroundColor = UIColor.white
         window.rootViewController = ViewController()
         window.makeKeyAndVisible()
         
