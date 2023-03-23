@@ -10,4 +10,5 @@ import UIKit
 
 struct AppConstants {
     static let ScreenWidth = UIScreen.main.bounds.width
+    static let ScreenHeight = UIScreen.main.bounds.height
 }

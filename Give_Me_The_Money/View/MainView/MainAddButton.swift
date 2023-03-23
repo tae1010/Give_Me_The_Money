@@ -36,10 +36,10 @@ extension MainAddButton {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.2).isActive = true
+        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.18).isActive = true
         self.heightAnchor.constraint(equalTo: self.widthAnchor).isActive = true
 
-        self.layer.cornerRadius = AppConstants.ScreenWidth * 0.2 / 2
+        self.layer.cornerRadius = AppConstants.ScreenWidth * 0.18 / 2
         self.layer.masksToBounds = true
         
         self.layer.shadowColor = UIColor.black.cgColor // 색깔

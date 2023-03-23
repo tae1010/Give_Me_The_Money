@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376629BDDF0F00457CAD /* AppDelegate.swift */; };
 		930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376829BDDF0F00457CAD /* SceneDelegate.swift */; };
-		930F376B29BDDF0F00457CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376A29BDDF0F00457CAD /* ViewController.swift */; };
+		930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376A29BDDF0F00457CAD /* MainViewController.swift */; };
 		930F377029BDDF1000457CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930F376F29BDDF1000457CAD /* Assets.xcassets */; };
 		930F377329BDDF1000457CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930F377129BDDF1000457CAD /* LaunchScreen.storyboard */; };
 		930F377E29BDDF1100457CAD /* Give_Me_The_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F377D29BDDF1100457CAD /* Give_Me_The_MoneyTests.swift */; };
@@ -19,6 +19,12 @@
 		934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */; };
 		934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCF29CADBE800490EF6 /* AppConstant.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
+		93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* chooseMenuViewController.swift */; };
+		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
+		93F0133B29CC5D8F003731C1 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */; };
+		93F0133C29CC5D8F003731C1 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133829CC5D8F003731C1 /* NanumGothic.otf */; };
+		93F0133D29CC5D8F003731C1 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */; };
+		93F0134029CC62D2003731C1 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133F29CC62D2003731C1 /* MainButton.swift */; };
 		DB6005C1C56B0AED08F4298E /* Pods_Give_Me_The_MoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */; };
 		FA5EAB471EC6506EFCF6A440 /* Pods_Give_Me_The_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */; };
 		FD39ED4C3734B90198164380 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C7C49A71EBF912D01F2661 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework */; };
@@ -48,7 +54,7 @@
 		930F376329BDDF0E00457CAD /* Give_Me_The_Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Give_Me_The_Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		930F376629BDDF0F00457CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		930F376829BDDF0F00457CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		930F376A29BDDF0F00457CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		930F376A29BDDF0F00457CAD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		930F376F29BDDF1000457CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		930F377229BDDF1000457CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		930F377429BDDF1000457CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +67,12 @@
 		934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIColor.swift; sourceTree = "<group>"; };
 		934F1DCF29CADBE800490EF6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
+		93F0133329CC4184003731C1 /* chooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseMenuViewController.swift; sourceTree = "<group>"; };
+		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
+		93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
+		93F0133829CC5D8F003731C1 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
+		93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
+		93F0133F29CC62D2003731C1 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		965873CC6823E7AA268322E8 /* Pods-Give_Me_The_Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money/Pods-Give_Me_The_Money.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEA039234D006AB6F7AA5EA /* Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB42367972F8D145339F3B54 /* Pods-Give_Me_The_MoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,14 +157,11 @@
 		930F376529BDDF0E00457CAD /* Give_Me_The_Money */ = {
 			isa = PBXGroup;
 			children = (
+				93F0133529CC5D76003731C1 /* Assets */,
+				93F0133229CC32D3003731C1 /* AppDelegate */,
 				934F1DCF29CADBE800490EF6 /* AppConstant.swift */,
 				934F1DCC29CACAD700490EF6 /* Extension */,
 				933CE9EA29BF1C13007A3558 /* View */,
-				930F376629BDDF0F00457CAD /* AppDelegate.swift */,
-				930F376829BDDF0F00457CAD /* SceneDelegate.swift */,
-				930F376A29BDDF0F00457CAD /* ViewController.swift */,
-				930F376F29BDDF1000457CAD /* Assets.xcassets */,
-				930F377129BDDF1000457CAD /* LaunchScreen.storyboard */,
 				930F377429BDDF1000457CAD /* Info.plist */,
 			);
 			path = Give_Me_The_Money;
@@ -178,6 +187,8 @@
 		933CE9EA29BF1C13007A3558 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				930F377129BDDF1000457CAD /* LaunchScreen.storyboard */,
+				93F0133F29CC62D2003731C1 /* MainButton.swift */,
 				933CE9EB29BF1C26007A3558 /* MainView */,
 			);
 			path = View;
@@ -186,8 +197,10 @@
 		933CE9EB29BF1C26007A3558 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
 				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
 				93F0133029CB0D3A003731C1 /* SideAddButton.swift */,
+				93F0133329CC4184003731C1 /* chooseMenuViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -198,6 +211,35 @@
 				934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		93F0133229CC32D3003731C1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				930F376629BDDF0F00457CAD /* AppDelegate.swift */,
+				930F376829BDDF0F00457CAD /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		93F0133529CC5D76003731C1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				93F0133E29CC5D9C003731C1 /* Font */,
+				930F376F29BDDF1000457CAD /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		93F0133E29CC5D9C003731C1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				93F0133829CC5D8F003731C1 /* NanumGothic.otf */,
+				93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */,
+				93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */,
+				93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +351,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F0133B29CC5D8F003731C1 /* NanumGothicBold.otf in Resources */,
 				930F377329BDDF1000457CAD /* LaunchScreen.storyboard in Resources */,
 				930F377029BDDF1000457CAD /* Assets.xcassets in Resources */,
+				93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */,
+				93F0133C29CC5D8F003731C1 /* NanumGothic.otf in Resources */,
+				93F0133D29CC5D8F003731C1 /* NanumGothicExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,11 +485,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
-				930F376B29BDDF0F00457CAD /* ViewController.swift in Sources */,
+				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
+				93F0134029CC62D2003731C1 /* MainButton.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
 				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
+				93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

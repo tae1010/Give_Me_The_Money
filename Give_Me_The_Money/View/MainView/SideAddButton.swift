@@ -9,16 +9,68 @@ import Foundation
 import UIKit
 import SnapKit
 
-class SideAddButton: UIButton {
+enum ButtonMode {
+    case game
+    case group
+}
+
+class SideAddButton: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureSideAddButton()
+    // 체크 이미지
+    let checkImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "check")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    // 버튼 종류 이미지
+    let descriptionImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    // 버튼 라벨
+    let menuLabel: UILabel = {
+        let label = UILabel()
+        label.text = "만들기"
+        label.textAlignment = .center
+        label.font = UIFont(name: "NanumGothicOTFExtraBold", size: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    var buttonMode: ButtonMode?
+    
+    init(buttonMode: ButtonMode) {
+        super.init(frame: .zero)
+        print("이거 불림?")
+        self.setButtonMode(buttonMode)
+        
+        
+        setUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.backgroundColor = UIColor.blue
     }
+    
+    
+    func setButtonMode(_ buttonMode: ButtonMode) {
+        if buttonMode == .game {
+            descriptionImageView.image = UIImage(named: "gameButton")
+            menuLabel.text = "게임 만들기"
+        } else {
+            descriptionImageView.image = UIImage(named: "groupButton")
+            menuLabel.text = "모임 만들기"
+        }
+        
+    }
+    
+    
     
     
 }
@@ -27,28 +79,42 @@ class SideAddButton: UIButton {
 // MARK: configureView
 extension SideAddButton {
     
+    func setUI() {
+        addSubview(checkImageView)
+        addSubview(descriptionImageView)
+        addSubview(menuLabel)
+        
+        setLayOut()
+        configureUI()
+    }
+    
     // add Button 모양 지정
-    func configureSideAddButton() {
+    func setLayOut() {
         
-        self.setImage(UIImage(named: "AddButton"), for: .normal)
-        self.backgroundColor = .primaryColor
-//        self.tintColor = .white
-        self.showsTouchWhenHighlighted = false
+        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.9).isActive = true
+        self.heightAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.4 / 4).isActive = true
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        checkImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        checkImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         
-        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.12).isActive = true
-        self.heightAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-
-        self.layer.cornerRadius = AppConstants.ScreenWidth * 0.12 / 2
-        self.layer.masksToBounds = true
+        menuLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        menuLabel.leadingAnchor.constraint(equalTo: self.checkImageView.trailingAnchor, constant: 20).isActive = true
         
-        self.layer.shadowColor = UIColor.black.cgColor // 색깔
-        self.layer.masksToBounds = false  // 내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
-        self.layer.shadowOffset = CGSize(width: 0, height: 4) // 위치조정
-        self.layer.shadowRadius = 5 // 반경
-        self.layer.shadowOpacity = 0.3 // alpha값
+        descriptionImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        descriptionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30).isActive = true
+    }
+    
+    func configureUI() {
         
+        self.layer.cornerRadius = 15
+        
+        self.backgroundColor = UIColor.white
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 0.3
     }
     
 }
