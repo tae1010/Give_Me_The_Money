@@ -11,17 +11,30 @@ import UIKit
 class MainButton: UIButton {
     
     override init(frame: CGRect) {
-        // set myValue before super.init is called
-        
         super.init(frame: frame)
         
-        // set other operations after super.init, if required
-        backgroundColor = .red
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    
+    init(title: String) {
+        super.init(frame: .zero)
+        
+        let isiPad = UIDevice.current.userInterfaceIdiom == .pad
+        let constantSize: CGFloat = isiPad ? 85: 75
+        
+        self.backgroundColor = .primaryColor
+        self.setTitleColor(.white, for: .normal)
+        self.setTitle(title, for: .normal)
+        self.titleLabel?.font = .nanumGothicBold(size: 15)
+        self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 10.0, right: 0.0)
+        self.heightAnchor.constraint(equalToConstant: AppConstants.setupConstantSize(size: constantSize)).isActive = true
+    }
+
     
 
 }

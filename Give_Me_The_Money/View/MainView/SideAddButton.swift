@@ -16,40 +16,50 @@ enum ButtonMode {
 
 class SideAddButton: UIView {
     
-    // 체크 이미지
+    // 체크 image
     let checkImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "check")
+        imageView.image = UIImage(named: "nonCheck")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    // 버튼 종류 이미지
+    // 버튼 종류 image
     let descriptionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    // 버튼 라벨
-    let menuLabel: UILabel = {
+    // 버튼 타이틀 label
+    let menuTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "만들기"
+        label.text = "메인"
         label.textAlignment = .center
-        label.font = UIFont(name: "NanumGothicOTFExtraBold", size: 16)
+        label.font = UIFont.nanumGothicExtraBold(size: 16)
+        label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    // 버튼 설명 Label
+    let menuDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "설명"
+        label.textAlignment = .center
+        label.font = UIFont.nanumGothicBold(size: 13)
+        label.textColor = .lightGray
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
+    // 버튼 종류를 정의 하기 위한 객체
     var buttonMode: ButtonMode?
     
     init(buttonMode: ButtonMode) {
         super.init(frame: .zero)
-        print("이거 불림?")
         self.setButtonMode(buttonMode)
-        
-        
         setUI()
     }
     
@@ -58,16 +68,17 @@ class SideAddButton: UIView {
         self.backgroundColor = UIColor.blue
     }
     
-    
+    // 버튼 종류 정의 (게임 만들기, 모임 만들기)
     func setButtonMode(_ buttonMode: ButtonMode) {
         if buttonMode == .game {
-            descriptionImageView.image = UIImage(named: "gameButton")
-            menuLabel.text = "게임 만들기"
-        } else {
-            descriptionImageView.image = UIImage(named: "groupButton")
-            menuLabel.text = "모임 만들기"
+            descriptionImageView.image = UIImage(named: "noSelectGameButton")
+            menuTitleLabel.text = "게임 만들기"
+            menuDescriptionLabel.text = "내기를 해서 진 사람이 더 많이 내요"
+        } else if buttonMode == .group {
+            descriptionImageView.image = UIImage(named: "noSelectGroupButton")
+            menuTitleLabel.text = "모임 만들기"
+            menuDescriptionLabel.text = "총무가 되어 돈을 관리, 계산해요"
         }
-        
     }
     
     
@@ -82,7 +93,8 @@ extension SideAddButton {
     func setUI() {
         addSubview(checkImageView)
         addSubview(descriptionImageView)
-        addSubview(menuLabel)
+        addSubview(menuTitleLabel)
+        addSubview(menuDescriptionLabel)
         
         setLayOut()
         configureUI()
@@ -92,16 +104,19 @@ extension SideAddButton {
     func setLayOut() {
         
         self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.9).isActive = true
-        self.heightAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.4 / 4).isActive = true
+        self.heightAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.4 / 3).isActive = true
         
         checkImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        checkImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
+        checkImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
         
-        menuLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        menuLabel.leadingAnchor.constraint(equalTo: self.checkImageView.trailingAnchor, constant: 20).isActive = true
+        menuTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: AppConstants.setupConstantSize(size: -9)).isActive = true
+        menuTitleLabel.leadingAnchor.constraint(equalTo: self.checkImageView.trailingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        
+        menuDescriptionLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: AppConstants.setupConstantSize(size: 10)).isActive = true
+        menuDescriptionLabel.leadingAnchor.constraint(equalTo: menuTitleLabel.leadingAnchor).isActive = true
         
         descriptionImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        descriptionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30).isActive = true
+        descriptionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
     }
     
     func configureUI() {

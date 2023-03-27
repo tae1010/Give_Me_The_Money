@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
     
     let mainAddButton = MainAddButton()
     
-    
     let disposeBag = DisposeBag()
     
     var tapMainButtonStatus: TapMainButtonStatus = .nonShow
@@ -31,14 +30,9 @@ class MainViewController: UIViewController {
         mainAddButton.rx.tap.bind(onNext: {
             
             let chooseMenuVC = ChooseMenuViewController()
+            chooseMenuVC.modalPresentationStyle = .fullScreen
             
-            chooseMenuVC.view.clipsToBounds = false
-            chooseMenuVC.view.layer.cornerRadius = 20
-            
-            let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: chooseMenuVC)
-            bottomSheet.mdc_bottomSheetPresentationController?.preferredSheetHeight = self.view.bounds.height * 0.4
-            
-            self.present(bottomSheet, animated: true)
+            self.present(chooseMenuVC, animated: true)
             
         }).disposed(by: disposeBag)
     }
@@ -58,8 +52,8 @@ extension MainViewController {
         self.view.addSubview(self.mainAddButton)
         self.mainAddButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.mainAddButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-        self.mainAddButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        self.mainAddButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
+        self.mainAddButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
         
     }
     

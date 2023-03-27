@@ -5,11 +5,11 @@
       "scale" : "1x"
     },
     {
+      "filename" : "aa.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 7.png",
       "idiom" : "iphone",
       "scale" : "3x"
     },
@@ -18,7 +18,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "Group 3.png",
+      "filename" : "aaa.png",
       "idiom" : "ipad",
       "scale" : "2x"
     }
