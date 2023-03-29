@@ -30,6 +30,11 @@
 		93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134729D2CD1C003731C1 /* MainViewModel.swift */; };
 		93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */; };
 		93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134D29D2F5DD003731C1 /* Coordinator.swift */; };
+		93F0135629D44418003731C1 /* NanumSquareNeo-aLt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135529D4436A003731C1 /* NanumSquareNeo-aLt.ttf */; };
+		93F0135729D44418003731C1 /* NanumSquareNeo-bRg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135429D4436A003731C1 /* NanumSquareNeo-bRg.ttf */; };
+		93F0135829D44418003731C1 /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135229D4436A003731C1 /* NanumSquareNeo-cBd.ttf */; };
+		93F0135929D44418003731C1 /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */; };
+		93F0135A29D44418003731C1 /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135129D4436A003731C1 /* NanumSquareNeo-eHv.ttf */; };
 		DB6005C1C56B0AED08F4298E /* Pods_Give_Me_The_MoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */; };
 		FA5EAB471EC6506EFCF6A440 /* Pods_Give_Me_The_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */; };
 		FD39ED4C3734B90198164380 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C7C49A71EBF912D01F2661 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework */; };
@@ -83,6 +88,11 @@
 		93F0134729D2CD1C003731C1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewModel.swift; sourceTree = "<group>"; };
 		93F0134D29D2F5DD003731C1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		93F0135129D4436A003731C1 /* NanumSquareNeo-eHv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-eHv.ttf"; sourceTree = "<group>"; };
+		93F0135229D4436A003731C1 /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
+		93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
+		93F0135429D4436A003731C1 /* NanumSquareNeo-bRg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-bRg.ttf"; sourceTree = "<group>"; };
+		93F0135529D4436A003731C1 /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
 		965873CC6823E7AA268322E8 /* Pods-Give_Me_The_Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money/Pods-Give_Me_The_Money.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEA039234D006AB6F7AA5EA /* Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB42367972F8D145339F3B54 /* Pods-Give_Me_The_MoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +238,7 @@
 		93F0133229CC32D3003731C1 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				934F1DCF29CADBE800490EF6 /* AppConstant.swift */,
 				930F376629BDDF0F00457CAD /* AppDelegate.swift */,
 				930F376829BDDF0F00457CAD /* SceneDelegate.swift */,
 			);
@@ -246,6 +257,11 @@
 		93F0133E29CC5D9C003731C1 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				93F0135529D4436A003731C1 /* NanumSquareNeo-aLt.ttf */,
+				93F0135429D4436A003731C1 /* NanumSquareNeo-bRg.ttf */,
+				93F0135229D4436A003731C1 /* NanumSquareNeo-cBd.ttf */,
+				93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */,
+				93F0135129D4436A003731C1 /* NanumSquareNeo-eHv.ttf */,
 				93F0133829CC5D8F003731C1 /* NanumGothic.otf */,
 				93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */,
 				93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */,
@@ -257,7 +273,6 @@
 		93F0134329D2C095003731C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				934F1DCF29CADBE800490EF6 /* AppConstant.swift */,
 				93F0134429D2C0A9003731C1 /* Group.swift */,
 			);
 			path = Model;
@@ -398,6 +413,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F0135629D44418003731C1 /* NanumSquareNeo-aLt.ttf in Resources */,
+				93F0135729D44418003731C1 /* NanumSquareNeo-bRg.ttf in Resources */,
+				93F0135829D44418003731C1 /* NanumSquareNeo-cBd.ttf in Resources */,
+				93F0135929D44418003731C1 /* NanumSquareNeo-dEb.ttf in Resources */,
+				93F0135A29D44418003731C1 /* NanumSquareNeo-eHv.ttf in Resources */,
 				93F0133B29CC5D8F003731C1 /* NanumGothicBold.otf in Resources */,
 				930F377329BDDF1000457CAD /* LaunchScreen.storyboard in Resources */,
 				930F377029BDDF1000457CAD /* Assets.xcassets in Resources */,

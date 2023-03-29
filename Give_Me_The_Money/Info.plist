@@ -4,6 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>NanumSquareNeo-eHv.ttf</string>
+		<string>NanumSquareNeo-dEb.ttf</string>
+		<string>NanumSquareNeo-cBd.ttf</string>
+		<string>NanumSquareNeo-bRg.ttf</string>
+		<string>NanumSquareNeo-aLt.ttf</string>
 		<string>NanumGothic.otf</string>
 		<string>NanumGothicBold.otf</string>
 		<string>NanumGothicExtraBold.otf</string>

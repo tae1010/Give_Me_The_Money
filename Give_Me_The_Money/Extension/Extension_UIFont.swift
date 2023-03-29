@@ -10,20 +10,40 @@ import UIKit
 
 extension UIFont {
 
+//    static func nanumGothicExtraBold(size: CGFloat) -> UIFont? {
+//        return UIFont(name: "NanumGothicOTFExtraBold", size: setupFontSize(size: size))
+//    }
+//
+//    static func nanumGothicBold(size: CGFloat) -> UIFont? {
+//        return UIFont(name: "NanumGothicOTFBold", size: setupFontSize(size: size))
+//    }
+//
+//    static func nanumGothic(size: CGFloat) -> UIFont? {
+//        return UIFont(name: "NanumGothicOTF", size: setupFontSize(size: size))
+//    }
+//
+//    static func nanumGothicLight(size: CGFloat) -> UIFont? {
+//        return UIFont(name: "NanumGothicOTFLight", size: setupFontSize(size: size))
+//    }
+    
     static func nanumGothicExtraBold(size: CGFloat) -> UIFont? {
-        return UIFont(name: "NanumGothicOTFExtraBold", size: setupFontSize(size: size))
+        return UIFont(name: "NanumSquareNeoTTF-dEb", size: setupFontSize(size: size))
     }
     
     static func nanumGothicBold(size: CGFloat) -> UIFont? {
-        return UIFont(name: "NanumGothicOTFBold", size: setupFontSize(size: size))
+        return UIFont(name: "NanumSquareNeoTTF-cBd", size: setupFontSize(size: size))
     }
     
     static func nanumGothic(size: CGFloat) -> UIFont? {
-        return UIFont(name: "NanumGothicOTF", size: setupFontSize(size: size))
+        return UIFont(name: "NanumSquareNeoTTF-bRg", size: setupFontSize(size: size))
     }
     
     static func nanumGothicLight(size: CGFloat) -> UIFont? {
-        return UIFont(name: "NanumGothicOTFLight", size: setupFontSize(size: size))
+        return UIFont(name: "NanumSquareNeoTTF-aLt", size: setupFontSize(size: size))
+    }
+    
+    static func nanumGothicHeavy(size: CGFloat) -> UIFont? {
+        return UIFont(name: "NanumSquareNeoTTF-eHv", size: setupFontSize(size: size))
     }
     
     // 아이패드, 아이폰 각각 폰트크기 다르게 설정
