@@ -8,11 +8,8 @@
 import Foundation
 import UIKit
 import SnapKit
-
-enum ButtonMode {
-    case game
-    case group
-}
+import RxCocoa
+import RxSwift
 
 class SideAddButton: UIView {
     
@@ -55,12 +52,49 @@ class SideAddButton: UIView {
     }()
     
     // 버튼 종류를 정의 하기 위한 객체
-    var buttonMode: ButtonMode?
+    var buttonMode: SideButtonMode?
     
-    init(buttonMode: ButtonMode) {
+    let viewModel = ChooseMenuViewModel()
+    let disposeBag = DisposeBag()
+    
+    init(buttonMode: SideButtonMode) {
         super.init(frame: .zero)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        addGestureRecognizer(tapGesture)
+        
+        self.buttonMode = buttonMode
         self.setButtonMode(buttonMode)
         setUI()
+        
+        // view model과 바인딩
+        viewModel.labelState
+            .subscribe(onNext: { [weak self] state in
+                
+                guard let self = self else { return }
+                
+                let color = (state == .normal) ? UIColor.lightGray : UIColor.primaryColor
+                let backGroundColor = (state == .normal) ? UIColor.white : UIColor.lightPrimaryColor
+                
+                self.menuTitleLabel.textColor = color
+                self.menuDescriptionLabel.textColor = color
+                self.backgroundColor = backGroundColor
+                self.descriptionImageView.image = UIImage(named: "gameButton")
+                
+                
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.imageState
+            .subscribe(onNext: { [weak self] state in
+                
+                guard let self = self else { return }
+                
+                let image = (state == .normal) ? UIImage(named: "nonCheck") : UIImage(named: "check")
+                self.checkImageView.image = image
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -68,21 +102,34 @@ class SideAddButton: UIView {
         self.backgroundColor = UIColor.blue
     }
     
+    
     // 버튼 종류 정의 (게임 만들기, 모임 만들기)
-    func setButtonMode(_ buttonMode: ButtonMode) {
-        if buttonMode == .game {
+    func setButtonMode(_ sideButtonMode: SideButtonMode) {
+        
+        if sideButtonMode == .game {
             descriptionImageView.image = UIImage(named: "noSelectGameButton")
             menuTitleLabel.text = "게임 만들기"
             menuDescriptionLabel.text = "내기를 해서 진 사람이 더 많이 내요"
-        } else if buttonMode == .group {
+            
+        } else if sideButtonMode == .group {
             descriptionImageView.image = UIImage(named: "noSelectGroupButton")
             menuTitleLabel.text = "모임 만들기"
             menuDescriptionLabel.text = "총무가 되어 돈을 관리, 계산해요"
         }
     }
     
+    func changeButtonUI() {
+        self.backgroundColor = .lightPrimaryColor
+        self.menuTitleLabel.textColor = .primaryColor
+        self.menuDescriptionLabel.textColor = .primaryColor
+        self.descriptionImageView.image = UIImage(named: "gameButton")
+        self.checkImageView.image = UIImage(named: "check")
+    }
     
-    
+    @objc private func handleTap() {
+        print("zz")
+        viewModel.handleTap()
+    }
     
 }
 

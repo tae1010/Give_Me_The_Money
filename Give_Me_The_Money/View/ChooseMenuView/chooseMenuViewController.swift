@@ -7,6 +7,13 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
+
+enum SideButtonMode {
+    case game
+    case group
+}
 
 class ChooseMenuViewController: UIViewController {
     
@@ -27,13 +34,42 @@ class ChooseMenuViewController: UIViewController {
     
     let gameAddButton = SideAddButton(buttonMode: .game)
     let groupAddButton = SideAddButton(buttonMode: .group)
-    
     let makeButton = MainButton(title: "만들기")
     
+    private var chooseMenuViewModel: ChooseMenuViewModel
+    let disposeBag = DisposeBag()
+    
+    let tapGameButtonGesture = UITapGestureRecognizer()
+    let tapGroupButtonGesture = UITapGestureRecognizer()
+
+    init(chooseMenuViewModel: ChooseMenuViewModel) {
+        self.chooseMenuViewModel = chooseMenuViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setUI()
+        configureUI()
+        
+        tapGroupButtonGesture.rx.event.bind(onNext: { _ in
+            self.chooseMenuViewModel.sideMenuStatus.accept(.group)
+        }).disposed(by: disposeBag)
+
+        
+        tapGameButtonGesture.rx.event.bind(onNext: { _ in
+            self.chooseMenuViewModel.sideMenuStatus.accept(.game)
+//            self.gameAddButton.changeButtonUI()
+            
+        }).disposed(by: disposeBag)
+        
+        
     }
 }
 
@@ -64,15 +100,23 @@ extension ChooseMenuViewController {
         self.chooseMenuTitleLabel.leadingAnchor.constraint(equalTo: self.closeButton.leadingAnchor).isActive = true
         self.chooseMenuTitleLabel.topAnchor.constraint(equalTo: self.closeButton.bottomAnchor, constant: AppConstants.setupConstantSize(size: 24)).isActive = true
         
-        self.gameAddButton.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        self.gameAddButton.topAnchor.constraint(equalTo: self.chooseMenuTitleLabel.bottomAnchor, constant: AppConstants.setupConstantSize(size: 34)).isActive = true
-        
         self.groupAddButton.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        self.groupAddButton.topAnchor.constraint(equalTo: self.gameAddButton.bottomAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        self.groupAddButton.topAnchor.constraint(equalTo: self.chooseMenuTitleLabel.bottomAnchor, constant: AppConstants.setupConstantSize(size: 34)).isActive = true
+        
+        self.gameAddButton.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        self.gameAddButton.topAnchor.constraint(equalTo: self.groupAddButton.bottomAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
         
         self.makeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.makeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         self.makeButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+    }
+    
+    func configureUI() {
+        gameAddButton.isUserInteractionEnabled = true
+        gameAddButton.addGestureRecognizer(tapGameButtonGesture)
+        
+        groupAddButton.isUserInteractionEnabled = true
+        groupAddButton.addGestureRecognizer(tapGroupButtonGesture)
     }
 
 }
