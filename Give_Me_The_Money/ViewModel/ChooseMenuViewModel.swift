@@ -9,32 +9,30 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-enum ButtonSelect {
-    case normal
-    case highlighted
+
+enum SideButtonMode {
+    case game
+    case group
 }
 
 class ChooseMenuViewModel {
     
     let disposedBag = DisposeBag()
-    var sideMenuStatus = PublishRelay<SideButtonMode>() // 어떤 사이드 메뉴를 선택하는지?
-    
-    let labelState = BehaviorRelay<ButtonSelect>(value: .normal)
-    let imageState = BehaviorRelay<ButtonSelect>(value: .normal)
+    var sideMenuStatus = PublishRelay<SideButtonMode>() // 어떤 사이드 메뉴를 선택하는지
+    var checkMakeButtonIsEnabled = BehaviorRelay<Bool>(value: false)
     
     init() {
         print("ChooseMenuViewModel init")
         
-        sideMenuStatus.bind(onNext: { status in
-            print(status)
+        sideMenuStatus.bind(onNext: { [ weak self ] status in
+            guard let self = self else { return }
+            print(status,"버튼상태")
+            self.checkMakeButtonIsEnabled.accept(true)
         }).disposed(by: disposedBag)
+        
+        
     }
     
-    func handleTap() {
-        let newState: ButtonSelect = (labelState.value == .normal) ? .highlighted : .normal
-        labelState.accept(newState)
-        imageState.accept(newState)
-    }
 
     
 }

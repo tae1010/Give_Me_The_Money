@@ -21,14 +21,14 @@ class MainButton: UIButton {
     }
     
     
-    init(title: String) {
+    init(title: String, isEnabled: Bool) {
         super.init(frame: .zero)
         
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad
         let constantSize: CGFloat = isiPad ? 85: 75
         
-        self.backgroundColor = .primaryColor
-        self.setTitleColor(.white, for: .normal)
+        self.backgroundColor = isEnabled ? .primaryColor : .gray
+        self.setTitleColor(isEnabled ? .white : .black, for: .normal)
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = .nanumGothicBold(size: 15)
         self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 10.0, right: 0.0)

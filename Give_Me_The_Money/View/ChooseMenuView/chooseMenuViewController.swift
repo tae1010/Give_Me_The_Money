@@ -10,10 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-enum SideButtonMode {
-    case game
-    case group
-}
+
 
 class ChooseMenuViewController: UIViewController {
     
@@ -34,46 +31,97 @@ class ChooseMenuViewController: UIViewController {
     
     let gameAddButton = SideAddButton(buttonMode: .game)
     let groupAddButton = SideAddButton(buttonMode: .group)
-    let makeButton = MainButton(title: "만들기")
+    let makeButton = MainButton(title: "만들기", isEnabled: false)
     
     private var chooseMenuViewModel: ChooseMenuViewModel
     let disposeBag = DisposeBag()
     
-    let tapGameButtonGesture = UITapGestureRecognizer()
-    let tapGroupButtonGesture = UITapGestureRecognizer()
+    let tapGameButtonGesture = UITapGestureRecognizer() // 게임 만들기 버튼 클릭 제스쳐
+    let tapGroupButtonGesture = UITapGestureRecognizer() // 그룹 만들기 버튼 클릭 제스쳐
 
+    
+    //MARK: init
     init(chooseMenuViewModel: ChooseMenuViewModel) {
         self.chooseMenuViewModel = chooseMenuViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    //MARK: LifeCycle
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setUI()
-        configureUI()
+        tapUI()
         
+        // 그룹 만들기 버튼 클릭
         tapGroupButtonGesture.rx.event.bind(onNext: { _ in
             self.chooseMenuViewModel.sideMenuStatus.accept(.group)
+            self.changeUI(buttonStatus: .group)
+            
         }).disposed(by: disposeBag)
 
         
+        // 게임 만들기 버튼 클릭
         tapGameButtonGesture.rx.event.bind(onNext: { _ in
             self.chooseMenuViewModel.sideMenuStatus.accept(.game)
-//            self.gameAddButton.changeButtonUI()
+            self.changeUI(buttonStatus: .game)
             
+        }).disposed(by: disposeBag)
+
+        
+        // 만들기 버튼 활성화
+        chooseMenuViewModel.checkMakeButtonIsEnabled.subscribe(onNext: { [weak self] isEnabled in
+            self?.makeButton.isEnabled = isEnabled
+        }).disposed(by: chooseMenuViewModel.disposedBag)
+        
+        
+        // 만들기 버튼 클릭
+        makeButton.rx.tap.bind(onNext: {
+            print("makeButton 클릭ㄱ")
         }).disposed(by: disposeBag)
         
         
+        // 닫기 버튼 클릭
+        closeButton.rx.tap.bind(onNext: {
+            self.dismiss(animated: true)
+        }).disposed(by: disposeBag)
     }
+    
+    //MARK: Function
+    
+    // 뷰 클릭시 ui변경
+    func changeUI(buttonStatus: SideButtonMode) {
+        
+        // 버튼 ui 변경시 만들기 버튼 ui도 변경
+        self.makeButton.backgroundColor = .primaryColor
+        self.makeButton.setTitleColor(.white, for: .normal)
+
+        // 버튼 ui 변경
+        self.groupAddButton.backgroundColor = buttonStatus == .group ? .lightPrimaryColor : .white
+        self.groupAddButton.menuTitleLabel.textColor = buttonStatus == .group ? .primaryColor : .lightGray
+        self.groupAddButton.menuDescriptionLabel.textColor = buttonStatus == .group ? .primaryColor : .lightGray
+        self.groupAddButton.descriptionImageView.image = buttonStatus == .group ? UIImage(named: "groupButton") : UIImage(named: "noSelectGroupButton")
+        self.groupAddButton.checkImageView.image = buttonStatus == .group ? UIImage(named: "check") : UIImage(named: "nonCheck")
+        
+        self.gameAddButton.backgroundColor = buttonStatus == .game ? .lightPrimaryColor : .white
+        self.gameAddButton.menuTitleLabel.textColor = buttonStatus == .game ? .primaryColor : .lightGray
+        self.gameAddButton.menuDescriptionLabel.textColor = buttonStatus == .game ? .primaryColor : .lightGray
+        self.gameAddButton.descriptionImageView.image = buttonStatus == .game ? UIImage(named: "gameButton") : UIImage(named: "noSelectGameButton")
+        self.gameAddButton.checkImageView.image = buttonStatus == .game ? UIImage(named: "check") : UIImage(named: "nonCheck")
+    }
+
 }
 
 
+//MARK: UI Setting
 extension ChooseMenuViewController {
     
     func setUI() {
@@ -111,7 +159,7 @@ extension ChooseMenuViewController {
         self.makeButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     }
     
-    func configureUI() {
+    func tapUI() {
         gameAddButton.isUserInteractionEnabled = true
         gameAddButton.addGestureRecognizer(tapGameButtonGesture)
         
