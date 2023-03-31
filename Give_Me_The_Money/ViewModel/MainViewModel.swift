@@ -10,8 +10,12 @@ import RxCocoa
 import RxSwift
 
 class MainViewModel {
+    var items = BehaviorRelay<[String]>(value: [])
     
     init() {
         print("메인뷰모델 init")
+        
+        items.accept(["aaa","bbb","ccc"])
+        
     }
 }

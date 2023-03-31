@@ -24,7 +24,7 @@ class ChooseMenuViewController: UIViewController {
         let label = UILabel()
         label.text = "메뉴 선택"
         label.textAlignment = .center
-        label.font = UIFont.nanumGothicBold(size: 24)
+        label.font = UIFont.nanumSquareNeoBold(size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -131,10 +131,10 @@ extension ChooseMenuViewController {
         self.view.addSubview(chooseMenuTitleLabel)
         self.view.addSubview(makeButton)
 
-        setLayOut()
+        setLayout()
     }
     
-    func setLayOut() {
+    func setLayout() {
         
         self.closeButton.translatesAutoresizingMaskIntoConstraints = false
         self.chooseMenuTitleLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -26,11 +26,11 @@ class MainButton: UIButton {
         
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad
         let constantSize: CGFloat = isiPad ? 85: 75
-        
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = isEnabled ? .primaryColor : .gray
         self.setTitleColor(isEnabled ? .white : .black, for: .normal)
         self.setTitle(title, for: .normal)
-        self.titleLabel?.font = .nanumGothicBold(size: 15)
+        self.titleLabel?.font = .nanumSquareNeoBold(size: 15)
         self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 10.0, right: 0.0)
         self.heightAnchor.constraint(equalToConstant: AppConstants.setupConstantSize(size: constantSize)).isActive = true
     }

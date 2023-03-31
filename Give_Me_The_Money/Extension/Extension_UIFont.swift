@@ -26,23 +26,23 @@ extension UIFont {
 //        return UIFont(name: "NanumGothicOTFLight", size: setupFontSize(size: size))
 //    }
     
-    static func nanumGothicExtraBold(size: CGFloat) -> UIFont? {
+    static func nanumSquareNeoExtrabold(size: CGFloat) -> UIFont? {
         return UIFont(name: "NanumSquareNeoTTF-dEb", size: setupFontSize(size: size))
     }
     
-    static func nanumGothicBold(size: CGFloat) -> UIFont? {
+    static func nanumSquareNeoBold(size: CGFloat) -> UIFont? {
         return UIFont(name: "NanumSquareNeoTTF-cBd", size: setupFontSize(size: size))
     }
     
-    static func nanumGothic(size: CGFloat) -> UIFont? {
+    static func nanumSquareNeo(size: CGFloat) -> UIFont? {
         return UIFont(name: "NanumSquareNeoTTF-bRg", size: setupFontSize(size: size))
     }
     
-    static func nanumGothicLight(size: CGFloat) -> UIFont? {
+    static func nanumSquareNeoLight(size: CGFloat) -> UIFont? {
         return UIFont(name: "NanumSquareNeoTTF-aLt", size: setupFontSize(size: size))
     }
     
-    static func nanumGothicHeavy(size: CGFloat) -> UIFont? {
+    static func nanumSquareNeoHeavy(size: CGFloat) -> UIFont? {
         return UIFont(name: "NanumSquareNeoTTF-eHv", size: setupFontSize(size: size))
     }
     

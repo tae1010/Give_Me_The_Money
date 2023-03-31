@@ -33,7 +33,7 @@ class SideAddButton: UIView {
         let label = UILabel()
         label.text = "메인"
         label.textAlignment = .center
-        label.font = UIFont.nanumGothicExtraBold(size: 16)
+        label.font = UIFont.nanumSquareNeoExtrabold(size: 16)
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,7 +44,7 @@ class SideAddButton: UIView {
         let label = UILabel()
         label.text = "설명"
         label.textAlignment = .center
-        label.font = UIFont.nanumGothicBold(size: 13)
+        label.font = UIFont.nanumSquareNeoBold(size: 13)
         label.textColor = .lightGray
         
         label.translatesAutoresizingMaskIntoConstraints = false
