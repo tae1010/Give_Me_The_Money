@@ -6,11 +6,23 @@
 //
 
 import UIKit
-import MaterialComponents.MaterialBottomSheet
 import RxCocoa
 import RxSwift
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
+    
+    let Scroller: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.backgroundColor = UIColor.white
+        return scroll
+    }()
+    
+    let logoView: UIView = {
+        let logoView = UIView()
+        logoView.backgroundColor = .gray
+        return logoView
+    }()
     
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -18,28 +30,19 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }()
 
-    let gameCollectionView: UICollectionView = {
+    let mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10 // cell사이의 간격 설정
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = AppConstants.setupConstantSize(size: 30) // cell 세로사이의 간격 설정
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
-        collectionView.register(GameCell.self, forCellWithReuseIdentifier: "GameCell")
+        collectionView.register(MainCell.self, forCellWithReuseIdentifier: "MainCell")
         return collectionView
     }()
     
-//    let groupCollectionView: UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
-//        layout.minimumInteritemSpacing = 0
-//        layout.minimumLineSpacing = 0
-//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        collectionView.backgroundColor = .white
-//        collectionView.register(GroupCell.self, forCellWithReuseIdentifier: "GroupCell")
-//        return collectionView
-//    }()
-    
-    
+    let statusView = MainStatusView()
     let mainAddButton = MainAddButton()
     let viewModel: MainViewModel
     
@@ -58,9 +61,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         setUI()
         
-        gameCollectionView.rx.setDelegate(self)
+        mainCollectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
+        
+        // tap mainButton
         mainAddButton.rx.tap.bind(onNext: {
             
             let chooseMenuVC = ChooseMenuViewController(chooseMenuViewModel: ChooseMenuViewModel())
@@ -71,20 +76,14 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }).disposed(by: disposeBag)
         
         
+        // bind mainCollectionView
         viewModel.items
-            .bind(to: gameCollectionView.rx.items(cellIdentifier: "GameCell", cellType: GameCell.self)) { index, item, cell in
+            .bind(to: mainCollectionView.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) { index, item, cell in
             
                 cell.usageLabel.text = "sss"
-                cell.backgroundColor = .gray
+
             }
             .disposed(by: disposeBag)
-        
-//        gameCollectionView.rx.modelSelected(Item.self)
-//            .subscribe(onNext: { item in
-//                print("Selected item: \(item.title)")
-//            })
-//            .disposed(by: disposeBag)
-        
         
     }
     
@@ -94,36 +93,43 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 extension MainViewController {
     
     func setUI() {
-        view.addSubview(gameCollectionView)
-//        view.addSubview(groupCollectionView)
+        view.addSubview(Scroller)
+        view.addSubview(logoView)
+        view.addSubview(statusView)
+        view.addSubview(mainCollectionView)
         view.addSubview(mainAddButton)
         setLayout()
     }
     
     func setLayout() {
         
+        logoView.translatesAutoresizingMaskIntoConstraints = false
+        statusView.translatesAutoresizingMaskIntoConstraints = false
+        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
+        
+        logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        logoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupConstantSize(size: 30)).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        
+        statusView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 30)).isActive = true
+        statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.9).isActive = true
         
         
         mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
         mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
         
-        gameCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        gameCollectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        gameCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        gameCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        gameCollectionView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2
-        ).isActive = true
         
-    
-
-//
-//        groupCollectionView.translatesAutoresizingMaskIntoConstraints = false
-//        groupCollectionView.topAnchor.constraint(equalTo: gameCollectionView.bottomAnchor, constant: 0).isActive = true
-//        groupCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-//        groupCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//        groupCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-//        
+        mainCollectionView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 60)).isActive = true
+        mainCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        mainCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        mainCollectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        mainCollectionView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.55).isActive = true
+             
     }
     
 
@@ -131,8 +137,8 @@ extension MainViewController {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == gameCollectionView{
-            return CGSize(width: UIScreen.main.bounds.width / 3, height: collectionView.frame.height)
+        if collectionView == mainCollectionView{
+            return CGSize(width: AppConstants.ScreenWidth * 0.9, height: collectionView.frame.height/4)
         }
         else { return CGSize(width: 0, height: 0)}
     }

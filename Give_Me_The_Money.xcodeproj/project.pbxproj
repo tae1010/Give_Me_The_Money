@@ -35,8 +35,8 @@
 		93F0135829D44418003731C1 /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135229D4436A003731C1 /* NanumSquareNeo-cBd.ttf */; };
 		93F0135929D44418003731C1 /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */; };
 		93F0135A29D44418003731C1 /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135129D4436A003731C1 /* NanumSquareNeo-eHv.ttf */; };
-		93F0135C29D6B090003731C1 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0135B29D6B090003731C1 /* GameCell.swift */; };
-		93F0135E29D6B0A7003731C1 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0135D29D6B0A7003731C1 /* GroupCell.swift */; };
+		93F0135C29D6B090003731C1 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0135B29D6B090003731C1 /* MainCell.swift */; };
+		93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E52C29DAB5A30002F193 /* MainStatusView.swift */; };
 		DB6005C1C56B0AED08F4298E /* Pods_Give_Me_The_MoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */; };
 		FA5EAB471EC6506EFCF6A440 /* Pods_Give_Me_The_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */; };
 		FD39ED4C3734B90198164380 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C7C49A71EBF912D01F2661 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework */; };
@@ -95,8 +95,8 @@
 		93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
 		93F0135429D4436A003731C1 /* NanumSquareNeo-bRg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-bRg.ttf"; sourceTree = "<group>"; };
 		93F0135529D4436A003731C1 /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
-		93F0135B29D6B090003731C1 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
-		93F0135D29D6B0A7003731C1 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		93F0135B29D6B090003731C1 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		93F7E52C29DAB5A30002F193 /* MainStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatusView.swift; sourceTree = "<group>"; };
 		965873CC6823E7AA268322E8 /* Pods-Give_Me_The_Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money/Pods-Give_Me_The_Money.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEA039234D006AB6F7AA5EA /* Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB42367972F8D145339F3B54 /* Pods-Give_Me_The_MoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 				93F0133F29CC62D2003731C1 /* MainButton.swift */,
 				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
 				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
-				93F0135B29D6B090003731C1 /* GameCell.swift */,
-				93F0135D29D6B0A7003731C1 /* GroupCell.swift */,
+				93F0135B29D6B090003731C1 /* MainCell.swift */,
+				93F7E52C29DAB5A30002F193 /* MainStatusView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -559,16 +559,16 @@
 			files = (
 				93F0134529D2C0A9003731C1 /* Group.swift in Sources */,
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
+				93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */,
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F0134029CC62D2003731C1 /* MainButton.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
 				93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */,
-				93F0135E29D6B0A7003731C1 /* GroupCell.swift in Sources */,
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
 				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
-				93F0135C29D6B090003731C1 /* GameCell.swift in Sources */,
+				93F0135C29D6B090003731C1 /* MainCell.swift in Sources */,
 				93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */,

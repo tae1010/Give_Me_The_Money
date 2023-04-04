@@ -10,8 +10,6 @@ target 'Give_Me_The_Money' do
   pod 'SnapKit', '~> 5.6.0'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'MaterialComponents/BottomSheet'
-  pod 'Toast-Swift', '~> 5.0.1'
   pod 'lottie-ios'
 
   target 'Give_Me_The_MoneyTests' do

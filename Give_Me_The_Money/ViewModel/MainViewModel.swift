@@ -15,7 +15,7 @@ class MainViewModel {
     init() {
         print("메인뷰모델 init")
         
-        items.accept(["aaa","bbb","ccc"])
+        items.accept(["aaa","bbb","ccc","ddd","eee","hhh","iii"])
         
     }
 }
