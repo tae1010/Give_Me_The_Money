@@ -116,16 +116,16 @@ extension SideAddButton {
         self.heightAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.4 / 3).isActive = true
         
         checkImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        checkImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        checkImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         
-        menuTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: AppConstants.setupConstantSize(size: -9)).isActive = true
-        menuTitleLabel.leadingAnchor.constraint(equalTo: self.checkImageView.trailingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        menuTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: AppConstants.setupNormalConstantSize(size: -9)).isActive = true
+        menuTitleLabel.leadingAnchor.constraint(equalTo: self.checkImageView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         
-        menuDescriptionLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: AppConstants.setupConstantSize(size: 10)).isActive = true
+        menuDescriptionLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
         menuDescriptionLabel.leadingAnchor.constraint(equalTo: menuTitleLabel.leadingAnchor).isActive = true
         
         descriptionImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        descriptionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
+        descriptionImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
     }
     
     func configureUI() {

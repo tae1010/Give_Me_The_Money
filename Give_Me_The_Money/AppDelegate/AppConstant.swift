@@ -16,7 +16,7 @@ struct AppConstants {
     static let ScreenHeight = UIScreen.main.bounds.height
     
     // 아이패드, 아이폰 각각 constant 크기 다르게 설정
-    static func setupConstantSize(size: CGFloat) -> CGFloat {
+    static func setupNormalConstantSize(size: CGFloat) -> CGFloat {
         
         var constantSize: CGFloat = 0
         
@@ -27,5 +27,32 @@ struct AppConstants {
     }
     
 
+    static func setupExtraConstantSize(size: CGFloat) -> CGFloat {
+        
+        var constantSize: CGFloat = 0
+        
+        if size < 0 { constantSize = isiPad ? size - 8 : size }
+        else { constantSize = isiPad ? size + 8 : size }
+
+        return constantSize
+    }
+    
+    static func setupNormalMultiplierSize(size: CGFloat) -> CGFloat {
+        
+        var constantSize: CGFloat = 0
+        
+        constantSize = isiPad ? size + 0.05 : size
+
+        return constantSize
+    }
+    
+    static func setupExtraMultiplierSize(size: CGFloat) -> CGFloat {
+        
+        var constantSize: CGFloat = 0
+        
+        constantSize = isiPad ? size + 0.2 : size
+
+        return constantSize
+    }
 
 }

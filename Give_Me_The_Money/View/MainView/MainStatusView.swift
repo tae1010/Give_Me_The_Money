@@ -15,7 +15,7 @@ class MainStatusView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .primaryColor
-        self.layer.cornerRadius = AppConstants.setupConstantSize(size: 20)
+        self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 20)
     }
     
     

@@ -71,17 +71,17 @@ class MainCell: UICollectionViewCell {
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         
-        usageLabelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
-        usageLabelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        usageLabelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
+        usageLabelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         usageLabelView.setContentCompressionResistancePriority(.required, for: .horizontal)
         
         titleLabel.centerYAnchor.constraint(equalTo: usageLabelView.centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: usageLabelView.trailingAnchor, constant: AppConstants.setupConstantSize(size: 7)).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -AppConstants.setupConstantSize(size: 20)).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: usageLabelView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: 7)).isActive = true
+        titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
         
-        totalPrice.topAnchor.constraint(equalTo: usageLabelView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 15)).isActive = true
+        totalPrice.topAnchor.constraint(equalTo: usageLabelView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 15)).isActive = true
         totalPrice.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35).isActive = true
         
         
@@ -90,10 +90,10 @@ class MainCell: UICollectionViewCell {
         
         
         userCountLabel.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor).isActive = true
-        userCountLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: AppConstants.setupConstantSize(size: 5)).isActive = true
+        userCountLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: 5)).isActive = true
         
         dateLabel.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupConstantSize(size: -20)).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -20)).isActive = true
     }
     
     override func awakeFromNib() {

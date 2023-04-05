@@ -35,16 +35,16 @@ class UsageLabelView: UIView {
         
         addSubview(usageLabel)
         
-        usageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        usageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        usageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
+        usageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -10)).isActive = true
         usageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         usageLabel.text = text
         
         self.backgroundColor = .lightPrimaryColor
-        self.layer.cornerRadius = AppConstants.setupConstantSize(size: 10)
+        self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 10)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: AppConstants.setupConstantSize(size: 25)).isActive = true
+        self.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 25)).isActive = true
     }
 
 }

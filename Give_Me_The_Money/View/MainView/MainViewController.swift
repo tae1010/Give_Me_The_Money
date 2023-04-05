@@ -34,7 +34,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = AppConstants.setupConstantSize(size: 30) // cell 세로사이의 간격 설정
+        layout.minimumLineSpacing = AppConstants.setupNormalConstantSize(size: 30) // cell 세로사이의 간격 설정
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
@@ -112,22 +112,24 @@ extension MainViewController {
         usageLabelView.translatesAutoresizingMaskIntoConstraints = false
         
         
-        logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
-        logoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupConstantSize(size: 30)).isActive = true
+        logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
+        logoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
+        
+        // 임시
         logoView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         logoView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         
         statusView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 30)).isActive = true
+        statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
         statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.9).isActive = true
         
         
-        mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
-        mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
+        mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
+        mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         
         
-        mainCollectionView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 30)).isActive = true
+        mainCollectionView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
         mainCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         mainCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         mainCollectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
@@ -141,7 +143,7 @@ extension MainViewController {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView{
-            return CGSize(width: AppConstants.ScreenWidth * 0.9, height: collectionView.frame.height / 2.6)
+            return CGSize(width: AppConstants.ScreenWidth * 0.9, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 2.6))
         }
         else { return CGSize(width: 0, height: 0)}
     }

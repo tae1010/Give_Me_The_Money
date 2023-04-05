@@ -142,17 +142,17 @@ extension ChooseMenuViewController {
         self.groupAddButton.translatesAutoresizingMaskIntoConstraints = false
         self.makeButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.closeButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
-        self.closeButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        self.closeButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
+        self.closeButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         
         self.chooseMenuTitleLabel.leadingAnchor.constraint(equalTo: self.closeButton.leadingAnchor).isActive = true
-        self.chooseMenuTitleLabel.topAnchor.constraint(equalTo: self.closeButton.bottomAnchor, constant: AppConstants.setupConstantSize(size: 24)).isActive = true
+        self.chooseMenuTitleLabel.topAnchor.constraint(equalTo: self.closeButton.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 24)).isActive = true
         
         self.groupAddButton.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        self.groupAddButton.topAnchor.constraint(equalTo: self.chooseMenuTitleLabel.bottomAnchor, constant: AppConstants.setupConstantSize(size: 34)).isActive = true
+        self.groupAddButton.topAnchor.constraint(equalTo: self.chooseMenuTitleLabel.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 34)).isActive = true
         
         self.gameAddButton.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        self.gameAddButton.topAnchor.constraint(equalTo: self.groupAddButton.bottomAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        self.gameAddButton.topAnchor.constraint(equalTo: self.groupAddButton.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         
         self.makeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.makeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true

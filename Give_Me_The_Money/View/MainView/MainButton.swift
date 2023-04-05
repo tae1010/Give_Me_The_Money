@@ -32,7 +32,7 @@ class MainButton: UIButton {
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = .nanumSquareNeoBold(size: 15)
         self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 10.0, right: 0.0)
-        self.heightAnchor.constraint(equalToConstant: AppConstants.setupConstantSize(size: constantSize)).isActive = true
+        self.heightAnchor.constraint(equalToConstant: AppConstants.setupNormalConstantSize(size: constantSize)).isActive = true
     }
 
     
