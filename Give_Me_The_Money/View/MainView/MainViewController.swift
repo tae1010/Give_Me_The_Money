@@ -42,6 +42,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         return collectionView
     }()
     
+    let usageLabelView = UsageLabelView()
     let statusView = MainStatusView()
     let mainAddButton = MainAddButton()
     let viewModel: MainViewModel
@@ -80,7 +81,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         viewModel.items
             .bind(to: mainCollectionView.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) { index, item, cell in
             
-                cell.usageLabel.text = "sss"
+                
 
             }
             .disposed(by: disposeBag)
@@ -98,6 +99,7 @@ extension MainViewController {
         view.addSubview(statusView)
         view.addSubview(mainCollectionView)
         view.addSubview(mainAddButton)
+        view.addSubview(usageLabelView)
         setLayout()
     }
     
@@ -107,6 +109,7 @@ extension MainViewController {
         statusView.translatesAutoresizingMaskIntoConstraints = false
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        usageLabelView.translatesAutoresizingMaskIntoConstraints = false
         
         
         logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
@@ -124,7 +127,7 @@ extension MainViewController {
         mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupConstantSize(size: -30)).isActive = true
         
         
-        mainCollectionView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 60)).isActive = true
+        mainCollectionView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 30)).isActive = true
         mainCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         mainCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         mainCollectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
@@ -138,7 +141,7 @@ extension MainViewController {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView{
-            return CGSize(width: AppConstants.ScreenWidth * 0.9, height: collectionView.frame.height/4)
+            return CGSize(width: AppConstants.ScreenWidth * 0.9, height: collectionView.frame.height / 2.6)
         }
         else { return CGSize(width: 0, height: 0)}
     }

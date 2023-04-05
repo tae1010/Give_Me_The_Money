@@ -49,7 +49,7 @@ extension UIFont {
     // 아이패드, 아이폰 각각 폰트크기 다르게 설정
     static func setupFontSize(size: CGFloat) -> CGFloat {
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad
-        let fontSize: CGFloat = isiPad ? size + 4 : size
+        let fontSize: CGFloat = isiPad ? size + 6 : size
         
         return fontSize
     }

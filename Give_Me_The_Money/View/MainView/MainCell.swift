@@ -10,18 +10,6 @@ import UIKit
 
 class MainCell: UICollectionViewCell {
     
-    let usageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "test"
-        label.font = UIFont.nanumSquareNeoBold(size: 15)
-        label.backgroundColor = UIColor.lightGray
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 5
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     let totalPrice: UILabel = {
         let label = UILabel()
         label.text = "0원"
@@ -38,13 +26,39 @@ class MainCell: UICollectionViewCell {
         return imageView
     }()
     
+    let userCountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0명"
+        label.font = UIFont.nanumSquareNeoExtrabold(size: 13)
+        label.textColor = UIColor.lightGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "23.01.01 ~ 23.01.01"
+        label.font = UIFont.nanumSquareNeoExtrabold(size: 13)
+        label.textColor = UIColor.lightGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    let usageLabelView = UsageLabelView(text: "여행")
+    
+    let titleLabel = UsageLabelView(text: "2021 회사 회의asdasdasdasdasdasd")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.addSubview(usageLabel)
+        contentView.addSubview(usageLabelView)
         contentView.addSubview(totalPrice)
         contentView.addSubview(userImageView)
+        contentView.addSubview(userCountLabel)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(titleLabel)
         
         contentView.backgroundColor = .white
         
@@ -56,21 +70,30 @@ class MainCell: UICollectionViewCell {
         
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
-        contentView.layer.masksToBounds = true
+        
+        usageLabelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        usageLabelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupConstantSize(size: 20)).isActive = true
+        usageLabelView.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
+        titleLabel.centerYAnchor.constraint(equalTo: usageLabelView.centerYAnchor).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: usageLabelView.trailingAnchor, constant: AppConstants.setupConstantSize(size: 7)).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -AppConstants.setupConstantSize(size: 20)).isActive = true
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
         
-        usageLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        usageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40).isActive = true
+        totalPrice.topAnchor.constraint(equalTo: usageLabelView.bottomAnchor, constant: AppConstants.setupConstantSize(size: 15)).isActive = true
+        totalPrice.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35).isActive = true
         
         
-        totalPrice.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        totalPrice.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40).isActive = true
-        
-        
-        userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40).isActive = true
+        userImageView.leadingAnchor.constraint(equalTo: usageLabelView.leadingAnchor).isActive = true
         userImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
         
         
+        userCountLabel.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor).isActive = true
+        userCountLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: AppConstants.setupConstantSize(size: 5)).isActive = true
+        
+        dateLabel.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupConstantSize(size: -20)).isActive = true
     }
     
     override func awakeFromNib() {
