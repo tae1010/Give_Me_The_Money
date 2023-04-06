@@ -24,7 +24,7 @@
 		93F0133B29CC5D8F003731C1 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */; };
 		93F0133C29CC5D8F003731C1 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133829CC5D8F003731C1 /* NanumGothic.otf */; };
 		93F0133D29CC5D8F003731C1 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */; };
-		93F0134029CC62D2003731C1 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133F29CC62D2003731C1 /* MainButton.swift */; };
+		93F0134029CC62D2003731C1 /* MakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133F29CC62D2003731C1 /* MakeButton.swift */; };
 		93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134129D1940A003731C1 /* Extension_UIFont.swift */; };
 		93F0134529D2C0A9003731C1 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134429D2C0A9003731C1 /* Group.swift */; };
 		93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134729D2CD1C003731C1 /* MainViewModel.swift */; };
@@ -38,6 +38,7 @@
 		93F0135C29D6B090003731C1 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0135B29D6B090003731C1 /* MainCell.swift */; };
 		93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E52C29DAB5A30002F193 /* MainStatusView.swift */; };
 		93F7E52F29DD66AA0002F193 /* UsageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */; };
+		93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E53329DE8FEF0002F193 /* ChartView.swift */; };
 		DB6005C1C56B0AED08F4298E /* Pods_Give_Me_The_MoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */; };
 		FA5EAB471EC6506EFCF6A440 /* Pods_Give_Me_The_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */; };
 		FD39ED4C3734B90198164380 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C7C49A71EBF912D01F2661 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework */; };
@@ -85,7 +86,7 @@
 		93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
 		93F0133829CC5D8F003731C1 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
-		93F0133F29CC62D2003731C1 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		93F0133F29CC62D2003731C1 /* MakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeButton.swift; sourceTree = "<group>"; };
 		93F0134129D1940A003731C1 /* Extension_UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIFont.swift; sourceTree = "<group>"; };
 		93F0134429D2C0A9003731C1 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		93F0134729D2CD1C003731C1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		93F0135B29D6B090003731C1 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		93F7E52C29DAB5A30002F193 /* MainStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatusView.swift; sourceTree = "<group>"; };
 		93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageLabelView.swift; sourceTree = "<group>"; };
+		93F7E53329DE8FEF0002F193 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		965873CC6823E7AA268322E8 /* Pods-Give_Me_The_Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money/Pods-Give_Me_The_Money.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEA039234D006AB6F7AA5EA /* Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB42367972F8D145339F3B54 /* Pods-Give_Me_The_MoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,12 +227,12 @@
 		933CE9EB29BF1C26007A3558 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				93F0133F29CC62D2003731C1 /* MainButton.swift */,
 				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
 				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
 				93F0135B29D6B090003731C1 /* MainCell.swift */,
 				93F7E52C29DAB5A30002F193 /* MainStatusView.swift */,
 				93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */,
+				93F7E53329DE8FEF0002F193 /* ChartView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 		93F0134B29D2F143003731C1 /* ChooseMenuView */ = {
 			isa = PBXGroup;
 			children = (
+				93F0133F29CC62D2003731C1 /* MakeButton.swift */,
 				93F0133029CB0D3A003731C1 /* SideAddButton.swift */,
 				93F0133329CC4184003731C1 /* chooseMenuViewController.swift */,
 			);
@@ -565,7 +568,8 @@
 				93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */,
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
-				93F0134029CC62D2003731C1 /* MainButton.swift in Sources */,
+				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
+				93F0134029CC62D2003731C1 /* MakeButton.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
 				93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */,
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,

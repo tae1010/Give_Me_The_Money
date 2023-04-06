@@ -41,7 +41,7 @@ class UsageLabelView: UIView {
         
         usageLabel.text = text
         
-        self.backgroundColor = .lightPrimaryColor
+        self.backgroundColor = .yellow
         self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 10)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 25)).isActive = true

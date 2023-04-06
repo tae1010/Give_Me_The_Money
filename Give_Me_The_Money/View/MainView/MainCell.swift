@@ -62,14 +62,19 @@ class MainCell: UICollectionViewCell {
         
         contentView.backgroundColor = .white
         
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.shadowOpacity = 0.3
-        layer.shadowRadius = 5
+        
+        
+//        layer.masksToBounds = false
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOffset = CGSize(width: -2, height: 2)
+//        layer.shadowOpacity = 0.3
+//        layer.shadowRadius = 5
         
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
+        contentView.layer.borderColor = UIColor.lightPrimaryCGColor
+        contentView.layer.borderWidth = 2.0
+        
         
         usageLabelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         usageLabelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true

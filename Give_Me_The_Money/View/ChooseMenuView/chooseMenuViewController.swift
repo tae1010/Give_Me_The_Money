@@ -31,7 +31,7 @@ class ChooseMenuViewController: UIViewController {
     
     let gameAddButton = SideAddButton(buttonMode: .game)
     let groupAddButton = SideAddButton(buttonMode: .group)
-    let makeButton = MainButton(title: "만들기", isEnabled: false)
+    let makeButton = MakeButton(title: "만들기", isEnabled: false)
     
     private var chooseMenuViewModel: ChooseMenuViewModel
     let disposeBag = DisposeBag()

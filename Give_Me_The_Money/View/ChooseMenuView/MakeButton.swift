@@ -8,12 +8,10 @@
 import Foundation
 import UIKit
 
-class MainButton: UIButton {
+class MakeButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
     }
     
     required init?(coder: NSCoder) {

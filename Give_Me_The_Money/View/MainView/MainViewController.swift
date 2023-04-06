@@ -122,7 +122,7 @@ extension MainViewController {
         
         statusView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
-        statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.9).isActive = true
+        statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.85).isActive = true
         
         
         mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
@@ -143,7 +143,7 @@ extension MainViewController {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView{
-            return CGSize(width: AppConstants.ScreenWidth * 0.9, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 2.6))
+            return CGSize(width: AppConstants.ScreenWidth * 0.85, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 2.6))
         }
         else { return CGSize(width: 0, height: 0)}
     }

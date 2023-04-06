@@ -17,41 +17,30 @@ struct AppConstants {
     
     // 아이패드, 아이폰 각각 constant 크기 다르게 설정
     static func setupNormalConstantSize(size: CGFloat) -> CGFloat {
-        
-        var constantSize: CGFloat = 0
-        
-        if size < 0 { constantSize = isiPad ? size - 4 : size }
-        else { constantSize = isiPad ? size + 4 : size }
-
+        let constantSize = isiPad ? size + (size < 0 ? -4 : 4) : size
         return constantSize
     }
     
 
     static func setupExtraConstantSize(size: CGFloat) -> CGFloat {
-        
-        var constantSize: CGFloat = 0
-        
-        if size < 0 { constantSize = isiPad ? size - 8 : size }
-        else { constantSize = isiPad ? size + 8 : size }
-
+        let constantSize = isiPad ? size + (size < 0 ? -10 : 10) : size
         return constantSize
     }
+    
     
     static func setupNormalMultiplierSize(size: CGFloat) -> CGFloat {
-        
-        var constantSize: CGFloat = 0
-        
-        constantSize = isiPad ? size + 0.05 : size
-
+        let constantSize = isiPad ? size + 0.05 : size
         return constantSize
     }
     
+    
     static func setupExtraMultiplierSize(size: CGFloat) -> CGFloat {
-        
-        var constantSize: CGFloat = 0
-        
-        constantSize = isiPad ? size + 0.2 : size
-
+        let constantSize = isiPad ? size + 0.2 : size
+        return constantSize
+    }
+    
+    static func setupChartViewSize(size: CGFloat) -> CGFloat {
+        let constantSize = isiPad ? size + 100 : size
         return constantSize
     }
 
