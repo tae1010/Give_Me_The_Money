@@ -30,17 +30,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }()
 
-    let mainCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = AppConstants.setupNormalConstantSize(size: 30) // cell 세로사이의 간격 설정
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
-        collectionView.register(MainCell.self, forCellWithReuseIdentifier: "MainCell")
-        return collectionView
-    }()
+    let mainView = MainView()
     
     let usageLabelView = UsageLabelView()
     let statusView = MainStatusView()
@@ -62,8 +52,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         setUI()
         
-        mainCollectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
+
         
         
         // tap mainButton
@@ -77,14 +66,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }).disposed(by: disposeBag)
         
         
-        // bind mainCollectionView
-        viewModel.items
-            .bind(to: mainCollectionView.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) { index, item, cell in
-            
-                
 
-            }
-            .disposed(by: disposeBag)
         
     }
     
@@ -94,10 +76,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 extension MainViewController {
     
     func setUI() {
+        configureUI()
+        
+        
         view.addSubview(Scroller)
         view.addSubview(logoView)
         view.addSubview(statusView)
-        view.addSubview(mainCollectionView)
+        view.addSubview(mainView)
         view.addSubview(mainAddButton)
         view.addSubview(usageLabelView)
         setLayout()
@@ -107,8 +92,7 @@ extension MainViewController {
         
         logoView.translatesAutoresizingMaskIntoConstraints = false
         statusView.translatesAutoresizingMaskIntoConstraints = false
-        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.translatesAutoresizingMaskIntoConstraints = false
         usageLabelView.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -121,7 +105,7 @@ extension MainViewController {
         
         
         statusView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
+        statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 50)).isActive = true
         statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.85).isActive = true
         
         
@@ -129,22 +113,25 @@ extension MainViewController {
         mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         
         
-        mainCollectionView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
-        mainCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        mainCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        mainCollectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        mainCollectionView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.55).isActive = true
+        mainView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
+        mainView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        mainView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        mainView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+
              
+    }
+    
+    func configureUI() {
+        self.view.backgroundColor = .primaryColor
+        
+        mainView.layer.cornerRadius = 30
+        mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+            
+        
+
     }
     
 
 }
 
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == mainCollectionView{
-            return CGSize(width: AppConstants.ScreenWidth * 0.85, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 2.6))
-        }
-        else { return CGSize(width: 0, height: 0)}
-    }
-}
+

@@ -18,6 +18,8 @@
 		933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */; };
 		934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */; };
 		934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCF29CADBE800490EF6 /* AppConstant.swift */; };
+		9360692129E140DC00CF9001 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692029E140DC00CF9001 /* MainCell.swift */; };
+		9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692329E1595000CF9001 /* MakeGroupViewController.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* chooseMenuViewController.swift */; };
 		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
@@ -35,10 +37,11 @@
 		93F0135829D44418003731C1 /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135229D4436A003731C1 /* NanumSquareNeo-cBd.ttf */; };
 		93F0135929D44418003731C1 /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */; };
 		93F0135A29D44418003731C1 /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135129D4436A003731C1 /* NanumSquareNeo-eHv.ttf */; };
-		93F0135C29D6B090003731C1 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0135B29D6B090003731C1 /* MainCell.swift */; };
+		93F0135C29D6B090003731C1 /* UseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0135B29D6B090003731C1 /* UseCell.swift */; };
 		93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E52C29DAB5A30002F193 /* MainStatusView.swift */; };
 		93F7E52F29DD66AA0002F193 /* UsageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */; };
 		93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E53329DE8FEF0002F193 /* ChartView.swift */; };
+		93F7E53629DFF8F20002F193 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E53529DFF8F20002F193 /* MainView.swift */; };
 		DB6005C1C56B0AED08F4298E /* Pods_Give_Me_The_MoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */; };
 		FA5EAB471EC6506EFCF6A440 /* Pods_Give_Me_The_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */; };
 		FD39ED4C3734B90198164380 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C7C49A71EBF912D01F2661 /* Pods_Give_Me_The_Money_Give_Me_The_MoneyUITests.framework */; };
@@ -80,6 +83,8 @@
 		933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAddButton.swift; sourceTree = "<group>"; };
 		934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIColor.swift; sourceTree = "<group>"; };
 		934F1DCF29CADBE800490EF6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		9360692029E140DC00CF9001 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		9360692329E1595000CF9001 /* MakeGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGroupViewController.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* chooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseMenuViewController.swift; sourceTree = "<group>"; };
 		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
@@ -97,10 +102,11 @@
 		93F0135329D4436A003731C1 /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
 		93F0135429D4436A003731C1 /* NanumSquareNeo-bRg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-bRg.ttf"; sourceTree = "<group>"; };
 		93F0135529D4436A003731C1 /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
-		93F0135B29D6B090003731C1 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		93F0135B29D6B090003731C1 /* UseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCell.swift; sourceTree = "<group>"; };
 		93F7E52C29DAB5A30002F193 /* MainStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatusView.swift; sourceTree = "<group>"; };
 		93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageLabelView.swift; sourceTree = "<group>"; };
 		93F7E53329DE8FEF0002F193 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		93F7E53529DFF8F20002F193 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		965873CC6823E7AA268322E8 /* Pods-Give_Me_The_Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money/Pods-Give_Me_The_Money.debug.xcconfig"; sourceTree = "<group>"; };
 		ADEA039234D006AB6F7AA5EA /* Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests/Pods-Give_Me_The_Money-Give_Me_The_MoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB42367972F8D145339F3B54 /* Pods-Give_Me_The_MoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 				930F377129BDDF1000457CAD /* LaunchScreen.storyboard */,
 				933CE9EB29BF1C26007A3558 /* MainView */,
 				93F0134B29D2F143003731C1 /* ChooseMenuView */,
+				9360692229E1591300CF9001 /* GroupView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,10 +236,11 @@
 			children = (
 				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
 				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
-				93F0135B29D6B090003731C1 /* MainCell.swift */,
 				93F7E52C29DAB5A30002F193 /* MainStatusView.swift */,
 				93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */,
 				93F7E53329DE8FEF0002F193 /* ChartView.swift */,
+				93F7E53529DFF8F20002F193 /* MainView.swift */,
+				9360692029E140DC00CF9001 /* MainCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -244,6 +252,14 @@
 				93F0134129D1940A003731C1 /* Extension_UIFont.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9360692229E1591300CF9001 /* GroupView */ = {
+			isa = PBXGroup;
+			children = (
+				9360692329E1595000CF9001 /* MakeGroupViewController.swift */,
+			);
+			path = GroupView;
 			sourceTree = "<group>";
 		};
 		93F0133229CC32D3003731C1 /* AppDelegate */ = {
@@ -301,6 +317,7 @@
 		93F0134B29D2F143003731C1 /* ChooseMenuView */ = {
 			isa = PBXGroup;
 			children = (
+				93F0135B29D6B090003731C1 /* UseCell.swift */,
 				93F0133F29CC62D2003731C1 /* MakeButton.swift */,
 				93F0133029CB0D3A003731C1 /* SideAddButton.swift */,
 				93F0133329CC4184003731C1 /* chooseMenuViewController.swift */,
@@ -568,6 +585,8 @@
 				93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */,
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
+				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
+				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
 				93F0134029CC62D2003731C1 /* MakeButton.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
@@ -575,7 +594,8 @@
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
 				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
-				93F0135C29D6B090003731C1 /* MainCell.swift in Sources */,
+				93F0135C29D6B090003731C1 /* UseCell.swift in Sources */,
+				9360692129E140DC00CF9001 /* MainCell.swift in Sources */,
 				93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */,

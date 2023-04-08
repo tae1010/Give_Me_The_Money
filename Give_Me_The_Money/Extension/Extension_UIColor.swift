@@ -9,12 +9,21 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    class var primaryColor: UIColor? { return UIColor(named: "primaryColor") }
-    class var primaryCGColor: CGColor { return UIColor.primaryColor!.cgColor }
+    class var primaryColor: UIColor { return UIColor(named: "primaryColor")! }
+    class var primaryCGColor: CGColor { return UIColor.primaryColor.cgColor }
     
-    class var veryLightGrey: UIColor? { return UIColor(named: "veryLightGrey") }
-    class var veryLightGreyCGColor: CGColor { return UIColor.veryLightGrey!.cgColor }
+    class var veryLightGrey: UIColor { return UIColor(named: "veryLightGrey")! }
+    class var veryLightGreyCGColor: CGColor { return UIColor.veryLightGrey.cgColor }
     
-    class var lightPrimaryColor: UIColor? { return UIColor(named: "lightPrimaryColor") }
-    class var lightPrimaryCGColor: CGColor { return UIColor.lightPrimaryColor!.cgColor }
+    class var lightPrimaryColor: UIColor { return UIColor(named: "lightPrimaryColor")! }
+    class var lightPrimaryCGColor: CGColor { return UIColor.lightPrimaryColor.cgColor }
+    
+    class var customYellowColor: UIColor { return UIColor(named: "customYellow")! }
+    class var customYellowCGColor: CGColor { return UIColor.customYellowColor.cgColor }
+    
+    class var customRedColor: UIColor { return UIColor(named: "customRed")! }
+    class var customRedCGColor: CGColor { return UIColor.customRedColor.cgColor }
+    
+    class var customGreenColor: UIColor { return UIColor(named: "customGreen")! }
+    class var customGreenCGColor: CGColor { return UIColor.customGreenColor.cgColor }
 }

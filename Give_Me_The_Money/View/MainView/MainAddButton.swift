@@ -33,13 +33,13 @@ extension MainAddButton {
         self.backgroundColor = .primaryColor
 //        self.tintColor = .white
         self.showsTouchWhenHighlighted = false
-        
+         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.18).isActive = true
+        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.09).isActive = true
         self.heightAnchor.constraint(equalTo: self.widthAnchor).isActive = true
 
-        self.layer.cornerRadius = AppConstants.ScreenWidth * 0.18 / 2
+        self.layer.cornerRadius = AppConstants.ScreenHeight * 0.09 / 2
         self.layer.masksToBounds = true
         
         self.layer.shadowColor = UIColor.black.cgColor // 색깔
@@ -47,7 +47,8 @@ extension MainAddButton {
         self.layer.shadowOffset = CGSize(width: 0, height: 4) // 위치조정
         self.layer.shadowRadius = 5 // 반경
         self.layer.shadowOpacity = 0.3 // alpha값
-        
+
     }
     
 }
+

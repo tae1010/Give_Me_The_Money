@@ -10,12 +10,31 @@ import UIKit
 
 class ChartView: UIView, CAAnimationDelegate {
     
+    var circleSize: CGFloat = 0
+    
+    init(circleSize: CGFloat) {
+        super.init(frame: .zero)
+        self.circleSize = circleSize
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func draw(_ rect: CGRect) {
+        
+        print(circleSize)
         
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
-        let colors = [UIColor.orange, UIColor.black, UIColor.systemGreen, UIColor.systemPink, UIColor.cyan, UIColor.systemTeal]
+        let colors: [UIColor] = [.customRedColor, .customGreenColor, .customYellowColor]
 
+        var colorIndex = 0
+        
         let values: [CGFloat] = [10, 20, 70]
         let total = values.reduce(0, +)
         
@@ -29,12 +48,17 @@ class ChartView: UIView, CAAnimationDelegate {
             let path = UIBezierPath()
             path.move(to: center)
             path.addArc(withCenter: center,
-                        radius: AppConstants.setupChartViewSize(size: 70),
+                        radius: circleSize,
                         startAngle: startAngle,
                         endAngle: startAngle + endAngle,
                         clockwise: true)
             
-            colors.randomElement()?.set()
+            colors[colorIndex].set()
+            colorIndex += 1
+            if colorIndex >= colors.count {
+                colorIndex = 0
+            }
+            
             path.fill()
             startAngle += endAngle
             path.close()
@@ -46,7 +70,7 @@ class ChartView: UIView, CAAnimationDelegate {
         }
         
         let semiCircle = UIBezierPath(arcCenter: center,
-                                      radius: AppConstants.setupExtraConstantSize(size: 30),
+                                      radius: circleSize - 10,
                                       startAngle: 0,
                                       endAngle: (360 * .pi) / 180,
                                       clockwise: true)

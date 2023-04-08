@@ -30,21 +30,22 @@ class UsageLabelView: UIView {
     }
     
     
-    init(text: String) {
+    init(text: String, backGroundColor: UIColor, labelColor: UIColor) {
         super.init(frame: .zero)
         
         addSubview(usageLabel)
         
-        usageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
-        usageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -10)).isActive = true
+//        usageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
+//        usageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -10)).isActive = true
         usageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        usageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
         usageLabel.text = text
-        
-        self.backgroundColor = .yellow
-        self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 10)
+        usageLabel.textColor = labelColor
+        self.backgroundColor = backGroundColor
+        self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 15)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 25)).isActive = true
+        self.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true
     }
 
 }
