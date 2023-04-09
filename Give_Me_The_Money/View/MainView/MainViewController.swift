@@ -59,9 +59,14 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         mainAddButton.rx.tap.bind(onNext: {
             
             let chooseMenuVC = ChooseMenuViewController(chooseMenuViewModel: ChooseMenuViewModel())
-            chooseMenuVC.modalPresentationStyle = .fullScreen
             
-            self.present(chooseMenuVC, animated: true)
+            let navigationController = UINavigationController(rootViewController: chooseMenuVC)
+
+            // 화면 전환 커스텀, 필자는 PullScreen으로 띄우고, VC2에서 navigationBar가 보이지 않게 설정
+            navigationController.modalPresentationStyle = .fullScreen
+            navigationController.isNavigationBarHidden = true
+            
+            self.present(navigationController, animated: true)
             
         }).disposed(by: disposeBag)
         

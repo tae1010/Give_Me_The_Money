@@ -77,9 +77,9 @@ extension MainView {
     
     func setupUI() {
         
-        [allLabel, groupLabel, gameLabel].map {
+        [allLabel, groupLabel, gameLabel].forEach({
             self.statusButtonStackView.addArrangedSubview($0)
-        }
+        })
         
         addSubview(mainCollectionView)
         addSubview(statusButtonStackView)

@@ -35,8 +35,6 @@ class UsageLabelView: UIView {
         
         addSubview(usageLabel)
         
-//        usageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
-//        usageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -10)).isActive = true
         usageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         usageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         

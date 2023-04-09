@@ -26,7 +26,7 @@ class MainStatusView: UIView {
         let label = UILabel()
         label.font = UIFont.nanumSquareNeoBold(size: 13)
         label.numberOfLines = 1
-        label.text = "총: 00,000,000원"
+        label.text = "총: 00,000,00000,000,00000,000,000원"
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -37,7 +37,7 @@ class MainStatusView: UIView {
         let label = UILabel()
         label.font = UIFont.nanumSquareNeoBold(size: 13)
         label.numberOfLines = 1
-        label.text = "모임: 00,000원"
+        label.text = "모임: 00,00000,000,00000,000,000원"
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -74,12 +74,6 @@ class MainStatusView: UIView {
         
         self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 30)
         
-//        self.layer.shadowColor = UIColor.black.cgColor // 색깔
-//        self.layer.masksToBounds = false  // 내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
-//        self.layer.shadowOffset = CGSize(width: 0, height: 4) // 위치조정
-//        self.layer.shadowRadius = 5 // 반경
-//        self.layer.shadowOpacity = 0.3 // alpha값
-        
         chartView.backgroundColor = .clear
         setupUI()
         
@@ -98,9 +92,9 @@ extension MainStatusView {
     func setupUI() {
         
         
-        [totalPriceLabel, myGroupPrice, myGamePrice].map {
+        [totalPriceLabel, myGroupPrice, myGamePrice].forEach({
             self.priceStatusStackView.addArrangedSubview($0)
-        }
+        })
         
         addSubview(chartView)
         addSubview(statusTitleLabel)

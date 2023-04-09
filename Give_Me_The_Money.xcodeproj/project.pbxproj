@@ -20,6 +20,9 @@
 		934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCF29CADBE800490EF6 /* AppConstant.swift */; };
 		9360692129E140DC00CF9001 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692029E140DC00CF9001 /* MainCell.swift */; };
 		9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692329E1595000CF9001 /* MakeGroupViewController.swift */; };
+		9360692629E2ABEF00CF9001 /* ChooseUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */; };
+		9360692929E2AFCF00CF9001 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692829E2AFCF00CF9001 /* BackButton.swift */; };
+		9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692A29E2B32D00CF9001 /* CloseButton.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* chooseMenuViewController.swift */; };
 		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
@@ -85,6 +88,9 @@
 		934F1DCF29CADBE800490EF6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		9360692029E140DC00CF9001 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		9360692329E1595000CF9001 /* MakeGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGroupViewController.swift; sourceTree = "<group>"; };
+		9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUsageView.swift; sourceTree = "<group>"; };
+		9360692829E2AFCF00CF9001 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		9360692A29E2B32D00CF9001 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* chooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseMenuViewController.swift; sourceTree = "<group>"; };
 		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 		933CE9EA29BF1C13007A3558 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9360692729E2AFB100CF9001 /* CommonView */,
 				930F377129BDDF1000457CAD /* LaunchScreen.storyboard */,
 				933CE9EB29BF1C26007A3558 /* MainView */,
 				93F0134B29D2F143003731C1 /* ChooseMenuView */,
@@ -237,7 +244,6 @@
 				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
 				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
 				93F7E52C29DAB5A30002F193 /* MainStatusView.swift */,
-				93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */,
 				93F7E53329DE8FEF0002F193 /* ChartView.swift */,
 				93F7E53529DFF8F20002F193 /* MainView.swift */,
 				9360692029E140DC00CF9001 /* MainCell.swift */,
@@ -258,8 +264,19 @@
 			isa = PBXGroup;
 			children = (
 				9360692329E1595000CF9001 /* MakeGroupViewController.swift */,
+				9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */,
 			);
 			path = GroupView;
+			sourceTree = "<group>";
+		};
+		9360692729E2AFB100CF9001 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */,
+				9360692829E2AFCF00CF9001 /* BackButton.swift */,
+				9360692A29E2B32D00CF9001 /* CloseButton.swift */,
+			);
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		93F0133229CC32D3003731C1 /* AppDelegate */ = {
@@ -586,6 +603,7 @@
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
+				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
 				93F0134029CC62D2003731C1 /* MakeButton.swift in Sources */,
@@ -595,6 +613,8 @@
 				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
 				93F0135C29D6B090003731C1 /* UseCell.swift in Sources */,
+				9360692929E2AFCF00CF9001 /* BackButton.swift in Sources */,
+				9360692629E2ABEF00CF9001 /* ChooseUsageView.swift in Sources */,
 				9360692129E140DC00CF9001 /* MainCell.swift in Sources */,
 				93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,

@@ -14,12 +14,7 @@ import RxSwift
 
 class ChooseMenuViewController: UIViewController {
     
-    let closeButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "closeButton"), for: .normal)
-        return button
-    }()
-    
+    let closeButton = CloseButton()
     let chooseMenuTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "메뉴 선택"
@@ -85,7 +80,15 @@ class ChooseMenuViewController: UIViewController {
         
         // 만들기 버튼 클릭
         makeButton.rx.tap.bind(onNext: {
-            print("makeButton 클릭ㄱ")
+            print("만들기버튼 ㅡㄹ릭")
+            let makeGroupViewController = MakeGroupViewController()
+            
+            makeGroupViewController.modalPresentationStyle = .fullScreen
+
+            
+            self.navigationController?.pushViewController(makeGroupViewController, animated: true)
+
+            
         }).disposed(by: disposeBag)
         
         
@@ -142,8 +145,8 @@ extension ChooseMenuViewController {
         self.groupAddButton.translatesAutoresizingMaskIntoConstraints = false
         self.makeButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.closeButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
-        self.closeButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
+        self.closeButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
+        self.closeButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
         
         self.chooseMenuTitleLabel.leadingAnchor.constraint(equalTo: self.closeButton.leadingAnchor).isActive = true
         self.chooseMenuTitleLabel.topAnchor.constraint(equalTo: self.closeButton.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 24)).isActive = true

@@ -23,7 +23,7 @@ class MakeButton: UIButton {
         super.init(frame: .zero)
         
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad
-        let constantSize: CGFloat = isiPad ? 85: 75
+        let constantSize: CGFloat = isiPad ? 90: 75
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = isEnabled ? .primaryColor : .gray
         self.setTitleColor(isEnabled ? .white : .black, for: .normal)

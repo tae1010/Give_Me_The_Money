@@ -26,4 +26,9 @@ extension UIColor {
     
     class var customGreenColor: UIColor { return UIColor(named: "customGreen")! }
     class var customGreenCGColor: CGColor { return UIColor.customGreenColor.cgColor }
+    
+    class var noSelectColor: UIColor { return UIColor(named: "noSelectColor")! }
+    class var noSelectCGColor: CGColor { return UIColor.noSelectColor.cgColor }
+    
+    
 }
