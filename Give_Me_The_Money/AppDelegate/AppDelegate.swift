@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            
 //        }
         
-        print(AppConstants.ScreenWidth)
         return true
     }
 

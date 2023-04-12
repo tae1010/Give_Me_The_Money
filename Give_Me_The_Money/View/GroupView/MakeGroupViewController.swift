@@ -16,13 +16,13 @@ class MakeGroupViewController: UIViewController {
     let contentScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .white
-        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.showsVerticalScrollIndicator = false
         
         return scrollView
     }()
     
     // 스크롤뷰안에 contentView
-    let contentView = UIView ()
+    let contentView = UIView()
     
     // 뒤로가기
     let backButton = BackButton()
@@ -36,6 +36,8 @@ class MakeGroupViewController: UIViewController {
     
     // 용도 view
     let chooseUsageView = ChooseUsageView()
+    
+    let choosePriceView = ChoosePriceView()
 
     let disposeBag = DisposeBag()
     
@@ -43,15 +45,19 @@ class MakeGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .white
         setUI()
         tapUI()
         
         backButton.rx.tap.bind(onNext: {
+            print("뒤로가기 클릭")
             self.navigationController?.popViewController(animated: true)
         }).disposed(by: disposeBag)
         
+        
+        tapChooseUsageView.rx.event.bind(onNext: {
+            print($0)
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -61,22 +67,28 @@ extension MakeGroupViewController {
     func setUI() {
         
         view.addSubview(contentScrollView)
-        contentScrollView.addSubview(contentView)
-        contentView.addSubview(backButton)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(chooseUsageView)
+        contentScrollView.addSubview(backButton)
+        contentScrollView.addSubview(titleLabel)
+        contentScrollView.addSubview(chooseUsageView)
+        contentScrollView.addSubview(choosePriceView)
+        
+        contentScrollView.isUserInteractionEnabled = true
+        backButton.isUserInteractionEnabled = true
+        titleLabel.isUserInteractionEnabled = true
+        chooseUsageView.isUserInteractionEnabled = true
         
         setLayout()
-        configureUI()
+//        configureUI()
     }
     
     func setLayout() {
         
         contentScrollView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.translatesAutoresizingMaskIntoConstraints = false
         backButton.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         chooseUsageView.translatesAutoresizingMaskIntoConstraints = false
+        choosePriceView.translatesAutoresizingMaskIntoConstraints = false
         
         
         contentScrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -84,24 +96,27 @@ extension MakeGroupViewController {
         contentScrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         contentScrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        contentView.topAnchor.constraint(equalTo: contentScrollView.topAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: contentScrollView.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: contentScrollView.trailingAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
+//        contentView.topAnchor.constraint(equalTo: contentScrollView.topAnchor).isActive = true
+//        contentView.leadingAnchor.constraint(equalTo: contentScrollView.leadingAnchor).isActive = true
+//        contentView.trailingAnchor.constraint(equalTo: contentScrollView.trailingAnchor).isActive = true
+//        contentView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
         
         
-        backButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
-        backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
+        backButton.topAnchor.constraint(equalTo: contentScrollView.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
+        backButton.leadingAnchor.constraint(equalTo: contentScrollView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
 
 
         titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
         chooseUsageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 50)).isActive = true
         chooseUsageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        chooseUsageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        chooseUsageView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
+        choosePriceView.topAnchor.constraint(equalTo: chooseUsageView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 70)).isActive = true
+        choosePriceView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        choosePriceView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
     }
     

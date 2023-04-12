@@ -46,9 +46,9 @@ class UseCell: UICollectionViewCell {
         return label
     }()
     
-    let usageLabelView = UsageLabelView(text: "여행", backGroundColor: .customGreenColor, labelColor: .black)
+    let usageLabelView = UsageLabelView(text: "여행", backGroundColor: .customGreenColor, labelColor: .black, necessaryWidth: false)
     
-    let titleLabel = UsageLabelView(text: "2021 회사 회의asdasdasdasdasdasd", backGroundColor: .customGreenColor, labelColor: .black)
+    let titleLabel = UsageLabelView(text: "2021 회사 회의asdasdasdasdasdasd", backGroundColor: .customGreenColor, labelColor: .black, necessaryWidth: false)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

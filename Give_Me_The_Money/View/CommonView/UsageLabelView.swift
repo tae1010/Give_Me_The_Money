@@ -30,11 +30,12 @@ class UsageLabelView: UIView {
     }
     
     
-    init(text: String, backGroundColor: UIColor, labelColor: UIColor) {
+    init(text: String, backGroundColor: UIColor, labelColor: UIColor, necessaryWidth: Bool) {
         super.init(frame: .zero)
         
         addSubview(usageLabel)
         
+        if necessaryWidth { usageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true }
         usageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         usageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
@@ -44,6 +45,10 @@ class UsageLabelView: UIView {
         self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 15)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true
+        
+        
+        
+        
     }
 
 }

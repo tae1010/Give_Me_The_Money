@@ -13,11 +13,11 @@ class MainView: UIView, UIScrollViewDelegate {
     
     let viewModel = MainViewModel() // 임시
     
-    let allLabel = UsageLabelView(text: "전체", backGroundColor: .customRedColor, labelColor: .white)
+    let allLabel = UsageLabelView(text: "전체", backGroundColor: .customRedColor, labelColor: .white, necessaryWidth: false)
     
-    let groupLabel = UsageLabelView(text: "모임", backGroundColor: .customYellowColor, labelColor: .white)
+    let groupLabel = UsageLabelView(text: "모임", backGroundColor: .customYellowColor, labelColor: .white, necessaryWidth: false)
     
-    let gameLabel = UsageLabelView(text: "게임", backGroundColor: .customGreenColor, labelColor: .white)
+    let gameLabel = UsageLabelView(text: "게임", backGroundColor: .customGreenColor, labelColor: .white, necessaryWidth: false)
     
     let mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

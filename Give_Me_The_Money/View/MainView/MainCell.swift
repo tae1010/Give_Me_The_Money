@@ -74,7 +74,6 @@ class MainCell: UICollectionViewCell {
         layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
         
         
-        print()
         statusImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: self.frame.height / AppConstants.setupNormalMultiplierSize(size: 3)).isActive = true
         statusImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
         statusImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true

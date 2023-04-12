@@ -52,7 +52,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         setUI()
         
-
+        self.navigationController?.isNavigationBarHidden = true
         
         
         // tap mainButton
