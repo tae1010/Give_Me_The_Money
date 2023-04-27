@@ -18,7 +18,7 @@ class ChoosePriceView: UIView {
         return label
     }()
     
-    let priceTextField = CustomTextField()
+    let priceTextField = CustomNumberTextField()
     
     let minusButton: UIButton = {
         let button = UIButton()
@@ -94,7 +94,7 @@ extension ChoosePriceView {
         
         plusMinusStackView.topAnchor.constraint(equalTo: priceTextField.topAnchor).isActive = true
         plusMinusStackView.leadingAnchor.constraint(equalTo: priceTextField.trailingAnchor, constant: AppConstants.setupExtraConstantSize(size: 50)).isActive = true
-        plusMinusStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: -10)).isActive = true
+        plusMinusStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         plusMinusStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
     }

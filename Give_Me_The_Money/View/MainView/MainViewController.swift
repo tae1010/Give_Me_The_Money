@@ -31,10 +31,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }()
 
     let mainView = MainView()
-    
     let usageLabelView = UsageLabelView()
     let statusView = MainStatusView()
     let mainAddButton = MainAddButton()
+    
     let viewModel: MainViewModel
     
     let disposeBag = DisposeBag()

@@ -28,12 +28,11 @@ class ChooseMenuViewController: UIViewController {
     let groupAddButton = SideAddButton(buttonMode: .group)
     let makeButton = MakeButton(title: "만들기", isEnabled: false)
     
-    private var chooseMenuViewModel: ChooseMenuViewModel
-    let disposeBag = DisposeBag()
-    
     let tapGameButtonGesture = UITapGestureRecognizer() // 게임 만들기 버튼 클릭 제스쳐
     let tapGroupButtonGesture = UITapGestureRecognizer() // 그룹 만들기 버튼 클릭 제스쳐
-
+    
+    private var chooseMenuViewModel: ChooseMenuViewModel
+    let disposeBag = DisposeBag()
     
     //MARK: init
     init(chooseMenuViewModel: ChooseMenuViewModel) {

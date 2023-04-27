@@ -61,7 +61,6 @@ class MainCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
            
-        
         contentView.addSubview(statusImage)
         contentView.addSubview(titleLabel)
         self.priceStatusStackView.addArrangedSubview(totalPrice)

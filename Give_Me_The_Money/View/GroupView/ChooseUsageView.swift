@@ -20,7 +20,7 @@ class ChooseUsageView: UIView {
         return label
     }()
     
-    let textField = CustomTextField()
+    let textField = CustomNumberTextField()
     
     let mealHStackView: UIStackView = {
         let stackView = UIStackView()
@@ -102,7 +102,7 @@ extension ChooseUsageView {
     
     func setUI() {
         self.addSubview(titleLabel)
-        self.addSubview(textField)
+//        self.addSubview(textField)
         self.addSubview(usageVStackView)
         
         [roomChargeUsageView, transportationCostUsageView].forEach({
@@ -128,7 +128,7 @@ extension ChooseUsageView {
     func setLayout() {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        textField.translatesAutoresizingMaskIntoConstraints = false
+//        textField.translatesAutoresizingMaskIntoConstraints = false
         usageVStackView.translatesAutoresizingMaskIntoConstraints = false
     
         
@@ -136,12 +136,12 @@ extension ChooseUsageView {
         titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         
         
-        textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: 10)).isActive = true
-        textField.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: -10)).isActive = true
-        textField.topAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
-        textField.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -2).isActive = true
-        
-        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+//        textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: 10)).isActive = true
+//        textField.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: -10)).isActive = true
+//        textField.topAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
+//        textField.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -2).isActive = true
+//
+//        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
         
         usageVStackView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true

@@ -23,10 +23,12 @@
 		9360692629E2ABEF00CF9001 /* ChooseUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */; };
 		9360692929E2AFCF00CF9001 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692829E2AFCF00CF9001 /* BackButton.swift */; };
 		9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692A29E2B32D00CF9001 /* CloseButton.swift */; };
-		9360696929E544C000CF9001 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696829E544C000CF9001 /* CustomTextField.swift */; };
+		9360696929E544C000CF9001 /* CustomNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696829E544C000CF9001 /* CustomNumberTextField.swift */; };
 		9360696B29E6A49E00CF9001 /* ChoosePriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696A29E6A49D00CF9001 /* ChoosePriceView.swift */; };
+		9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */; };
+		9360696F29EBC7C900CF9001 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696E29EBC7C800CF9001 /* PeopleCell.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
-		93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* chooseMenuViewController.swift */; };
+		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
 		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
 		93F0133B29CC5D8F003731C1 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */; };
 		93F0133C29CC5D8F003731C1 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133829CC5D8F003731C1 /* NanumGothic.otf */; };
@@ -93,10 +95,12 @@
 		9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUsageView.swift; sourceTree = "<group>"; };
 		9360692829E2AFCF00CF9001 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		9360692A29E2B32D00CF9001 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
-		9360696829E544C000CF9001 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9360696829E544C000CF9001 /* CustomNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberTextField.swift; sourceTree = "<group>"; };
 		9360696A29E6A49D00CF9001 /* ChoosePriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePriceView.swift; sourceTree = "<group>"; };
+		9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePeopleView.swift; sourceTree = "<group>"; };
+		9360696E29EBC7C800CF9001 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
-		93F0133329CC4184003731C1 /* chooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseMenuViewController.swift; sourceTree = "<group>"; };
+		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
 		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
 		93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
 		93F0133829CC5D8F003731C1 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 				9360692329E1595000CF9001 /* MakeGroupViewController.swift */,
 				9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */,
 				9360696A29E6A49D00CF9001 /* ChoosePriceView.swift */,
+				9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */,
+				9360696E29EBC7C800CF9001 /* PeopleCell.swift */,
 			);
 			path = GroupView;
 			sourceTree = "<group>";
@@ -280,7 +286,7 @@
 				93F7E52E29DD66AA0002F193 /* UsageLabelView.swift */,
 				9360692829E2AFCF00CF9001 /* BackButton.swift */,
 				9360692A29E2B32D00CF9001 /* CloseButton.swift */,
-				9360696829E544C000CF9001 /* CustomTextField.swift */,
+				9360696829E544C000CF9001 /* CustomNumberTextField.swift */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -340,10 +346,10 @@
 		93F0134B29D2F143003731C1 /* ChooseMenuView */ = {
 			isa = PBXGroup;
 			children = (
+				93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */,
 				93F0135B29D6B090003731C1 /* UseCell.swift */,
 				93F0133F29CC62D2003731C1 /* MakeButton.swift */,
 				93F0133029CB0D3A003731C1 /* SideAddButton.swift */,
-				93F0133329CC4184003731C1 /* chooseMenuViewController.swift */,
 			);
 			path = ChooseMenuView;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */,
 				93F0134529D2C0A9003731C1 /* Group.swift in Sources */,
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
 				93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */,
@@ -618,12 +625,13 @@
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
 				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
+				9360696F29EBC7C900CF9001 /* PeopleCell.swift in Sources */,
 				93F0135C29D6B090003731C1 /* UseCell.swift in Sources */,
 				9360692929E2AFCF00CF9001 /* BackButton.swift in Sources */,
 				9360692629E2ABEF00CF9001 /* ChooseUsageView.swift in Sources */,
-				9360696929E544C000CF9001 /* CustomTextField.swift in Sources */,
+				9360696929E544C000CF9001 /* CustomNumberTextField.swift in Sources */,
 				9360692129E140DC00CF9001 /* MainCell.swift in Sources */,
-				93F0133429CC4184003731C1 /* chooseMenuViewController.swift in Sources */,
+				93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */,
 				9360696B29E6A49E00CF9001 /* ChoosePriceView.swift in Sources */,

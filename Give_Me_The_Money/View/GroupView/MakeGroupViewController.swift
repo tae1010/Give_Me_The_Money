@@ -38,6 +38,8 @@ class MakeGroupViewController: UIViewController {
     let chooseUsageView = ChooseUsageView()
     
     let choosePriceView = ChoosePriceView()
+    
+    let choosePeopleView = ChoosePeopleView()
 
     let disposeBag = DisposeBag()
     
@@ -71,11 +73,13 @@ extension MakeGroupViewController {
         contentScrollView.addSubview(titleLabel)
         contentScrollView.addSubview(chooseUsageView)
         contentScrollView.addSubview(choosePriceView)
+        contentScrollView.addSubview(choosePeopleView)
         
         contentScrollView.isUserInteractionEnabled = true
         backButton.isUserInteractionEnabled = true
         titleLabel.isUserInteractionEnabled = true
         chooseUsageView.isUserInteractionEnabled = true
+        choosePeopleView.isUserInteractionEnabled = true
         
         setLayout()
 //        configureUI()
@@ -89,6 +93,7 @@ extension MakeGroupViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         chooseUsageView.translatesAutoresizingMaskIntoConstraints = false
         choosePriceView.translatesAutoresizingMaskIntoConstraints = false
+        choosePeopleView.translatesAutoresizingMaskIntoConstraints = false
         
         
         contentScrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -117,6 +122,12 @@ extension MakeGroupViewController {
         choosePriceView.topAnchor.constraint(equalTo: chooseUsageView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 70)).isActive = true
         choosePriceView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         choosePriceView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
+        
+        choosePeopleView.topAnchor.constraint(equalTo: choosePriceView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 70)).isActive = true
+        choosePeopleView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        choosePeopleView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
+        choosePriceView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
+        
         
     }
     
