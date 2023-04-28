@@ -11,11 +11,12 @@ import RxSwift
 
 class MainViewModel {
     var items = BehaviorRelay<[String]>(value: [])
+    var item = ["김정태","가나다","가나다","가나다","가나나나다","가나다","가나다서","가나다대리","가가"]
     
     init() {
         print("메인뷰모델 init")
         
-        items.accept(["aaaaaaaa","bbbbb","ccc","ddd","eee","hhh","iii"])
+        items.accept(["김정태","가나다","가나다","가나다","가나나나다","가나다","가나다서","가나다대리","가가"])
         
     }
 }

@@ -13,12 +13,11 @@ class PeopleCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "사용자"
-        label.font = UIFont.nanumSquareNeoBold(size: 15)
+        label.font = UIFont.nanumSquareNeoExtrabold(size: 14)
+        label.textColor = .gray
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        label.lineBreakMode = .byCharWrapping
+//        label.lineBreakMode = .byCharWrapping
         
         return label
     }()
@@ -29,19 +28,19 @@ class PeopleCell: UICollectionViewCell {
         contentView.addSubview(titleLabel)
         contentView.backgroundColor = .noSelectColor
         
-        
-        
-//        layer.masksToBounds = true
+        layer.masksToBounds = true
         layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
         
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+
+//        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+//        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
-        titleLabel.setContentHuggingPriority(.required, for: .vertical)
+        titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+//        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+//        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+//        titleLabel.setContentHuggingPriority(.required, for: .vertical)
         
-        contentView.widthAnchor.constraint(equalTo: titleLabel.widthAnchor, constant: 20).isActive = true
+        
         
     }
     
@@ -49,10 +48,11 @@ class PeopleCell: UICollectionViewCell {
         super.init(coder: coder)
     }
     
-    func configure(text: String) {
-        titleLabel.text = text
-        titleLabel.sizeToFit()
-        layoutIfNeeded()
-    }
+//    func configure(text: String) {
+//        titleLabel.text = text
+//        contentView.widthAnchor.constraint(equalToConstant: titleLabel.intrinsicContentSize.width + 20).isActive = true
+//        titleLabel.sizeToFit()
+//        layoutIfNeeded()
+//    }
 }
 

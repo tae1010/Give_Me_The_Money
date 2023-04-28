@@ -115,15 +115,15 @@ extension MakeGroupViewController {
         titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
-        chooseUsageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 50)).isActive = true
+        chooseUsageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 70)).isActive = true
         chooseUsageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         chooseUsageView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
-        choosePriceView.topAnchor.constraint(equalTo: chooseUsageView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 70)).isActive = true
+        choosePriceView.topAnchor.constraint(equalTo: chooseUsageView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 70)).isActive = true
         choosePriceView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         choosePriceView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
-        choosePeopleView.topAnchor.constraint(equalTo: choosePriceView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 70)).isActive = true
+        choosePeopleView.topAnchor.constraint(equalTo: choosePriceView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 70)).isActive = true
         choosePeopleView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         choosePeopleView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         choosePriceView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true

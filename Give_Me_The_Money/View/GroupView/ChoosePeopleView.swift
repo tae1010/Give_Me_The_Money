@@ -37,9 +37,9 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
     
     let peopleCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        layout.minimumInteritemSpacing = AppConstants.setupWidthConstantSize(size: 10) // cell 가로간격
+        layout.minimumInteritemSpacing = AppConstants.setupExtraConstantSize(size: 10) // cell 가로간격
         layout.minimumLineSpacing = AppConstants.setupWidthConstantSize(size: 10) // cell 세로간격
         
         
@@ -64,7 +64,8 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         // bind mainCollectionView
         viewModel.items
             .bind(to: peopleCollectionView.rx.items(cellIdentifier: "PeopleCell", cellType: PeopleCell.self)) { index, item, cell in
-                cell.configure(text: item)
+//                cell.configure(text: item)
+                cell.titleLabel.text = item
             }.disposed(by: disposeBag)
         
     }
@@ -106,15 +107,18 @@ extension ChoosePeopleView {
         peopleCollectionView.topAnchor.constraint(equalTo: setAllButton.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
         peopleCollectionView.leadingAnchor.constraint(equalTo: setAllButton.leadingAnchor).isActive = true
         peopleCollectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        peopleCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 15).isActive = true
-        peopleCollectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        peopleCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
+        peopleCollectionView.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 50)).isActive = true
         
     }
 }
 
-//extension ChoosePeopleView: UICollectionViewDelegateFlowLayout {
+extension ChoosePeopleView: UICollectionViewDelegateFlowLayout {
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        return CGSize(width: AppConstants.ScreenWidth / 5, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 7))
+//        return CGSize(width: viewModel.item[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.nanumSquareNeoHeavy(size: 17)]).width + AppConstants.setupWidthExtraConstantSize(size: 20), height: AppConstants.setupExtraConstantSize(size: 30))
 //    }
-//}
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: viewModel.item[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + AppConstants.setupWidthExtraConstantSize(size: 25), height: AppConstants.setupExtraConstantSize(size: 30))
+    }
+}

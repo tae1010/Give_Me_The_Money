@@ -32,6 +32,11 @@ struct AppConstants {
         return constantSize
     }
     
+    static func setupWidthExtraConstantSize(size: CGFloat) -> CGFloat {
+        let constantSize = isiPad ? size + (size < 0 ? -50 : 50) : size
+        return constantSize
+    }
+    
     static func setupNormalMultiplierSize(size: CGFloat) -> CGFloat {
         let constantSize = isiPad ? size + 0.05 : size
         return constantSize
