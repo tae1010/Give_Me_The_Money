@@ -28,6 +28,7 @@
 		9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */; };
 		9360696F29EBC7C900CF9001 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696E29EBC7C800CF9001 /* PeopleCell.swift */; };
 		9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698329FACF2D00CF9001 /* Extension_String.swift */; };
+		9360698629FBE9BE00CF9001 /* PersonalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
 		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
@@ -101,6 +102,7 @@
 		9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePeopleView.swift; sourceTree = "<group>"; };
 		9360696E29EBC7C800CF9001 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		9360698329FACF2D00CF9001 /* Extension_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_String.swift; sourceTree = "<group>"; };
+		9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPriceView.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
 		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				9360696A29E6A49D00CF9001 /* ChoosePriceView.swift */,
 				9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */,
 				9360696E29EBC7C800CF9001 /* PeopleCell.swift */,
+				9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */,
 			);
 			path = GroupView;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
+				9360698629FBE9BE00CF9001 /* PersonalPriceView.swift in Sources */,
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,

@@ -40,6 +40,8 @@ class MakeGroupViewController: UIViewController {
     let choosePriceView = ChoosePriceView()
     
     let choosePeopleView = ChoosePeopleView()
+    
+    let personPriceView = PersonPricevView()
 
     let disposeBag = DisposeBag()
     
@@ -74,12 +76,14 @@ extension MakeGroupViewController {
         contentScrollView.addSubview(chooseUsageView)
         contentScrollView.addSubview(choosePriceView)
         contentScrollView.addSubview(choosePeopleView)
+        contentScrollView.addSubview(personPriceView)
         
         contentScrollView.isUserInteractionEnabled = true
         backButton.isUserInteractionEnabled = true
         titleLabel.isUserInteractionEnabled = true
         chooseUsageView.isUserInteractionEnabled = true
         choosePeopleView.isUserInteractionEnabled = true
+        personPriceView.isUserInteractionEnabled = true
         
         setLayout()
 //        configureUI()
@@ -94,6 +98,7 @@ extension MakeGroupViewController {
         chooseUsageView.translatesAutoresizingMaskIntoConstraints = false
         choosePriceView.translatesAutoresizingMaskIntoConstraints = false
         choosePeopleView.translatesAutoresizingMaskIntoConstraints = false
+        personPriceView.translatesAutoresizingMaskIntoConstraints = false
         
         
         contentScrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -126,7 +131,12 @@ extension MakeGroupViewController {
         choosePeopleView.topAnchor.constraint(equalTo: choosePriceView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 70)).isActive = true
         choosePeopleView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         choosePeopleView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
-        choosePriceView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
+        
+        personPriceView.topAnchor.constraint(equalTo: choosePeopleView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
+        personPriceView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        personPriceView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
+        personPriceView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
+        personPriceView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         
     }
