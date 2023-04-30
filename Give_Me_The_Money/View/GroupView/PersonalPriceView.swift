@@ -111,6 +111,7 @@ extension PersonPricevView {
         
         leftPriceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         leftPriceLabel.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 15)).isActive = true
+        leftPriceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         leftPriceNumLabel.topAnchor.constraint(equalTo: leftPriceLabel.topAnchor).isActive = true
         leftPriceNumLabel.bottomAnchor.constraint(equalTo: leftPriceLabel.bottomAnchor).isActive = true

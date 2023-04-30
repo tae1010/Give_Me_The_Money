@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 
 class ChooseUsageView: UIView {
@@ -83,12 +85,20 @@ class ChooseUsageView: UIView {
     let alcohol2 = UsageLabelView(text: "술 2차", backGroundColor: UIColor.noSelectColor, labelColor: .gray, necessaryWidth: true)
     let alcohol3 = UsageLabelView(text: "술 3차", backGroundColor: UIColor.noSelectColor, labelColor: .gray, necessaryWidth: true)
     let alcohol4 = UsageLabelView(text: "술 4차", backGroundColor: UIColor.noSelectColor, labelColor: .gray, necessaryWidth: true)
+    
 
+    
+
+
+
+    
+    
+    let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
-        print(titleLabel.frame.height + usageVStackView.frame.height)
+        tapUI()
     }
     
     
@@ -96,6 +106,53 @@ class ChooseUsageView: UIView {
         super.init(coder: coder)
         
     }
+    
+    // stackview 안에 라벨 클릭 이벤트
+    func tapUI() {
+        
+        let tapRoomChargeUsageView = UITapGestureRecognizer()
+        let tapTransportationCostUsageView = UITapGestureRecognizer()
+        let tapMorningUsageView = UITapGestureRecognizer()
+        let tapLunchUsageView = UITapGestureRecognizer()
+        let tapDinnerUsageView = UITapGestureRecognizer()
+        let tapMealUsageView = UITapGestureRecognizer()
+        let tapAlcohol1 = UITapGestureRecognizer()
+        let tapAlcohol2 = UITapGestureRecognizer()
+        let tapAlcohol3 = UITapGestureRecognizer()
+        let tapAlcohol4 = UITapGestureRecognizer()
+        
+        let labels = [roomChargeUsageView, transportationCostUsageView, morningUsageView, lunchUsageView, dinnerUsageView, mealUsageView, alcohol1, alcohol2, alcohol3, alcohol4]
+        
+        let gestureRecognizers = [
+            tapRoomChargeUsageView, tapTransportationCostUsageView, tapMorningUsageView, tapLunchUsageView, tapDinnerUsageView, tapMealUsageView, tapAlcohol1, tapAlcohol2, tapAlcohol3, tapAlcohol4
+        ]
+        
+        labels.forEach { label in
+            gestureRecognizers.forEach { gestureRecognizer in
+                label.addGestureRecognizer(gestureRecognizer)
+            }
+        }
+        
+        
+        for (index, label) in labels.enumerated() {
+            let tapGestureRecognizer = UITapGestureRecognizer()
+            label.addGestureRecognizer(tapGestureRecognizer)
+            
+            tapGestureRecognizer.rx.event.bind { _ in
+                // 선택된 라벨의 색상을 변경
+                labels[index].backgroundColor = .primaryColor
+                labels[index].usageLabel.textColor = .white
+                
+                // 선택되지 않은 다른 라벨들의 색상을 원래 색으로 변경
+                for (otherIndex, otherLabel) in labels.enumerated() where otherIndex != index {
+                    otherLabel.backgroundColor = .noSelectColor
+                    otherLabel.usageLabel.textColor = .gray
+                }
+            }.disposed(by: disposeBag)
+        }
+
+    }
+    
 }
 
 extension ChooseUsageView {
