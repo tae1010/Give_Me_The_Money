@@ -20,39 +20,48 @@ class ChoosePriceView: UIView {
     
     let priceTextField = CustomNumberTextField()
     
-    let minusButton: UIButton = {
+    let eraseButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.tintColor = UIColor.lightGray
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: AppConstants.setupExtraConstantSize(size: 20), weight: .light)
+        let image = UIImage(systemName: "eraser", withConfiguration: imageConfig)
+        button.setImage(image, for: .normal)
+        button.tintColor = UIColor.black
         return button
     }()
     
-    let plusButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "minus"), for: .normal)
-        button.tintColor = UIColor.lightGray
-        return button
-    }()
-    
-    let priceLabel: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = UIFont.nanumSquareNeoBold(size: 17)
-        label.textColor = .gray
-        
-        return label
-    }()
-    
-    let plusMinusStackView: UIStackView = {
-        let stackView = UIStackView()
-        
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
-        stackView.spacing = AppConstants.setupWidthConstantSize(size: 10)
-
-        return stackView
-    }()
+//    let minusButton: UIButton = {
+//        let button = UIButton()
+//        button.setImage(UIImage(systemName: "plus"), for: .normal)
+//        button.tintColor = UIColor.lightGray
+//        return button
+//    }()
+//
+//    let plusButton: UIButton = {
+//        let button = UIButton()
+//        button.setImage(UIImage(systemName: "minus"), for: .normal)
+//        button.tintColor = UIColor.lightGray
+//        return button
+//    }()
+//
+//    let priceLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "0"
+//        label.font = UIFont.nanumSquareNeoBold(size: 17)
+//        label.textColor = .gray
+//
+//        return label
+//    }()
+//
+//    let plusMinusStackView: UIStackView = {
+//        let stackView = UIStackView()
+//
+//        stackView.axis = .horizontal
+//        stackView.alignment = .fill
+//        stackView.distribution = .fillProportionally
+//        stackView.spacing = AppConstants.setupWidthConstantSize(size: 10)
+//
+//        return stackView
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,11 +80,12 @@ extension ChoosePriceView {
         
         self.addSubview(titleLabel)
         self.addSubview(priceTextField)
-        self.addSubview(plusMinusStackView)
+        self.addSubview(eraseButton)
+//        self.addSubview(plusMinusStackView)
         
-        [plusButton, priceLabel, minusButton].forEach({
-            self.plusMinusStackView.addArrangedSubview($0)
-        })
+//        [plusButton, priceLabel, minusButton].forEach({
+//            self.plusMinusStackView.addArrangedSubview($0)
+//        })
         
         setLayout()
     }
@@ -84,7 +94,8 @@ extension ChoosePriceView {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         priceTextField.translatesAutoresizingMaskIntoConstraints = false
-        plusMinusStackView.translatesAutoresizingMaskIntoConstraints = false
+        eraseButton.translatesAutoresizingMaskIntoConstraints = false
+//        plusMinusStackView.translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
@@ -92,10 +103,11 @@ extension ChoosePriceView {
         priceTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         priceTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true
         
-        plusMinusStackView.topAnchor.constraint(equalTo: priceTextField.topAnchor).isActive = true
-        plusMinusStackView.leadingAnchor.constraint(equalTo: priceTextField.trailingAnchor, constant: AppConstants.setupExtraConstantSize(size: 50)).isActive = true
-        plusMinusStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        plusMinusStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        eraseButton.topAnchor.constraint(equalTo: priceTextField.topAnchor).isActive = true
+        eraseButton.leadingAnchor.constraint(equalTo: priceTextField.trailingAnchor, constant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true
+        eraseButton.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        eraseButton.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
     }
 }

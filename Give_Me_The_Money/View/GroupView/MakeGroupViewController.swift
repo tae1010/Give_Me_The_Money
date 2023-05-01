@@ -51,6 +51,7 @@ class MakeGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        hideKeyboardWhenTappedAround()
         setUI()
         tapUI()
         
@@ -100,7 +101,7 @@ extension MakeGroupViewController {
         personPriceView.translatesAutoresizingMaskIntoConstraints = false
         makeButton.translatesAutoresizingMaskIntoConstraints = false
         
-        contentScrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        contentScrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         contentScrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         contentScrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         contentScrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -110,6 +111,7 @@ extension MakeGroupViewController {
         contentView.trailingAnchor.constraint(equalTo: contentScrollView.trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: contentScrollView.widthAnchor).isActive = true
+
         
         backButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
         backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
@@ -144,7 +146,6 @@ extension MakeGroupViewController {
         makeButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         makeButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         makeButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-
     }
     
     func tapUI() {

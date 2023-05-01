@@ -124,8 +124,7 @@ class ChooseUsageView: UIView {
         let labels = [roomChargeUsageView, transportationCostUsageView, morningUsageView, lunchUsageView, dinnerUsageView, mealUsageView, alcohol1, alcohol2, alcohol3, alcohol4]
         
         let gestureRecognizers = [
-            tapRoomChargeUsageView, tapTransportationCostUsageView, tapMorningUsageView, tapLunchUsageView, tapDinnerUsageView, tapMealUsageView, tapAlcohol1, tapAlcohol2, tapAlcohol3, tapAlcohol4
-        ]
+            tapRoomChargeUsageView, tapTransportationCostUsageView, tapMorningUsageView, tapLunchUsageView, tapDinnerUsageView, tapMealUsageView, tapAlcohol1, tapAlcohol2, tapAlcohol3, tapAlcohol4]
         
         labels.forEach { label in
             gestureRecognizers.forEach { gestureRecognizer in

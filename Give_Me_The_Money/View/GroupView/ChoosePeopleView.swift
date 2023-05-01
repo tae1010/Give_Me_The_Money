@@ -29,9 +29,21 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         return button
     }()
     
+    let deleteAllButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("모두 지우기", for: .normal)
+        button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
+        button.setTitleColor(.lightGray, for: .normal)
+        
+        return button
+    }()
+    
     let settingButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "setting"), for: .normal)
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: AppConstants.setupExtraConstantSize(size: 20), weight: .light)
+        let image = UIImage(systemName: "gearshape", withConfiguration: imageConfig)
+        button.setImage(image, for: .normal)
+        button.tintColor = UIColor.black
         return button
     }()
     
@@ -46,6 +58,7 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.register(PeopleCell.self, forCellWithReuseIdentifier: "PeopleCell")
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -64,10 +77,39 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         // bind mainCollectionView
         viewModel.items
             .bind(to: peopleCollectionView.rx.items(cellIdentifier: "PeopleCell", cellType: PeopleCell.self)) { index, item, cell in
-//                cell.configure(text: item)
                 cell.titleLabel.text = item
             }.disposed(by: disposeBag)
         
+        Observable.zip(peopleCollectionView.rx.modelSelected(String.self), peopleCollectionView.rx.itemSelected)
+            .subscribe(onNext: { [weak self] (item, indexPath) in
+                guard let self = self else { return }
+                
+                if let cell = self.peopleCollectionView.cellForItem(at: indexPath) as? PeopleCell {
+                    
+                    // 선택된 셀의 배경 색상 및 라벨의 텍스트 색상 변경
+                    cell.contentView.backgroundColor = .primaryColor
+                    cell.titleLabel.textColor = .white
+                }
+                
+            }, onError: { _ in
+                print("에러")
+            }).disposed(by: disposeBag)
+        
+        peopleCollectionView.rx.itemDeselected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                
+                if let cell = self.peopleCollectionView.cellForItem(at: indexPath) as? PeopleCell {
+                    
+                    // 선택 상태에서 해제된 셀의 배경 색상 및 라벨의 텍스트 색상 변경
+                    cell.contentView.backgroundColor = .noSelectColor
+                    cell.titleLabel.textColor = .gray
+                    
+                }
+                
+            }, onError: { _ in
+                print("에러")
+            }).disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) {
@@ -81,6 +123,7 @@ extension ChoosePeopleView {
         
         self.addSubview(titleLabel)
         self.addSubview(setAllButton)
+        self.addSubview(deleteAllButton)
         self.addSubview(settingButton)
         self.addSubview(peopleCollectionView)
         
@@ -92,6 +135,7 @@ extension ChoosePeopleView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         setAllButton.translatesAutoresizingMaskIntoConstraints = false
         settingButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteAllButton.translatesAutoresizingMaskIntoConstraints = false
         peopleCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -104,6 +148,10 @@ extension ChoosePeopleView {
         setAllButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 15)).isActive = true
         setAllButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         
+        deleteAllButton.leadingAnchor.constraint(equalTo: setAllButton.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: 25)).isActive = true
+        deleteAllButton.topAnchor.constraint(equalTo: setAllButton.topAnchor).isActive = true
+        deleteAllButton.bottomAnchor.constraint(equalTo: setAllButton.bottomAnchor).isActive = true
+        
         peopleCollectionView.topAnchor.constraint(equalTo: setAllButton.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 10)).isActive = true
         peopleCollectionView.leadingAnchor.constraint(equalTo: setAllButton.leadingAnchor).isActive = true
         peopleCollectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -114,9 +162,6 @@ extension ChoosePeopleView {
 }
 
 extension ChoosePeopleView: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: viewModel.item[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.nanumSquareNeoHeavy(size: 17)]).width + AppConstants.setupWidthExtraConstantSize(size: 20), height: AppConstants.setupExtraConstantSize(size: 30))
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: viewModel.item[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + AppConstants.setupWidthExtraConstantSize(size: 25), height: AppConstants.setupExtraConstantSize(size: 30))

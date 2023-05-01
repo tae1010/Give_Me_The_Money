@@ -17,7 +17,6 @@ class PeopleCell: UICollectionViewCell {
         label.textColor = .gray
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.lineBreakMode = .byCharWrapping
         
         return label
     }()
@@ -31,28 +30,13 @@ class PeopleCell: UICollectionViewCell {
         layer.masksToBounds = true
         layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
         
-
-//        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-//        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-//        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-//        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
-//        titleLabel.setContentHuggingPriority(.required, for: .vertical)
-        
-        
-        
+
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
-//    func configure(text: String) {
-//        titleLabel.text = text
-//        contentView.widthAnchor.constraint(equalToConstant: titleLabel.intrinsicContentSize.width + 20).isActive = true
-//        titleLabel.sizeToFit()
-//        layoutIfNeeded()
-//    }
 }
 
