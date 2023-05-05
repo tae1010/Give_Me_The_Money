@@ -54,12 +54,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.navigationController?.isNavigationBarHidden = true
         
-        
         // tap mainButton
         mainAddButton.rx.tap.bind(onNext: {
-            
             let chooseMenuVC = ChooseMenuViewController(chooseMenuViewModel: ChooseMenuViewModel())
-            
             let navigationController = UINavigationController(rootViewController: chooseMenuVC)
 
             // 화면 전환 커스텀, 필자는 PullScreen으로 띄우고, VC2에서 navigationBar가 보이지 않게 설정
@@ -67,7 +64,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             navigationController.isNavigationBarHidden = true
             
             self.present(navigationController, animated: true)
-            
         }).disposed(by: disposeBag)
         
         
@@ -82,7 +78,6 @@ extension MainViewController {
     
     func setUI() {
         configureUI()
-        
         
         view.addSubview(Scroller)
         view.addSubview(logoView)
@@ -100,7 +95,6 @@ extension MainViewController {
         mainView.translatesAutoresizingMaskIntoConstraints = false
         usageLabelView.translatesAutoresizingMaskIntoConstraints = false
         
-        
         logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         logoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
         
@@ -108,15 +102,12 @@ extension MainViewController {
         logoView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         logoView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        
         statusView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 50)).isActive = true
         statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.85).isActive = true
         
-        
         mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
-        
         
         mainView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
         mainView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
@@ -131,9 +122,6 @@ extension MainViewController {
         
         mainView.layer.cornerRadius = 30
         mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
-            
-        
-
     }
     
 

@@ -78,38 +78,27 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         viewModel.items
             .bind(to: peopleCollectionView.rx.items(cellIdentifier: "PeopleCell", cellType: PeopleCell.self)) { index, item, cell in
                 cell.titleLabel.text = item
+                
+                if self.viewModel.isSelect[index] {
+                    cell.contentView.backgroundColor = .noSelectColor
+                    cell.titleLabel.textColor = .gray
+                } else {
+                    cell.contentView.backgroundColor = .primaryColor
+                    cell.titleLabel.textColor = .white
+                }
+                
             }.disposed(by: disposeBag)
         
         Observable.zip(peopleCollectionView.rx.modelSelected(String.self), peopleCollectionView.rx.itemSelected)
             .subscribe(onNext: { [weak self] (item, indexPath) in
                 guard let self = self else { return }
-                
-                if let cell = self.peopleCollectionView.cellForItem(at: indexPath) as? PeopleCell {
-                    
-                    // 선택된 셀의 배경 색상 및 라벨의 텍스트 색상 변경
-                    cell.contentView.backgroundColor = .primaryColor
-                    cell.titleLabel.textColor = .white
-                }
+                viewModel.isSelect[indexPath.row].toggle()
+                peopleCollectionView.reloadItems(at: [indexPath])
                 
             }, onError: { _ in
                 print("에러")
             }).disposed(by: disposeBag)
         
-        peopleCollectionView.rx.itemDeselected
-            .subscribe(onNext: { [weak self] indexPath in
-                guard let self = self else { return }
-                
-                if let cell = self.peopleCollectionView.cellForItem(at: indexPath) as? PeopleCell {
-                    
-                    // 선택 상태에서 해제된 셀의 배경 색상 및 라벨의 텍스트 색상 변경
-                    cell.contentView.backgroundColor = .noSelectColor
-                    cell.titleLabel.textColor = .gray
-                    
-                }
-                
-            }, onError: { _ in
-                print("에러")
-            }).disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) {

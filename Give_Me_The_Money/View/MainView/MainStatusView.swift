@@ -90,19 +90,14 @@ extension MainStatusView {
     
     
     func setupUI() {
-        
-        
         [totalPriceLabel, myGroupPrice, myGamePrice].forEach({
             self.priceStatusStackView.addArrangedSubview($0)
         })
-        
         addSubview(chartView)
         addSubview(statusTitleLabel)
         addSubview(priceStatusStackView)
 
-        
         setLayOut()
-        
     }
     
     func setLayOut() {
@@ -111,29 +106,21 @@ extension MainStatusView {
         statusTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         priceStatusStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        
         chartView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 50)).isActive = true
         chartView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         chartView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3).isActive = true
         chartView.heightAnchor.constraint(equalTo: chartView.widthAnchor).isActive = true
         
-        
         statusTitleLabel.topAnchor.constraint(equalTo: chartView.topAnchor).isActive = true
         statusTitleLabel.leadingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: 30)).isActive = true
         statusTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
-        
         
         priceStatusStackView.topAnchor.constraint(equalTo: statusTitleLabel.bottomAnchor, constant: 10).isActive = true
         priceStatusStackView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor).isActive = true
         priceStatusStackView.leadingAnchor.constraint(equalTo: statusTitleLabel.leadingAnchor).isActive = true
         priceStatusStackView.trailingAnchor.constraint(equalTo: statusTitleLabel.trailingAnchor).isActive = true
         
-        
-        
-        
         self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
-        
-        
         
     }
     
