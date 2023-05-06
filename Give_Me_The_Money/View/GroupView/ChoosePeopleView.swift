@@ -62,7 +62,7 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         return collectionView
     }()
     
-    let viewModel = MainViewModel() // 임시
+    let viewModel = GroupViewModel() // 임시
     let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
@@ -75,11 +75,11 @@ class ChoosePeopleView: UIView, UIScrollViewDelegate {
         
         
         // bind mainCollectionView
-        viewModel.items
+        viewModel.choosePeople
             .bind(to: peopleCollectionView.rx.items(cellIdentifier: "PeopleCell", cellType: PeopleCell.self)) { index, item, cell in
                 cell.titleLabel.text = item
                 
-                if self.viewModel.isSelect[index] {
+                if !self.viewModel.isSelect[index] {
                     cell.contentView.backgroundColor = .noSelectColor
                     cell.titleLabel.textColor = .gray
                 } else {
@@ -153,6 +153,6 @@ extension ChoosePeopleView {
 extension ChoosePeopleView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: viewModel.item[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + AppConstants.setupWidthExtraConstantSize(size: 25), height: AppConstants.setupExtraConstantSize(size: 30))
+        return CGSize(width: viewModel.choosePeopleArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + AppConstants.setupWidthExtraConstantSize(size: 25), height: AppConstants.setupExtraConstantSize(size: 30))
     }
 }

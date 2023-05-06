@@ -11,7 +11,7 @@ import RxSwift
 
 class MainView: UIView, UIScrollViewDelegate {
     
-    let viewModel = MainViewModel() // 임시
+    let viewModel = GroupViewModel() // 임시
     
     let allLabel = UsageLabelView(text: "전체", backGroundColor: .customRedColor, labelColor: .white, necessaryWidth: false)
     
@@ -58,7 +58,7 @@ class MainView: UIView, UIScrollViewDelegate {
         
         
         // bind mainCollectionView
-        viewModel.items
+        viewModel.choosePeople
             .bind(to: mainCollectionView.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) { index, item, cell in
 
             }

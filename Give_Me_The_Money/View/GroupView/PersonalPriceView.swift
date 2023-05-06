@@ -24,7 +24,7 @@ class PersonPricevView: UIView {
     
     let sameButton: UIButton = {
         let button = UIButton()
-        button.setTitle("균등", for: .normal)
+        button.setTitle("균등하게 나누기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
         button.backgroundColor = .veryLightGrey
@@ -37,7 +37,7 @@ class PersonPricevView: UIView {
     
     let gameButton: UIButton = {
         let button = UIButton()
-        button.setTitle("내기", for: .normal)
+        button.setTitle("게임으로 나누기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
         button.backgroundColor = .veryLightGrey

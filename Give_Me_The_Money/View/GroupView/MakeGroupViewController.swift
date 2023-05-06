@@ -43,7 +43,7 @@ class MakeGroupViewController: UIViewController {
     
     let personPriceView = PersonPricevView()
     
-    let makeButton = MakeButton(title: "만들기", isEnabled: true)
+    let makeButton = CustomMakeButton(title: "만들기", isEnabled: true)
     let disposeBag = DisposeBag()
     
     let tapChooseUsageView = UITapGestureRecognizer() // 뒤로가기 버튼 클릭 제스쳐

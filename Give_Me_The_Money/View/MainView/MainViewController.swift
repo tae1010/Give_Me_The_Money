@@ -35,11 +35,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     let statusView = MainStatusView()
     let mainAddButton = MainAddButton()
     
-    let viewModel: MainViewModel
+    let viewModel: GroupViewModel
     
     let disposeBag = DisposeBag()
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: GroupViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,7 +59,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             let chooseMenuVC = ChooseMenuViewController(chooseMenuViewModel: ChooseMenuViewModel())
             let navigationController = UINavigationController(rootViewController: chooseMenuVC)
 
-            // 화면 전환 커스텀, 필자는 PullScreen으로 띄우고, VC2에서 navigationBar가 보이지 않게 설정
             navigationController.modalPresentationStyle = .fullScreen
             navigationController.isNavigationBarHidden = true
             

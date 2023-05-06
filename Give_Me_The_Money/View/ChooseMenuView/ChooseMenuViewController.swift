@@ -26,7 +26,7 @@ class ChooseMenuViewController: UIViewController {
     
     let gameAddButton = SideAddButton(buttonMode: .game)
     let groupAddButton = SideAddButton(buttonMode: .group)
-    let makeButton = MakeButton(title: "만들기", isEnabled: false)
+    let makeButton = CustomMakeButton(title: "만들기", isEnabled: false)
     
     let tapGameButtonGesture = UITapGestureRecognizer() // 게임 만들기 버튼 클릭 제스쳐
     let tapGroupButtonGesture = UITapGestureRecognizer() // 그룹 만들기 버튼 클릭 제스쳐
@@ -40,14 +40,11 @@ class ChooseMenuViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     //MARK: LifeCycle
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -79,15 +76,16 @@ class ChooseMenuViewController: UIViewController {
         
         // 만들기 버튼 클릭
         makeButton.rx.tap.bind(onNext: {
-            print("만들기버튼 ㅡㄹ릭")
-            let makeGroupViewController = MakeGroupViewController()
-            
-            makeGroupViewController.modalPresentationStyle = .fullScreen
+            let setTitleVC = SetTitleVeiwController(titleType: .game)
 
+            setTitleVC.modalPresentationStyle = .overFullScreen
+            self.present(setTitleVC, animated: true, completion: nil)
             
-            self.navigationController?.pushViewController(makeGroupViewController, animated: true)
+//            let makeGroupViewController = MakeGroupViewController()
+//            
+//            makeGroupViewController.modalPresentationStyle = .fullScreen
+//            self.navigationController?.pushViewController(makeGroupViewController, animated: true)
 
-            
         }).disposed(by: disposeBag)
         
         

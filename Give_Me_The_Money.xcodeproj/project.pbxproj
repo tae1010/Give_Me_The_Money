@@ -30,16 +30,18 @@
 		9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698329FACF2D00CF9001 /* Extension_String.swift */; };
 		9360698629FBE9BE00CF9001 /* PersonalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */; };
 		9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698729FFA81900CF9001 /* Extension_ViewController.swift */; };
+		9360698A2A05508F00CF9001 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936069892A05508E00CF9001 /* MainViewModel.swift */; };
+		9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698C2A06454900CF9001 /* SetTitleViewController.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
 		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
 		93F0133B29CC5D8F003731C1 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */; };
 		93F0133C29CC5D8F003731C1 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133829CC5D8F003731C1 /* NanumGothic.otf */; };
 		93F0133D29CC5D8F003731C1 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */; };
-		93F0134029CC62D2003731C1 /* MakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133F29CC62D2003731C1 /* MakeButton.swift */; };
+		93F0134029CC62D2003731C1 /* CustomMakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133F29CC62D2003731C1 /* CustomMakeButton.swift */; };
 		93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134129D1940A003731C1 /* Extension_UIFont.swift */; };
 		93F0134529D2C0A9003731C1 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134429D2C0A9003731C1 /* Group.swift */; };
-		93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134729D2CD1C003731C1 /* MainViewModel.swift */; };
+		93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134729D2CD1C003731C1 /* GroupViewModel.swift */; };
 		93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */; };
 		93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134D29D2F5DD003731C1 /* Coordinator.swift */; };
 		93F0135629D44418003731C1 /* NanumSquareNeo-aLt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0135529D4436A003731C1 /* NanumSquareNeo-aLt.ttf */; };
@@ -105,16 +107,18 @@
 		9360698329FACF2D00CF9001 /* Extension_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_String.swift; sourceTree = "<group>"; };
 		9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPriceView.swift; sourceTree = "<group>"; };
 		9360698729FFA81900CF9001 /* Extension_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_ViewController.swift; sourceTree = "<group>"; };
+		936069892A05508E00CF9001 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9360698C2A06454900CF9001 /* SetTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTitleViewController.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
 		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
 		93F0133729CC5D8F003731C1 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
 		93F0133829CC5D8F003731C1 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
-		93F0133F29CC62D2003731C1 /* MakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeButton.swift; sourceTree = "<group>"; };
+		93F0133F29CC62D2003731C1 /* CustomMakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMakeButton.swift; sourceTree = "<group>"; };
 		93F0134129D1940A003731C1 /* Extension_UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIFont.swift; sourceTree = "<group>"; };
 		93F0134429D2C0A9003731C1 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		93F0134729D2CD1C003731C1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		93F0134729D2CD1C003731C1 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewModel.swift; sourceTree = "<group>"; };
 		93F0134D29D2F5DD003731C1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93F0135129D4436A003731C1 /* NanumSquareNeo-eHv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-eHv.ttf"; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				930F377129BDDF1000457CAD /* LaunchScreen.storyboard */,
 				933CE9EB29BF1C26007A3558 /* MainView */,
 				93F0134B29D2F143003731C1 /* ChooseMenuView */,
+				9360698B2A0644BC00CF9001 /* SetTitleView */,
 				9360692229E1591300CF9001 /* GroupView */,
 			);
 			path = View;
@@ -256,8 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
-				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
 				93F7E52C29DAB5A30002F193 /* MainStatusView.swift */,
+				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
 				93F7E53329DE8FEF0002F193 /* ChartView.swift */,
 				93F7E53529DFF8F20002F193 /* MainView.swift */,
 				9360692029E140DC00CF9001 /* MainCell.swift */,
@@ -296,8 +301,17 @@
 				9360692829E2AFCF00CF9001 /* BackButton.swift */,
 				9360692A29E2B32D00CF9001 /* CloseButton.swift */,
 				9360696829E544C000CF9001 /* CustomNumberTextField.swift */,
+				93F0133F29CC62D2003731C1 /* CustomMakeButton.swift */,
 			);
 			path = CommonView;
+			sourceTree = "<group>";
+		};
+		9360698B2A0644BC00CF9001 /* SetTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				9360698C2A06454900CF9001 /* SetTitleViewController.swift */,
+			);
+			path = SetTitleView;
 			sourceTree = "<group>";
 		};
 		93F0133229CC32D3003731C1 /* AppDelegate */ = {
@@ -346,7 +360,8 @@
 		93F0134629D2CD07003731C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				93F0134729D2CD1C003731C1 /* MainViewModel.swift */,
+				936069892A05508E00CF9001 /* MainViewModel.swift */,
+				93F0134729D2CD1C003731C1 /* GroupViewModel.swift */,
 				93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */,
 			);
 			path = ViewModel;
@@ -357,7 +372,6 @@
 			children = (
 				93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */,
 				93F0135B29D6B090003731C1 /* UseCell.swift */,
-				93F0133F29CC62D2003731C1 /* MakeButton.swift */,
 				93F0133029CB0D3A003731C1 /* SideAddButton.swift */,
 			);
 			path = ChooseMenuView;
@@ -631,7 +645,7 @@
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
-				93F0134029CC62D2003731C1 /* MakeButton.swift in Sources */,
+				93F0134029CC62D2003731C1 /* CustomMakeButton.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
 				93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */,
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
@@ -645,10 +659,12 @@
 				9360692129E140DC00CF9001 /* MainCell.swift in Sources */,
 				93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
-				93F0134829D2CD1C003731C1 /* MainViewModel.swift in Sources */,
+				93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */,
 				9360696B29E6A49E00CF9001 /* ChoosePriceView.swift in Sources */,
 				93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */,
+				9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */,
 				93F7E52F29DD66AA0002F193 /* UsageLabelView.swift in Sources */,
+				9360698A2A05508F00CF9001 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

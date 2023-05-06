@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MakeButton: UIButton {
+class CustomMakeButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
