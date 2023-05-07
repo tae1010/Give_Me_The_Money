@@ -8,17 +8,13 @@
 import Foundation
 import UIKit
 
-enum titleType {
-    case game
-    case group
-}
-
-class SetTitleVeiwController: UIViewController {
+class SetTitleViewController: UIViewController {
     
     let darkView: UIView = {
         let view = UIView()
+        
         view.backgroundColor = .gray
-//        view.alpha = 0.7
+        view.alpha = 0.0
         return view
     }()
     
@@ -40,20 +36,13 @@ class SetTitleVeiwController: UIViewController {
         return label
     }()
     
-    let titleTextField: UITextField = {
-        let textField = UITextField()
-        textField.font = UIFont.nanumSquareNeoHeavy(size: 15)
-        textField.textColor = .black
-        textField.textAlignment = .center
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
+    let titleTextField = CustomTextField()
     
     let makeButton = CustomMakeButton(title: "만들기", isEnabled: true)
     
-    var type: titleType?
+    var type: SideButtonMode?
     
-    init(titleType: titleType) {
+    init(titleType: SideButtonMode) {
         super.init(nibName: nil, bundle: nil)
         self.type = titleType
     }
@@ -64,30 +53,33 @@ class SetTitleVeiwController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkMenuType(titleType: type ?? .game)
+        hideKeyboardWhenTappedAround()
+        setKeyboardObserver()
+        checkMenuType(sideButtonMode: type ?? .game)
         setUI()
-        
     }
-    override func viewWillAppear(_ animated: Bool) {
+    
+    override func viewDidAppear(_ animated: Bool) {
         showBottomSheet()
     }
     
-    func checkMenuType(titleType: titleType) {
-        titleLabel.text = titleType == .game ? "게임 이름을 정해주세요" : "모임 이름을 정해주세요"
+    func checkMenuType(sideButtonMode: SideButtonMode) {
+        titleLabel.text = sideButtonMode == .game ? "게임 이름을 정해주세요" : "모임 이름을 정해주세요"
     }
     
     func showBottomSheet() {
         
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
-                    // 4 - 1
+            // 4 - 1
+            self.darkView.backgroundColor = .gray
             self.darkView.alpha = 0.7
-                    // 4 - 2
+            // 4 - 2
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
 }
 
-extension SetTitleVeiwController {
+extension SetTitleViewController {
     func setUI() {
         self.view.addSubview(darkView)
         self.view.addSubview(setTitleView)

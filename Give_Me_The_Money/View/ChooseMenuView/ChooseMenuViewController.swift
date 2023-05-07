@@ -54,7 +54,7 @@ class ChooseMenuViewController: UIViewController {
         
         // 그룹 만들기 버튼 클릭
         tapGroupButtonGesture.rx.event.bind(onNext: { _ in
-            self.chooseMenuViewModel.sideMenuStatus.accept(.group)
+            self.chooseMenuViewModel.sideMenuStatusRelay.accept(.group)
             self.changeUI(buttonStatus: .group)
             
         }).disposed(by: disposeBag)
@@ -62,7 +62,7 @@ class ChooseMenuViewController: UIViewController {
         
         // 게임 만들기 버튼 클릭
         tapGameButtonGesture.rx.event.bind(onNext: { _ in
-            self.chooseMenuViewModel.sideMenuStatus.accept(.game)
+            self.chooseMenuViewModel.sideMenuStatusRelay.accept(.game)
             self.changeUI(buttonStatus: .game)
             
         }).disposed(by: disposeBag)
@@ -76,7 +76,7 @@ class ChooseMenuViewController: UIViewController {
         
         // 만들기 버튼 클릭
         makeButton.rx.tap.bind(onNext: {
-            let setTitleVC = SetTitleVeiwController(titleType: .game)
+            let setTitleVC = SetTitleViewController(titleType: self.chooseMenuViewModel.sideMenuStatus)
 
             setTitleVC.modalPresentationStyle = .overFullScreen
             self.present(setTitleVC, animated: true, completion: nil)

@@ -18,15 +18,17 @@ enum SideButtonMode {
 class ChooseMenuViewModel {
     
     let disposedBag = DisposeBag()
-    var sideMenuStatus = PublishRelay<SideButtonMode>() // 어떤 사이드 메뉴를 선택하는지
+    var sideMenuStatusRelay = PublishRelay<SideButtonMode>() // 어떤 사이드 메뉴를 선택하는지
+    var sideMenuStatus: SideButtonMode = .group
     var checkMakeButtonIsEnabled = BehaviorRelay<Bool>(value: false)
     
     init() {
         print("ChooseMenuViewModel init")
         
-        sideMenuStatus.bind(onNext: { [ weak self ] status in
+        sideMenuStatusRelay.bind(onNext: { [ weak self ] status in
             guard let self = self else { return }
             print(status,"버튼상태")
+            self.sideMenuStatus = status
             self.checkMakeButtonIsEnabled.accept(true)
         }).disposed(by: disposedBag)
         

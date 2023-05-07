@@ -1,22 +1,22 @@
 //
-//  TextField.swift
+//  CustomTextField.swift
 //  Give_Me_The_Money
 //
-//  Created by 김정태 on 2023/04/11.
+//  Created by 김정태 on 2023/05/07.
 //
 
 import Foundation
 import UIKit
 
-class CustomNumberTextField: UIView {
+class CustomTextField: UIView {
+    
+    var beforeText = ""
     
     let textField: UITextField = {
         let textField = UITextField()
-        textField.font = UIFont.nanumSquareNeoHeavy(size: 15)
+        textField.font = UIFont.nanumSquareNeoHeavy(size: 18)
         textField.textColor = .black
-        textField.textAlignment = .center
         textField.borderStyle = .none
-        textField.keyboardType = .numberPad
         
         textField.leftViewMode = .always
         textField.autocorrectionType = .no
@@ -64,32 +64,19 @@ class CustomNumberTextField: UIView {
 
 
 // MARK: - textfield click delegate
-extension CustomNumberTextField: UITextFieldDelegate {
+extension CustomTextField: UITextFieldDelegate {
     
-    // textfield click
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textfield 선택")
-        textField.becomeFirstResponder()
-        textField.tintColor = UIColor.primaryColor
-    }
-    
+    // 글자수 30글자 + 백스페이스 누를때는 반응
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // 새로운 문자열을 계산
-        let currentText = textField.text ?? ""
-        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
-        
-        // 숫자만 있는지 확인
-        let isNumeric = newText.isEmpty || (Double(newText) != nil)
-        
-        // 총 길이 확인
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = ","
-        formatter.maximumFractionDigits = 0
-        let numberWithCommas = formatter.string(from: NSNumber(value: Int(newText) ?? 0)) ?? ""
-        let maxLength = numberWithCommas.count + (numberWithCommas.count-1)/3
-        
-        return isNumeric && maxLength <= 15
+        if let char = string.cString(using: String.Encoding.utf8) {
+            let isBackSpace = strcmp(char, "\\b")
+            if isBackSpace == -92 {
+                return true
+            }
+        }
+        guard textField.text!.count < 30 else { return false }
+        return true
     }
     
 }
+

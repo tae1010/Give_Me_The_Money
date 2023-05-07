@@ -32,6 +32,7 @@
 		9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698729FFA81900CF9001 /* Extension_ViewController.swift */; };
 		9360698A2A05508F00CF9001 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936069892A05508E00CF9001 /* MainViewModel.swift */; };
 		9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698C2A06454900CF9001 /* SetTitleViewController.swift */; };
+		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
 		93F0133A29CC5D8F003731C1 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */; };
@@ -109,6 +110,7 @@
 		9360698729FFA81900CF9001 /* Extension_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_ViewController.swift; sourceTree = "<group>"; };
 		936069892A05508E00CF9001 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9360698C2A06454900CF9001 /* SetTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTitleViewController.swift; sourceTree = "<group>"; };
+		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
 		93F0133629CC5D8F003731C1 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				9360692A29E2B32D00CF9001 /* CloseButton.swift */,
 				9360696829E544C000CF9001 /* CustomNumberTextField.swift */,
 				93F0133F29CC62D2003731C1 /* CustomMakeButton.swift */,
+				93EA31C52A07B8B900CAF551 /* CustomTextField.swift */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
+				93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */,
 				9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */,
 				9360698629FBE9BE00CF9001 /* PersonalPriceView.swift in Sources */,
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
