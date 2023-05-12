@@ -57,6 +57,7 @@ class MakeGroupViewController: UIViewController {
         
         backButton.rx.tap.bind(onNext: {
             print("뒤로가기 클릭")
+            self.dismiss(animated: true, completion: nil)
             self.navigationController?.popViewController(animated: true)
         }).disposed(by: disposeBag)
         

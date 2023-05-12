@@ -12,7 +12,6 @@ class SetTitleViewController: UIViewController {
     
     let darkView: UIView = {
         let view = UIView()
-        
         view.backgroundColor = .gray
         view.alpha = 0.0
         return view
@@ -27,8 +26,6 @@ class SetTitleViewController: UIViewController {
         return view
     }()
     
-    let closeButton = CloseButton()
-    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.nanumSquareNeoBold(size: 20)
@@ -36,8 +33,8 @@ class SetTitleViewController: UIViewController {
         return label
     }()
     
+    let closeButton = CloseButton()
     let titleTextField = CustomTextField()
-    
     let makeButton = CustomMakeButton(title: "만들기", isEnabled: true)
     
     var type: SideButtonMode?
@@ -57,6 +54,8 @@ class SetTitleViewController: UIViewController {
         setKeyboardObserver()
         checkMenuType(sideButtonMode: type ?? .game)
         setUI()
+        tapUI()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,7 +68,7 @@ class SetTitleViewController: UIViewController {
     
     func showBottomSheet() {
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
             // 4 - 1
             self.darkView.backgroundColor = .gray
             self.darkView.alpha = 0.7
@@ -77,6 +76,7 @@ class SetTitleViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+
 }
 
 extension SetTitleViewController {
@@ -123,5 +123,35 @@ extension SetTitleViewController {
         makeButton.leadingAnchor.constraint(equalTo: setTitleView.leadingAnchor).isActive = true
         makeButton.trailingAnchor.constraint(equalTo: setTitleView.trailingAnchor).isActive = true
         makeButton.bottomAnchor.constraint(equalTo: setTitleView.bottomAnchor).isActive = true
+    }
+    
+    func tapUI() {
+        closeButton.clickAction = {
+            self.darkView.alpha = 0.0
+            self.dismiss(animated: true)
+        }
+        
+        makeButton.clickAction = {
+            self.darkView.alpha = 0.0
+//            let makeGroupViewController = MakeGroupViewController()
+//            makeGroupViewController.modalPresentationStyle = .fullScreen
+//            self.navigationController?.pushViewController(makeGroupViewController, animated: true)
+            
+            guard let pvc = self.presentingViewController else { return }
+            
+            let makeGroupViewController = MakeGroupViewController()
+            let navigationController = UINavigationController(rootViewController: makeGroupViewController)
+
+            navigationController.modalPresentationStyle = .fullScreen
+            navigationController.isNavigationBarHidden = true
+
+            // 기존팝업창은 지우고 reallyCheckPopup창을 띄움
+            self.dismiss(animated: true) {
+                pvc.present(navigationController, animated: true)
+            }
+
+            
+            
+        }
     }
 }

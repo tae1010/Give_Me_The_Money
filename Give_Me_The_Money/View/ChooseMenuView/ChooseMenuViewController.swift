@@ -80,11 +80,6 @@ class ChooseMenuViewController: UIViewController {
 
             setTitleVC.modalPresentationStyle = .overFullScreen
             self.present(setTitleVC, animated: true, completion: nil)
-            
-//            let makeGroupViewController = MakeGroupViewController()
-//            
-//            makeGroupViewController.modalPresentationStyle = .fullScreen
-//            self.navigationController?.pushViewController(makeGroupViewController, animated: true)
 
         }).disposed(by: disposeBag)
         
