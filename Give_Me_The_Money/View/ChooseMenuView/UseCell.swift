@@ -85,14 +85,11 @@ class UseCell: UICollectionViewCell {
         titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -AppConstants.setupNormalConstantSize(size: 20)).isActive = true
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
-        
         totalPrice.topAnchor.constraint(equalTo: usageLabelView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 15)).isActive = true
         totalPrice.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35).isActive = true
         
-        
         userImageView.leadingAnchor.constraint(equalTo: usageLabelView.leadingAnchor).isActive = true
         userImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
-        
         
         userCountLabel.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor).isActive = true
         userCountLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: 5)).isActive = true

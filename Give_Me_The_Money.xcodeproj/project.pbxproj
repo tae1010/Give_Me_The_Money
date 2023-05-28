@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930118672A120C3B0085B3A6 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930118662A120C3B0085B3A6 /* PersonCell.swift */; };
 		930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376629BDDF0F00457CAD /* AppDelegate.swift */; };
 		930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376829BDDF0F00457CAD /* SceneDelegate.swift */; };
 		930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F376A29BDDF0F00457CAD /* MainViewController.swift */; };
@@ -28,10 +29,11 @@
 		9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */; };
 		9360696F29EBC7C900CF9001 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360696E29EBC7C800CF9001 /* PeopleCell.swift */; };
 		9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698329FACF2D00CF9001 /* Extension_String.swift */; };
-		9360698629FBE9BE00CF9001 /* PersonalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */; };
+		9360698629FBE9BE00CF9001 /* PersonPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698529FBE9BE00CF9001 /* PersonPriceView.swift */; };
 		9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698729FFA81900CF9001 /* Extension_ViewController.swift */; };
 		9360698A2A05508F00CF9001 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936069892A05508E00CF9001 /* MainViewModel.swift */; };
 		9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698C2A06454900CF9001 /* SetTitleViewController.swift */; };
+		9362125B2A2340CE000C4890 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9362125A2A2340CE000C4890 /* PeopleViewModel.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -81,6 +83,7 @@
 		3164408166E88F104511F838 /* Pods_Give_Me_The_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Give_Me_The_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3539571D203D92716BC62F03 /* Pods_Give_Me_The_MoneyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Give_Me_The_MoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664243616EEEE6F8C861E165 /* Pods-Give_Me_The_MoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Give_Me_The_MoneyTests.release.xcconfig"; path = "Target Support Files/Pods-Give_Me_The_MoneyTests/Pods-Give_Me_The_MoneyTests.release.xcconfig"; sourceTree = "<group>"; };
+		930118662A120C3B0085B3A6 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		930F376329BDDF0E00457CAD /* Give_Me_The_Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Give_Me_The_Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		930F376629BDDF0F00457CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		930F376829BDDF0F00457CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,10 +109,11 @@
 		9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePeopleView.swift; sourceTree = "<group>"; };
 		9360696E29EBC7C800CF9001 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		9360698329FACF2D00CF9001 /* Extension_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_String.swift; sourceTree = "<group>"; };
-		9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPriceView.swift; sourceTree = "<group>"; };
+		9360698529FBE9BE00CF9001 /* PersonPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPriceView.swift; sourceTree = "<group>"; };
 		9360698729FFA81900CF9001 /* Extension_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_ViewController.swift; sourceTree = "<group>"; };
 		936069892A05508E00CF9001 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9360698C2A06454900CF9001 /* SetTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTitleViewController.swift; sourceTree = "<group>"; };
+		9362125A2A2340CE000C4890 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -291,7 +295,8 @@
 				9360696A29E6A49D00CF9001 /* ChoosePriceView.swift */,
 				9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */,
 				9360696E29EBC7C800CF9001 /* PeopleCell.swift */,
-				9360698529FBE9BE00CF9001 /* PersonalPriceView.swift */,
+				9360698529FBE9BE00CF9001 /* PersonPriceView.swift */,
+				930118662A120C3B0085B3A6 /* PersonCell.swift */,
 			);
 			path = GroupView;
 			sourceTree = "<group>";
@@ -364,8 +369,9 @@
 			isa = PBXGroup;
 			children = (
 				936069892A05508E00CF9001 /* MainViewModel.swift */,
-				93F0134729D2CD1C003731C1 /* GroupViewModel.swift */,
 				93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */,
+				93F0134729D2CD1C003731C1 /* GroupViewModel.swift */,
+				9362125A2A2340CE000C4890 /* PeopleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */,
+				9362125B2A2340CE000C4890 /* PeopleViewModel.swift in Sources */,
 				93F0134529D2C0A9003731C1 /* Group.swift in Sources */,
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
 				9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */,
@@ -645,7 +652,7 @@
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
 				93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */,
 				9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */,
-				9360698629FBE9BE00CF9001 /* PersonalPriceView.swift in Sources */,
+				9360698629FBE9BE00CF9001 /* PersonPriceView.swift in Sources */,
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
@@ -665,6 +672,7 @@
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */,
 				9360696B29E6A49E00CF9001 /* ChoosePriceView.swift in Sources */,
+				930118672A120C3B0085B3A6 /* PersonCell.swift in Sources */,
 				93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */,
 				9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */,
 				93F7E52F29DD66AA0002F193 /* UsageLabelView.swift in Sources */,

@@ -133,9 +133,6 @@ extension SetTitleViewController {
         
         makeButton.clickAction = {
             self.darkView.alpha = 0.0
-//            let makeGroupViewController = MakeGroupViewController()
-//            makeGroupViewController.modalPresentationStyle = .fullScreen
-//            self.navigationController?.pushViewController(makeGroupViewController, animated: true)
             
             guard let pvc = self.presentingViewController else { return }
             
@@ -149,9 +146,6 @@ extension SetTitleViewController {
             self.dismiss(animated: true) {
                 pvc.present(navigationController, animated: true)
             }
-
-            
-            
         }
     }
 }

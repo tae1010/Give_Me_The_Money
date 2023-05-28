@@ -27,4 +27,8 @@ class GroupViewModel {
         isSelect = [Bool](repeating: false, count: choosePeopleArray.count)
         
     }
+    
+    func addPeople() {
+        self.choosePeopleArray.append("추가")
+    }
 }

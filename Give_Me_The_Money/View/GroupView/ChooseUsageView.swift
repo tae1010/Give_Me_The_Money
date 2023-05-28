@@ -86,13 +86,6 @@ class ChooseUsageView: UIView {
     let alcohol3 = UsageLabelView(text: "술 3차", backGroundColor: UIColor.noSelectColor, labelColor: .gray, necessaryWidth: true)
     let alcohol4 = UsageLabelView(text: "술 4차", backGroundColor: UIColor.noSelectColor, labelColor: .gray, necessaryWidth: true)
     
-
-    
-
-
-
-    
-    
     let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
@@ -132,7 +125,6 @@ class ChooseUsageView: UIView {
             }
         }
         
-        
         for (index, label) in labels.enumerated() {
             let tapGestureRecognizer = UITapGestureRecognizer()
             label.addGestureRecognizer(tapGestureRecognizer)
@@ -158,7 +150,6 @@ extension ChooseUsageView {
     
     func setUI() {
         self.addSubview(titleLabel)
-//        self.addSubview(textField)
         self.addSubview(usageVStackView)
         
         [roomChargeUsageView, transportationCostUsageView].forEach({
@@ -184,21 +175,10 @@ extension ChooseUsageView {
     func setLayout() {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        textField.translatesAutoresizingMaskIntoConstraints = false
         usageVStackView.translatesAutoresizingMaskIntoConstraints = false
-    
         
         titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        
-        
-//        textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: 10)).isActive = true
-//        textField.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: -10)).isActive = true
-//        textField.topAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
-//        textField.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -2).isActive = true
-//
-//        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        
         
         usageVStackView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true
         usageVStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true

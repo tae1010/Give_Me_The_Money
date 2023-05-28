@@ -41,7 +41,7 @@ class MakeGroupViewController: UIViewController {
     
     let choosePeopleView = ChoosePeopleView()
     
-    let personPriceView = PersonPricevView()
+    let personPriceView = PersonPriceView()
     
     let makeButton = CustomMakeButton(title: "만들기", isEnabled: true)
     let disposeBag = DisposeBag()
@@ -58,7 +58,6 @@ class MakeGroupViewController: UIViewController {
         backButton.rx.tap.bind(onNext: {
             print("뒤로가기 클릭")
             self.dismiss(animated: true, completion: nil)
-            self.navigationController?.popViewController(animated: true)
         }).disposed(by: disposeBag)
         
         
@@ -66,7 +65,6 @@ class MakeGroupViewController: UIViewController {
             
         }).disposed(by: disposeBag)
     }
-    
 }
 
 
@@ -85,9 +83,7 @@ extension MakeGroupViewController {
         contentView.addSubview(personPriceView)
         contentView.addSubview(makeButton)
         
-
         setLayout()
-
     }
     
     func setLayout() {
@@ -112,37 +108,30 @@ extension MakeGroupViewController {
         contentView.trailingAnchor.constraint(equalTo: contentScrollView.trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: contentScrollView.widthAnchor).isActive = true
-
         
         backButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
         backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
-
 
         titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         
-        
         chooseUsageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 50)).isActive = true
         chooseUsageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         chooseUsageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        
         
         choosePriceView.topAnchor.constraint(equalTo: chooseUsageView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 90)).isActive = true
         choosePriceView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         choosePriceView.centerXAnchor.constraint(equalTo: contentScrollView.centerXAnchor).isActive = true
         
-        
         choosePeopleView.topAnchor.constraint(equalTo: choosePriceView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 90)).isActive = true
         choosePeopleView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         choosePeopleView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        
         
         personPriceView.topAnchor.constraint(equalTo: choosePeopleView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
         personPriceView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         personPriceView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
 
-        
         makeButton.topAnchor.constraint(equalTo: personPriceView.bottomAnchor, constant: AppConstants.setupWidthConstantSize(size: 90)).isActive = true
         makeButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         makeButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true

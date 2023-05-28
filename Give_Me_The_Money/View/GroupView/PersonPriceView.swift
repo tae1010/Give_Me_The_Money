@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PersonPricevView: UIView {
+class PersonPriceView: UIView {
     
     let buttonStackView: UIStackView = {
         let stackView = UIStackView()
@@ -20,7 +20,6 @@ class PersonPricevView: UIView {
 
         return stackView
     }()
-
     
     let sameButton: UIButton = {
         let button = UIButton()
@@ -29,11 +28,9 @@ class PersonPricevView: UIView {
         button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
         button.backgroundColor = .veryLightGrey
         button.layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
-        
-        
+        button.addTarget(PersonPriceView.self, action: #selector(tapSameButton), for: .touchUpInside)
         return button
     }()
-    
     
     let gameButton: UIButton = {
         let button = UIButton()
@@ -61,38 +58,42 @@ class PersonPricevView: UIView {
         return label
     }()
     
+    private lazy var personTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(PersonCell.self, forCellReuseIdentifier: "PersonCell")
+        return tableView
+    }()
+    
+    let peopleViewModel = PeopleViewModel()
+    
+    var test = ["가나다","김정태","ㅁㄴㅇ"]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
+        personTableView.dataSource = self
+        personTableView.delegate = self
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    // 스택뷰에 뷰를 추가하는 함수
-//    func updateStackView() {
-//        // 스택뷰에 있는 라벨 제거
-//        buttonStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-//
-//        // 배열에 있는 값에 따라 라벨을 추가
-//        for item in items {
-//
-//            buttonStackView.addArrangedSubview()
-//        }
-//    }
-    
+    @objc func tapSameButton() {
+        test.append("추가됨")
+        personTableView.reloadData()
+    }
     
 }
 
 
-extension PersonPricevView {
+extension PersonPriceView {
     
     func setUI() {
-        
         self.addSubview(buttonStackView)
         self.addSubview(leftPriceLabel)
         self.addSubview(leftPriceNumLabel)
+        self.addSubview(personTableView)
         self.buttonStackView.addArrangedSubview(sameButton)
         self.buttonStackView.addArrangedSubview(gameButton)
         
@@ -104,6 +105,7 @@ extension PersonPricevView {
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         leftPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         leftPriceNumLabel.translatesAutoresizingMaskIntoConstraints = false
+        personTableView.translatesAutoresizingMaskIntoConstraints = false
         
         buttonStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
@@ -111,11 +113,31 @@ extension PersonPricevView {
         
         leftPriceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         leftPriceLabel.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 15)).isActive = true
-        leftPriceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        leftPriceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         leftPriceNumLabel.topAnchor.constraint(equalTo: leftPriceLabel.topAnchor).isActive = true
-        leftPriceNumLabel.bottomAnchor.constraint(equalTo: leftPriceLabel.bottomAnchor).isActive = true
+//        leftPriceNumLabel.bottomAnchor.constraint(equalTo: leftPriceLabel.bottomAnchor).isActive = true
         leftPriceNumLabel.leadingAnchor.constraint(equalTo: leftPriceLabel.trailingAnchor, constant: 5).isActive = true
         leftPriceNumLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor).isActive = true
+        
+        personTableView.topAnchor.constraint(equalTo: leftPriceNumLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
+        personTableView.leadingAnchor.constraint(equalTo: buttonStackView.leadingAnchor).isActive = true
+        personTableView.trailingAnchor.constraint(equalTo: buttonStackView.trailingAnchor).isActive = true
+        personTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
+}
+
+extension PersonPriceView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return test.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? PersonCell else { return UITableViewCell() }
+        
+        return cell
+    }
+    
+    
 }
