@@ -23,7 +23,7 @@ class ChoosePriceView: UIView {
     let eraseButton: UIButton = {
         let button = UIButton()
         let imageConfig = UIImage.SymbolConfiguration(pointSize: AppConstants.setupExtraConstantSize(size: 20), weight: .light)
-        let image = UIImage(systemName: "eraser", withConfiguration: imageConfig)
+        let image = UIImage(named: "eraser", in: nil, with: imageConfig)
         button.setImage(image, for: .normal)
         button.tintColor = UIColor.black
         return button
@@ -53,6 +53,8 @@ extension ChoosePriceView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         priceTextField.translatesAutoresizingMaskIntoConstraints = false
         eraseButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        eraseButton.setContentHuggingPriority(.init(251), for: .horizontal)
         
         titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true

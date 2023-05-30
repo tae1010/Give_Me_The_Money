@@ -28,7 +28,7 @@ class PersonPriceView: UIView {
         button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
         button.backgroundColor = .veryLightGrey
         button.layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
-        button.addTarget(PersonPriceView.self, action: #selector(tapSameButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tapSameButton), for: .touchUpInside)
         return button
     }()
     
@@ -60,6 +60,7 @@ class PersonPriceView: UIView {
     
     private lazy var personTableView: UITableView = {
         let tableView = UITableView()
+        tableView.separatorStyle = .none
         tableView.register(PersonCell.self, forCellReuseIdentifier: "PersonCell")
         return tableView
     }()
@@ -73,6 +74,8 @@ class PersonPriceView: UIView {
         setUI()
         personTableView.dataSource = self
         personTableView.delegate = self
+        personTableView.rowHeight = UITableView.automaticDimension
+        personTableView.estimatedRowHeight = 50
     }
     
     required init?(coder: NSCoder) {
@@ -80,8 +83,12 @@ class PersonPriceView: UIView {
     }
     
     @objc func tapSameButton() {
+        
+        let endIndex = IndexPath(row: test.count, section: 0)
         test.append("추가됨")
         personTableView.reloadData()
+        personTableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
+        print("눌림")
     }
     
 }
@@ -124,6 +131,7 @@ extension PersonPriceView {
         personTableView.leadingAnchor.constraint(equalTo: buttonStackView.leadingAnchor).isActive = true
         personTableView.trailingAnchor.constraint(equalTo: buttonStackView.trailingAnchor).isActive = true
         personTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        personTableView.heightAnchor.constraint(equalToConstant: AppConstants.setupWidthExtraConstantSize(size: 100)).isActive = true
     }
 }
 
@@ -135,6 +143,8 @@ extension PersonPriceView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? PersonCell else { return UITableViewCell() }
+        
+        cell.personLabel.text = test[indexPath.row]
         
         return cell
     }
