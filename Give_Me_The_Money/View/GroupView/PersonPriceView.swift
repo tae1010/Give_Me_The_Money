@@ -10,37 +10,37 @@ import UIKit
 
 class PersonPriceView: UIView {
     
-    let buttonStackView: UIStackView = {
-        let stackView = UIStackView()
-        
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        stackView.spacing = AppConstants.setupWidthConstantSize(size: 10)
-
-        return stackView
-    }()
+//    let buttonStackView: UIStackView = {
+//        let stackView = UIStackView()
+//
+//        stackView.axis = .horizontal
+//        stackView.alignment = .fill
+//        stackView.distribution = .fillEqually
+//        stackView.spacing = AppConstants.setupWidthConstantSize(size: 10)
+//
+//        return stackView
+//    }()
     
-    let sameButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("균등하게 나누기", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
-        button.backgroundColor = .veryLightGrey
-        button.layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
-        button.addTarget(self, action: #selector(tapSameButton), for: .touchUpInside)
-        return button
-    }()
-    
-    let gameButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("게임으로 나누기", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
-        button.backgroundColor = .veryLightGrey
-        button.layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
-        return button
-    }()
+//    let sameButton: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("균등하게 나누기", for: .normal)
+//        button.setTitleColor(.black, for: .normal)
+//        button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
+//        button.backgroundColor = .veryLightGrey
+//        button.layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
+//        button.addTarget(self, action: #selector(tapSameButton), for: .touchUpInside)
+//        return button
+//    }()
+//
+//    let gameButton: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("게임으로 나누기", for: .normal)
+//        button.setTitleColor(.black, for: .normal)
+//        button.titleLabel?.font = UIFont.nanumSquareNeoBold(size: 13)
+//        button.backgroundColor = .veryLightGrey
+//        button.layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
+//        return button
+//    }()
     
     let leftPriceLabel: UILabel = {
         let label = UILabel()
@@ -97,29 +97,29 @@ class PersonPriceView: UIView {
 extension PersonPriceView {
     
     func setUI() {
-        self.addSubview(buttonStackView)
+//        self.addSubview(buttonStackView)
         self.addSubview(leftPriceLabel)
         self.addSubview(leftPriceNumLabel)
         self.addSubview(personTableView)
-        self.buttonStackView.addArrangedSubview(sameButton)
-        self.buttonStackView.addArrangedSubview(gameButton)
+//        self.buttonStackView.addArrangedSubview(sameButton)
+//        self.buttonStackView.addArrangedSubview(gameButton)
         
         setLayout()
     }
     
     func setLayout() {
         
-        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+//        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         leftPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         leftPriceNumLabel.translatesAutoresizingMaskIntoConstraints = false
         personTableView.translatesAutoresizingMaskIntoConstraints = false
         
-        buttonStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+//        buttonStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+//        buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
         leftPriceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        leftPriceLabel.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 15)).isActive = true
+        leftPriceLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 15)).isActive = true
 //        leftPriceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         leftPriceNumLabel.topAnchor.constraint(equalTo: leftPriceLabel.topAnchor).isActive = true
@@ -128,8 +128,8 @@ extension PersonPriceView {
         leftPriceNumLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor).isActive = true
         
         personTableView.topAnchor.constraint(equalTo: leftPriceNumLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
-        personTableView.leadingAnchor.constraint(equalTo: buttonStackView.leadingAnchor).isActive = true
-        personTableView.trailingAnchor.constraint(equalTo: buttonStackView.trailingAnchor).isActive = true
+        personTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        personTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         personTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         personTableView.heightAnchor.constraint(equalToConstant: AppConstants.setupWidthExtraConstantSize(size: 100)).isActive = true
     }
