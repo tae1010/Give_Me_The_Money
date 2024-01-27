@@ -26,9 +26,6 @@ class ChartView: UIView, CAAnimationDelegate {
     }
     
     override func draw(_ rect: CGRect) {
-        
-        print(circleSize)
-        
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
         let colors: [UIColor] = [.customRedColor, .customGreenColor, .customYellowColor]
