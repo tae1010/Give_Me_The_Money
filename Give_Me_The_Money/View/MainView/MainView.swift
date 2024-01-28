@@ -25,6 +25,7 @@ class MainView: UIView, UIScrollViewDelegate {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = AppConstants.setupNormalConstantSize(size: 30) // cell 세로사이의 간격 설정
         
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.register(MainCell.self, forCellWithReuseIdentifier: "MainCell")
@@ -82,22 +83,22 @@ extension MainView {
         })
         
         addSubview(mainCollectionView)
-        addSubview(statusButtonStackView)
+//        addSubview(statusButtonStackView)
         setLayout()
         
     }
     
     func setLayout() {
-        statusButtonStackView.translatesAutoresizingMaskIntoConstraints = false
+//        statusButtonStackView.translatesAutoresizingMaskIntoConstraints = false
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
-        statusButtonStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        statusButtonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 40)).isActive = true
-        statusButtonStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
+//        statusButtonStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+//        statusButtonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 40)).isActive = true
+//        statusButtonStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
         
         mainCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         mainCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        mainCollectionView.topAnchor.constraint(equalTo: statusButtonStackView.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
+        mainCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 40)).isActive = true
         mainCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 15).isActive = true
 
     }
@@ -108,6 +109,8 @@ extension MainView {
 extension MainView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: AppConstants.ScreenWidth * 0.85, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4))
+//        return CGSize(width: AppConstants.ScreenWidth * 0.85, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4))
+        
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4))
     }
 }

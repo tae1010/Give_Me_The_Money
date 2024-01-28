@@ -67,12 +67,6 @@ class MainCell: UICollectionViewCell {
         self.priceStatusStackView.addArrangedSubview(myPrice)
         contentView.addSubview(priceStatusStackView)
         
-        contentView.backgroundColor = .lightPrimaryColor
-        
-        layer.masksToBounds = true
-        layer.cornerRadius = AppConstants.setupExtraConstantSize(size: 10)
-        
-        
         statusImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: self.frame.height / AppConstants.setupNormalMultiplierSize(size: 3)).isActive = true
         statusImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
         statusImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
@@ -87,6 +81,13 @@ class MainCell: UICollectionViewCell {
         
         priceStatusStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         priceStatusStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: -20)).isActive = true
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 20, height: 15)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 10
+        
+        layer.masksToBounds = true
     }
     
     override func awakeFromNib() {

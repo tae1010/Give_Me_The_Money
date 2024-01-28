@@ -18,10 +18,16 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         return scroll
     }()
     
-    let logoView: UIView = {
-        let logoView = UIView()
-        logoView.backgroundColor = .gray
-        return logoView
+//    let logoView: UIView = {
+//        let logoView = UIView()
+//        logoView.backgroundColor = .gray
+//        return logoView
+//    }()
+    
+    let listView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "List")
+        return imageView
     }()
     
     let logoImageView: UIImageView = {
@@ -32,7 +38,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     let mainView = MainView()
     let usageLabelView = UsageLabelView()
-    let statusView = MainStatusView()
     let mainAddButton = MainAddButton()
     
     let viewModel: GroupViewModel
@@ -64,10 +69,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             
             self.present(navigationController, animated: true)
         }).disposed(by: disposeBag)
-        
-        
-
-        
     }
     
 }
@@ -79,8 +80,7 @@ extension MainViewController {
         configureUI()
         
         view.addSubview(Scroller)
-        view.addSubview(logoView)
-        view.addSubview(statusView)
+        view.addSubview(listView)
         view.addSubview(mainView)
         view.addSubview(mainAddButton)
         view.addSubview(usageLabelView)
@@ -88,27 +88,24 @@ extension MainViewController {
     }
     
     func setLayout() {
-        
-        logoView.translatesAutoresizingMaskIntoConstraints = false
-        statusView.translatesAutoresizingMaskIntoConstraints = false
+        listView.translatesAutoresizingMaskIntoConstraints = false
         mainView.translatesAutoresizingMaskIntoConstraints = false
         usageLabelView.translatesAutoresizingMaskIntoConstraints = false
-        
-        logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
-        logoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
+
+//        logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
+//        logoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 30)).isActive = true
         
         // 임시
-        logoView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        logoView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        logoView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        logoView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        statusView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        statusView.topAnchor.constraint(equalTo: self.logoView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 50)).isActive = true
-        statusView.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.85).isActive = true
+        listView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        listView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         
         mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         
-        mainView.topAnchor.constraint(equalTo: self.statusView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
+        mainView.topAnchor.constraint(equalTo: self.listView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
         mainView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         mainView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         mainView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
@@ -117,7 +114,7 @@ extension MainViewController {
     }
     
     func configureUI() {
-        self.view.backgroundColor = .primaryColor
+//        self.view.backgroundColor = .primaryColor
         
         mainView.layer.cornerRadius = 30
         mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
