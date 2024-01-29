@@ -23,7 +23,7 @@ class GroupViewModel {
     init() {
         print("메인뷰모델 init")
         
-        choosePeople.accept(["김정태","가나다","가나다","가나다","가나나나다","가나다","가나다서","가나다대리","가가"])
+        choosePeople.accept(["김정태"])
         isSelect = [Bool](repeating: false, count: choosePeopleArray.count)
         
     }

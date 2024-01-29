@@ -13,7 +13,8 @@ class MainCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "여행"
-        label.font = UIFont.nanumSquareNeoHeavy(size: 15)
+        label.textColor = .black
+        label.font = UIFont.nanumSquareNeoBold(size: 15)
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -22,20 +23,41 @@ class MainCell: UICollectionViewCell {
     let totalPrice: UILabel = {
         let label = UILabel()
         label.text = "00,000,000원"
-        label.font = UIFont.nanumSquareNeoBold(size: 13)
+        label.textColor = .black
+        label.font = UIFont.nanumSquareNeoHeavy(size: 24)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let myPrice: UILabel = {
+    let lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .veryLightGrey
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let editLabel: UILabel = {
         let label = UILabel()
-        label.text = "00,000,000원"
-        label.font = UIFont.nanumSquareNeoBold(size: 13
-        )
-        label.numberOfLines = 0
+        label.text = "Edit"
+        label.textColor = .primaryColor
+        label.font = UIFont.nanumSquareNeoHeavy(size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    let trashImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "trash")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let rightImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "right")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     let statusImage: UIImageView = {
@@ -45,49 +67,52 @@ class MainCell: UICollectionViewCell {
         return imageView
     }()
     
-    let priceStatusStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = AppConstants.setupExtraConstantSize(size: 10)
-        stackView.alignment = .leading
-        stackView.distribution = .fillEqually
-
-        return stackView
-    }()
-    
-
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        self.contentView.backgroundColor = .white
            
-        contentView.addSubview(statusImage)
         contentView.addSubview(titleLabel)
-        self.priceStatusStackView.addArrangedSubview(totalPrice)
-        self.priceStatusStackView.addArrangedSubview(myPrice)
-        contentView.addSubview(priceStatusStackView)
+        contentView.addSubview(totalPrice)
+        contentView.addSubview(lineView)
+        contentView.addSubview(editLabel)
+        contentView.addSubview(trashImage)
+        contentView.addSubview(rightImage)
         
-        statusImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: self.frame.height / AppConstants.setupNormalMultiplierSize(size: 3)).isActive = true
-        statusImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 20)).isActive = true
-        statusImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        statusImage.widthAnchor.constraint(equalTo: statusImage.heightAnchor).isActive = true
-        
-        
-        titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: statusImage.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: 10)).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 15)).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -20)).isActive = true
 
- 
-        priceStatusStackView.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 10).isActive = true
+        totalPrice.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30).isActive = true
+        totalPrice.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        totalPrice.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         
-        priceStatusStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        priceStatusStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupWidthConstantSize(size: -20)).isActive = true
+        trashImage.topAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
+        trashImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -20)).isActive = true
+        trashImage.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        trashImage.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 20, height: 15)
-        layer.shadowOpacity = 0.5
+        rightImage.centerYAnchor.constraint(equalTo: editLabel.centerYAnchor).isActive = true
+        rightImage.trailingAnchor.constraint(equalTo: trashImage.trailingAnchor).isActive = true
+        rightImage.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        rightImage.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        
+        lineView.topAnchor.constraint(equalTo: totalPrice.bottomAnchor, constant: 30).isActive = true
+        lineView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        lineView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+        lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        editLabel.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 15).isActive = true
+        editLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        editLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -15)).isActive = true
+        
+        
+        
+        layer.masksToBounds = false
+        layer.shadowOpacity = 0.3
+        layer.shadowColor = UIColor.lightGray.cgColor
+//        layer.shadowOffset = CGSize(width: -2, height: 0)
         layer.shadowRadius = 10
-        
-        layer.masksToBounds = true
     }
     
     override func awakeFromNib() {

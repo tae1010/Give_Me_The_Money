@@ -15,6 +15,9 @@ extension UIColor {
     class var veryLightGrey: UIColor { return UIColor(named: "veryLightGrey")! }
     class var veryLightGreyCGColor: CGColor { return UIColor.veryLightGrey.cgColor }
     
+    class var veryveryLightGrey: UIColor { return UIColor(named: "veryveryLightGrey")! }
+    class var veryveryLightGreyCGColor: CGColor { return UIColor.veryveryLightGrey.cgColor }
+    
     class var lightPrimaryColor: UIColor { return UIColor(named: "lightPrimaryColor")! }
     class var lightPrimaryCGColor: CGColor { return UIColor.lightPrimaryColor.cgColor }
     

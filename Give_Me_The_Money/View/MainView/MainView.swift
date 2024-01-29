@@ -22,12 +22,11 @@ class MainView: UIView, UIScrollViewDelegate {
     let mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = AppConstants.setupNormalConstantSize(size: 30) // cell 세로사이의 간격 설정
-        
+        layout.sectionInset = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 0)
+        layout.minimumLineSpacing = 15
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .veryveryLightGrey
         collectionView.register(MainCell.self, forCellWithReuseIdentifier: "MainCell")
         return collectionView
     }()
@@ -77,28 +76,16 @@ class MainView: UIView, UIScrollViewDelegate {
 extension MainView {
     
     func setupUI() {
-        
-        [allLabel, groupLabel, gameLabel].forEach({
-            self.statusButtonStackView.addArrangedSubview($0)
-        })
-        
         addSubview(mainCollectionView)
-//        addSubview(statusButtonStackView)
         setLayout()
-        
     }
     
     func setLayout() {
-//        statusButtonStackView.translatesAutoresizingMaskIntoConstraints = false
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-//        statusButtonStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-//        statusButtonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupWidthConstantSize(size: 40)).isActive = true
-//        statusButtonStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 40)).isActive = true
-        
+
         mainCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         mainCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        mainCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: AppConstants.setupExtraConstantSize(size: 40)).isActive = true
+        mainCollectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         mainCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 15).isActive = true
 
     }
@@ -109,8 +96,6 @@ extension MainView {
 extension MainView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-//        return CGSize(width: AppConstants.ScreenWidth * 0.85, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4))
-        
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4))
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4.5))
     }
 }
