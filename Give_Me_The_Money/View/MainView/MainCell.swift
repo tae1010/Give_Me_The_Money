@@ -14,19 +14,21 @@ class MainCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "여행"
         label.textColor = .black
-        label.font = UIFont.nanumSquareNeoBold(size: 15)
+        label.font = UIFont.nanumSquareNeoExtrabold(size: 19)
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.sizeToFit()
         return label
     }()
         
     let totalPrice: UILabel = {
         let label = UILabel()
-        label.text = "00,000,000원"
+        label.text = "$ 00,000,000"
         label.textColor = .black
-        label.font = UIFont.nanumSquareNeoHeavy(size: 24)
-        label.numberOfLines = 0
+        label.font = UIFont.nanumSquareNeoHeavy(size: 27)
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.sizeToFit()
         return label
     }()
     
@@ -43,6 +45,7 @@ class MainCell: UICollectionViewCell {
         label.textColor = .primaryColor
         label.font = UIFont.nanumSquareNeoHeavy(size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.sizeToFit()
         return label
     }()
     
@@ -81,32 +84,30 @@ class MainCell: UICollectionViewCell {
         
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: AppConstants.setupNormalConstantSize(size: 15)).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -20)).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trashImage.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: -20)).isActive = true
 
-        totalPrice.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30).isActive = true
+        totalPrice.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
         totalPrice.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        totalPrice.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+        totalPrice.trailingAnchor.constraint(equalTo: trashImage.trailingAnchor).isActive = true
         
         trashImage.topAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
         trashImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -20)).isActive = true
-        trashImage.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        trashImage.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        trashImage.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        trashImage.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
         rightImage.centerYAnchor.constraint(equalTo: editLabel.centerYAnchor).isActive = true
         rightImage.trailingAnchor.constraint(equalTo: trashImage.trailingAnchor).isActive = true
         rightImage.widthAnchor.constraint(equalToConstant: 15).isActive = true
         rightImage.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
-        lineView.topAnchor.constraint(equalTo: totalPrice.bottomAnchor, constant: 30).isActive = true
+        lineView.topAnchor.constraint(equalTo: totalPrice.bottomAnchor, constant: 35).isActive = true
         lineView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        lineView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+        lineView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
-        editLabel.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 15).isActive = true
+        editLabel.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 17).isActive = true
         editLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        editLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -15)).isActive = true
-        
-        
+        editLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -17)).isActive = true
         
         layer.masksToBounds = false
         layer.shadowOpacity = 0.3

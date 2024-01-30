@@ -23,7 +23,7 @@ class MainView: UIView, UIScrollViewDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 0)
-        layout.minimumLineSpacing = 15
+        layout.minimumLineSpacing = 12
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .veryveryLightGrey
@@ -60,7 +60,8 @@ class MainView: UIView, UIScrollViewDelegate {
         // bind mainCollectionView
         viewModel.choosePeople
             .bind(to: mainCollectionView.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) { index, item, cell in
-
+                cell.titleLabel.text = "일본 여행"
+                cell.totalPrice.text = "$ 1,020,000"
             }
             .disposed(by: disposeBag)
     }
@@ -92,10 +93,19 @@ extension MainView {
 }
 
 
- 
+
 extension MainView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as? MainCell else {
+            return .zero
+        }
+        cell.titleLabel.text = "dummy"
+        cell.editLabel.text = "dummy"
+        cell.totalPrice.text = "dummy"
         
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / AppConstants.setupExtraMultiplierSize(size: 4.5))
+        var height = cell.titleLabel.frame.height + cell.editLabel.frame.height + cell.totalPrice.frame.height
+
+        return CGSize(width: collectionView.frame.width, height: height +  110)
     }
 }
