@@ -104,7 +104,7 @@ extension MainView: UICollectionViewDelegateFlowLayout {
         cell.editLabel.text = "dummy"
         cell.totalPrice.text = "dummy"
         
-        var height = cell.titleLabel.frame.height + cell.editLabel.frame.height + cell.totalPrice.frame.height
+        let height = cell.titleLabel.frame.height + cell.editLabel.frame.height + cell.totalPrice.frame.height
 
         return CGSize(width: collectionView.frame.width, height: height +  110)
     }

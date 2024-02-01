@@ -100,16 +100,16 @@ extension MainViewController {
         
         logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
         logoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        logoView.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        logoView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: 27).isActive = true
         
         addButton.centerYAnchor.constraint(equalTo: logoView.centerYAnchor).isActive = true
         addButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
         
         settingView.centerYAnchor.constraint(equalTo: logoView.centerYAnchor).isActive = true
         settingView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true
-        settingView.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        settingView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        settingView.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        settingView.heightAnchor.constraint(equalToConstant: 27).isActive = true
         
 //        mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
 //        mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
