@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+protocol SetTitleViewControllerDelegate: AnyObject {
+//    func presentChooseMenuViewController()
+    func dismissToMainViewController()
+}
+
 class SetTitleViewController: UIViewController {
     
     let darkView: UIView = {
@@ -33,15 +38,20 @@ class SetTitleViewController: UIViewController {
         return label
     }()
     
+    weak var delegate: SetTitleViewControllerDelegate?
+    
     let closeButton = CloseButton()
     let titleTextField = CustomTextField()
     let makeButton = CustomMakeButton(title: "만들기", isEnabled: true)
     
     var type: SideButtonMode?
     
-    init(titleType: SideButtonMode) {
+//    init(titleType: SideButtonMode) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.type = titleType
+//    }
+    init() {
         super.init(nibName: nil, bundle: nil)
-        self.type = titleType
     }
     
     required init?(coder: NSCoder) {

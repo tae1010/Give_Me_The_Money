@@ -9,6 +9,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+protocol MainViewControllerDelegate: AnyObject {
+    func pushToSetTitleViewController()
+}
+
 class MainViewController: UIViewController, UIScrollViewDelegate {
     
     let Scroller: UIScrollView = {
@@ -46,6 +50,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     let disposeBag = DisposeBag()
     
+    weak var delegate: MainViewControllerDelegate?
+    
     init(viewModel: GroupViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -58,6 +64,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        tabUI()
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -123,13 +130,20 @@ extension MainViewController {
     }
     
     func configureUI() {
-//        self.view.backgroundColor = .primaryColor
+        self.view.backgroundColor = UIColor.white
         
         mainView.layer.cornerRadius = 30
         mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
+    func tabUI() {
+        let tabLabel = UITapGestureRecognizer(target: self, action: #selector(didTapPushButton))
+        self.addButton.addGestureRecognizer(tabLabel)
+    }
+    
+    @objc func didTapPushButton() {
+        delegate?.pushToSetTitleViewController()
+    }
+    
 
 }
-
-

@@ -8,38 +8,25 @@
 import Foundation
 import UIKit
 
-protocol Coordinator: AnyObject {
+protocol Coordinator {
+    var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
-    var parentCoordinator: Coordinator? { get set }
     func start()
-    func moveToNextView()
 }
 
-class MainCoordinator: Coordinator {
+class BaseCoordinator: Coordinator {
+    
+    // MARK: - Property
+    
+    var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    // MARK: - Init
     
-    var parentCoordinator: Coordinator?
-    
-    func moveToNextView() {
-        //
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
-    
-    var childCoordinators = [Coordinator]()
-    var nav: UINavigationController
-    
-    init(nav: UINavigationController) {
-        self.nav = nav
-    }
-//    
-//    func start() {
-//        let vc = MainViewController.instantiate(storyboardName: "Main")
-//        vc.coordinator = self
-//        nav.pushViewController(vc, animated: false)
-//    }
-//    
-//    func showSecondVC() {
-//        let vc = SecondViewController.instantiate(storyboardName: "Main")
-//        vc.coordinator = self
-//        nav.pushViewController(vc, animated: true)
-//    }
+
+    // MARK: - Start
+
+    func start() {}
 }

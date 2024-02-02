@@ -76,7 +76,7 @@ class ChooseMenuViewController: UIViewController {
         
         // 만들기 버튼 클릭
         makeButton.rx.tap.bind(onNext: {
-            let setTitleVC = SetTitleViewController(titleType: self.chooseMenuViewModel.sideMenuStatus)
+            let setTitleVC = SetTitleViewController()
 
             setTitleVC.modalPresentationStyle = .overFullScreen
             self.present(setTitleVC, animated: true, completion: nil)

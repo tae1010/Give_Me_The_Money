@@ -8,21 +8,19 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        // 스토리보드x, 기본 배경 흰색
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: MainViewController(viewModel: GroupViewModel()))
+        guard let scene = (scene as? UIWindowScene) else { return }
+        self.window = UIWindow(windowScene: scene)
 
-        window.makeKeyAndVisible()
-        
-        self.window = window
+        let navigationController = UINavigationController(rootViewController: MainViewController(viewModel: GroupViewModel()))
+        self.window?.rootViewController = navigationController
+
+        let coordinator = AppCoordinator(navigationController: navigationController)
+        coordinator.start()
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

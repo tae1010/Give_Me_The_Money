@@ -34,6 +34,9 @@
 		9360698A2A05508F00CF9001 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936069892A05508E00CF9001 /* MainViewModel.swift */; };
 		9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360698C2A06454900CF9001 /* SetTitleViewController.swift */; };
 		9362125B2A2340CE000C4890 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9362125A2A2340CE000C4890 /* PeopleViewModel.swift */; };
+		9374C78B2B6CB66F00C324A2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C78A2B6CB66F00C324A2 /* AppCoordinator.swift */; };
+		9374C78D2B6CB7FF00C324A2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */; };
+		9374C78F2B6CBFC500C324A2 /* SetTitleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -114,6 +117,9 @@
 		936069892A05508E00CF9001 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9360698C2A06454900CF9001 /* SetTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTitleViewController.swift; sourceTree = "<group>"; };
 		9362125A2A2340CE000C4890 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		9374C78A2B6CB66F00C324A2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTitleCoordinator.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +396,9 @@
 			isa = PBXGroup;
 			children = (
 				93F0134D29D2F5DD003731C1 /* Coordinator.swift */,
+				9374C78A2B6CB66F00C324A2 /* AppCoordinator.swift */,
+				9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */,
+				9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -642,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */,
+				9374C78B2B6CB66F00C324A2 /* AppCoordinator.swift in Sources */,
 				9362125B2A2340CE000C4890 /* PeopleViewModel.swift in Sources */,
 				93F0134529D2C0A9003731C1 /* Group.swift in Sources */,
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
@@ -669,10 +679,12 @@
 				9360696929E544C000CF9001 /* CustomNumberTextField.swift in Sources */,
 				9360692129E140DC00CF9001 /* MainCell.swift in Sources */,
 				93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */,
+				9374C78F2B6CBFC500C324A2 /* SetTitleCoordinator.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */,
 				9360696B29E6A49E00CF9001 /* ChoosePriceView.swift in Sources */,
 				930118672A120C3B0085B3A6 /* PersonCell.swift in Sources */,
+				9374C78D2B6CB7FF00C324A2 /* MainCoordinator.swift in Sources */,
 				93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */,
 				9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */,
 				93F7E52F29DD66AA0002F193 /* UsageLabelView.swift in Sources */,
