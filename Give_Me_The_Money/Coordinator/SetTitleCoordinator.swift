@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 protocol SetTitleCoordinatorDelegate {
-//    func presentCViewController()
     func popViewController()
 }
 
@@ -22,9 +21,8 @@ class SetTitleCoordinator: BaseCoordinator, SetTitleViewControllerDelegate {
     override func start() {
         let setTitleVC = SetTitleViewController()
         setTitleVC.delegate = self
-        setTitleVC.modalPresentationStyle = .overFullScreen
-        navigationController.modalPresentationStyle = .fullScreen
-        navigationController.present(setTitleVC, animated: true)
+        setTitleVC.modalPresentationStyle = .overCurrentContext
+        navigationController.present(setTitleVC, animated: false)
     }
     
     func popViewController() {

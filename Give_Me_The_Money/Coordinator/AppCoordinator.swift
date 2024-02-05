@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate {
+class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate {
     
     override func start() {
         showMainViewController()
@@ -24,6 +24,13 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
     
     func pushToSetTitleViewController() {
         let coordinator = SetTitleCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
+    func pushToSettingViewController() {
+        let coordinator = SettingCoordinator(navigationController: navigationController)
         coordinator.delegate = self
         coordinator.start()
         childCoordinators.append(coordinator)

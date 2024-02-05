@@ -11,6 +11,7 @@ import RxSwift
 
 protocol MainViewControllerDelegate: AnyObject {
     func pushToSetTitleViewController()
+    func pushToSettingViewController()
 }
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
@@ -31,6 +32,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     let settingView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "setting")
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -67,17 +69,40 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         tabUI()
         
         self.navigationController?.isNavigationBarHidden = true
+        self.view.isUserInteractionEnabled = true
         
-        // tap mainButton
-        mainAddButton.rx.tap.bind(onNext: {
-            let chooseMenuVC = ChooseMenuViewController(chooseMenuViewModel: ChooseMenuViewModel())
-            let navigationController = UINavigationController(rootViewController: chooseMenuVC)
+        let tapAddButtonGesture = UITapGestureRecognizer()
+        addButton.addGestureRecognizer(tapAddButtonGesture)
+        
+        let tapSettingViewGesture = UITapGestureRecognizer()
+        settingView.addGestureRecognizer(tapSettingViewGesture)
+        
+        let tapBackGroundViewGesture = UITapGestureRecognizer()
+        self.view.addGestureRecognizer(tapBackGroundViewGesture)
 
-            navigationController.modalPresentationStyle = .fullScreen
-            navigationController.isNavigationBarHidden = true
-            
-            self.present(navigationController, animated: true)
+        tapAddButtonGesture.rx.event.bind(onNext: { recognizer in
+            self.delegate?.pushToSetTitleViewController()
         }).disposed(by: disposeBag)
+        
+        tapSettingViewGesture.rx.event.bind(onNext: { recognizer in
+            self.delegate?.pushToSettingViewController()
+        }).disposed(by: disposeBag)
+        
+        tapBackGroundViewGesture.rx.event.bind(onNext: { recognizer in
+            print("배경 tap")
+        }).disposed(by: disposeBag)
+        
+        
+//        // tap mainButton
+//        mainAddButton.rx.tap.bind(onNext: {
+//            let chooseMenuVC = ChooseMenuViewController(chooseMenuViewModel: ChooseMenuViewModel())
+//            let navigationController = UINavigationController(rootViewController: chooseMenuVC)
+//
+//            navigationController.modalPresentationStyle = .fullScreen
+//            navigationController.isNavigationBarHidden = true
+//
+//            self.present(navigationController, animated: true)
+//        }).disposed(by: disposeBag)
     }
     
 }
@@ -142,7 +167,7 @@ extension MainViewController {
     }
     
     @objc func didTapPushButton() {
-        delegate?.pushToSetTitleViewController()
+//        delegate?.pushToSetTitleViewController()
     }
     
 

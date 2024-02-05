@@ -37,6 +37,8 @@
 		9374C78B2B6CB66F00C324A2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C78A2B6CB66F00C324A2 /* AppCoordinator.swift */; };
 		9374C78D2B6CB7FF00C324A2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */; };
 		9374C78F2B6CBFC500C324A2 /* SetTitleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */; };
+		9374C7942B70EF1500C324A2 /* SettingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7932B70EF1500C324A2 /* SettingPopUpViewController.swift */; };
+		9374C7962B70F71200C324A2 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7952B70F71200C324A2 /* SettingCoordinator.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -120,6 +122,8 @@
 		9374C78A2B6CB66F00C324A2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTitleCoordinator.swift; sourceTree = "<group>"; };
+		9374C7932B70EF1500C324A2 /* SettingPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpViewController.swift; sourceTree = "<group>"; };
+		9374C7952B70F71200C324A2 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -259,12 +263,13 @@
 		933CE9EA29BF1C13007A3558 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9360692729E2AFB100CF9001 /* CommonView */,
 				930F377129BDDF1000457CAD /* LaunchScreen.storyboard */,
+				9360692729E2AFB100CF9001 /* CommonView */,
 				933CE9EB29BF1C26007A3558 /* MainView */,
 				93F0134B29D2F143003731C1 /* ChooseMenuView */,
 				9360698B2A0644BC00CF9001 /* SetTitleView */,
 				9360692229E1591300CF9001 /* GroupView */,
+				9374C7922B70EEE600C324A2 /* SettingView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +331,14 @@
 				9360698C2A06454900CF9001 /* SetTitleViewController.swift */,
 			);
 			path = SetTitleView;
+			sourceTree = "<group>";
+		};
+		9374C7922B70EEE600C324A2 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				9374C7932B70EF1500C324A2 /* SettingPopUpViewController.swift */,
+			);
+			path = SettingView;
 			sourceTree = "<group>";
 		};
 		93F0133229CC32D3003731C1 /* AppDelegate */ = {
@@ -399,6 +412,7 @@
 				9374C78A2B6CB66F00C324A2 /* AppCoordinator.swift */,
 				9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */,
 				9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */,
+				9374C7952B70F71200C324A2 /* SettingCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -661,6 +675,7 @@
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
 				93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */,
+				9374C7962B70F71200C324A2 /* SettingCoordinator.swift in Sources */,
 				9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */,
 				9360698629FBE9BE00CF9001 /* PersonPriceView.swift in Sources */,
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
@@ -682,6 +697,7 @@
 				9374C78F2B6CBFC500C324A2 /* SetTitleCoordinator.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */,
+				9374C7942B70EF1500C324A2 /* SettingPopUpViewController.swift in Sources */,
 				9360696B29E6A49E00CF9001 /* ChoosePriceView.swift in Sources */,
 				930118672A120C3B0085B3A6 /* PersonCell.swift in Sources */,
 				9374C78D2B6CB7FF00C324A2 /* MainCoordinator.swift in Sources */,

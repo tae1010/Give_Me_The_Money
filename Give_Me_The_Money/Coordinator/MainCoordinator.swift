@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainCoordinatorDelegate {
     func pushToSetTitleViewController()
+    func pushToSettingViewController()
 }
 
 class MainCoordinator: BaseCoordinator, MainViewControllerDelegate   {
@@ -31,6 +32,10 @@ class MainCoordinator: BaseCoordinator, MainViewControllerDelegate   {
     
     func pushToSetTitleViewController() {
         delegate?.pushToSetTitleViewController()
+    }
+    
+    func pushToSettingViewController() {
+        delegate?.pushToSettingViewController()
     }
 }
 
