@@ -69,16 +69,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         tabUI()
         
         self.navigationController?.isNavigationBarHidden = true
-        self.view.isUserInteractionEnabled = true
+        
         
         let tapAddButtonGesture = UITapGestureRecognizer()
         addButton.addGestureRecognizer(tapAddButtonGesture)
         
         let tapSettingViewGesture = UITapGestureRecognizer()
         settingView.addGestureRecognizer(tapSettingViewGesture)
-        
-        let tapBackGroundViewGesture = UITapGestureRecognizer()
-        self.view.addGestureRecognizer(tapBackGroundViewGesture)
 
         tapAddButtonGesture.rx.event.bind(onNext: { recognizer in
             self.delegate?.pushToSetTitleViewController()
@@ -86,10 +83,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         tapSettingViewGesture.rx.event.bind(onNext: { recognizer in
             self.delegate?.pushToSettingViewController()
-        }).disposed(by: disposeBag)
-        
-        tapBackGroundViewGesture.rx.event.bind(onNext: { recognizer in
-            print("배경 tap")
         }).disposed(by: disposeBag)
         
         
@@ -117,7 +110,6 @@ extension MainViewController {
         view.addSubview(addButton)
         view.addSubview(settingView)
         view.addSubview(mainView)
-//        view.addSubview(mainAddButton)
         view.addSubview(usageLabelView)
         
         setLayout()

@@ -7,9 +7,10 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 protocol SettingViewControllerDelegate {
-    
+    func dismissToMainViewController()
 }
 
 class SettingPopUpViewController: UIViewController {
@@ -31,21 +32,32 @@ class SettingPopUpViewController: UIViewController {
         return button
     }()
     
-//    let popUpStackView: UIStackView = {
-//        let stackView = UIStackView()
-//        stackView.axis = .vertical
-//        stackView.alignment = .center
-//        stackView.distribution = .fillProportionally
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        return stackView
-//    }()
+    let usageUserButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("용도 관리하기", for: .normal)
+        button.titleLabel?.font = .nanumSquareNeoBold(size: 17)
+        button.setTitleColor(.black, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+
     
     var delegate: SettingViewControllerDelegate?
+    let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         setUI()
+        
+        let tapBackGroundViewGesture = UITapGestureRecognizer()
+        self.view.addGestureRecognizer(tapBackGroundViewGesture)
+        
+        tapBackGroundViewGesture.rx.event.bind(onNext: { recognizer in
+            self.delegate?.dismissToMainViewController()
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -55,6 +67,7 @@ extension SettingPopUpViewController {
 //        popUpStackView.addSubview(settingUserButton)
         self.view.addSubview(popUpView)
         self.view.addSubview(settingUserButton)
+        self.view.addSubview(usageUserButton)
         setLayout()
     }
     
@@ -62,13 +75,16 @@ extension SettingPopUpViewController {
         popUpView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         popUpView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         popUpView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        popUpView.heightAnchor.constraint(equalToConstant: 50).isActive = true // 스택뷰에 버튼 추가할 때마다 constant +50
+        popUpView.heightAnchor.constraint(equalToConstant: 100).isActive = true // 스택뷰에 버튼 추가할 때마다 constant +50
         
-        settingUserButton.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor).isActive = true // 중앙 정렬 추가
-        settingUserButton.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor).isActive = true // 중앙 정렬 추가
+        settingUserButton.topAnchor.constraint(equalTo: popUpView.topAnchor).isActive = true
         settingUserButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
         settingUserButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
+        settingUserButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.view.layoutIfNeeded()
+        usageUserButton.topAnchor.constraint(equalTo: settingUserButton.bottomAnchor).isActive = true
+        usageUserButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
+        usageUserButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
+        usageUserButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor).isActive = true
     }
 }

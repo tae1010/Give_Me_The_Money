@@ -9,10 +9,11 @@ import Foundation
 
 protocol SettingCoordinatorDelegate {
     func popViewController()
+    func dismissToMainViewController()
 }
 
 class SettingCoordinator: BaseCoordinator, SettingViewControllerDelegate {
-    
+ 
     var delegate: SettingCoordinatorDelegate?
 
     // MARK: - Start
@@ -30,7 +31,7 @@ class SettingCoordinator: BaseCoordinator, SettingViewControllerDelegate {
     }
     
     func dismissToMainViewController() {
-        delegate?.popViewController()
+        delegate?.dismissToMainViewController()
     }
     
 }

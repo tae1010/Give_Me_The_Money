@@ -40,4 +40,10 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
         navigationController.dismiss(animated: true)
         childCoordinators.removeLast()
     }
+    
+    func dismissToMainViewController() {
+        navigationController.dismiss(animated: false)
+        childCoordinators.removeLast()
+    }
+    
 }
