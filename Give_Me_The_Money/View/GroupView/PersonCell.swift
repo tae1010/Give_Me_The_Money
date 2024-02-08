@@ -13,6 +13,7 @@ class PersonCell: UITableViewCell {
     let personLabel: UILabel = {
         let label = UILabel()
         label.text = "사람"
+        label.textColor = .black
         label.font = .nanumSquareNeoBold(size: 15)
         return label
     }()
@@ -21,8 +22,9 @@ class PersonCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        print("?")
+        self.contentView.backgroundColor = .white
         setUI()
+        print(self.frame.height)
     }
     
     required init?(coder: NSCoder) {
@@ -43,15 +45,11 @@ extension PersonCell {
         personLabel.translatesAutoresizingMaskIntoConstraints = false
         priceTextField.translatesAutoresizingMaskIntoConstraints = false
         
-//        priceTextField.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
-//        priceTextField.setContentCompressionResistancePriority(.init(rawValue: 251), for: .horizontal)
-        
         personLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
         personLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         personLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
         
         priceTextField.topAnchor.constraint(equalTo: personLabel.topAnchor).isActive = true
-//        priceTextField.bottomAnchor.constraint(equalTo: personLabel.bottomAnchor).isActive = true
         priceTextField.leadingAnchor.constraint(equalTo: personLabel.trailingAnchor, constant: AppConstants.setupWidthExtraConstantSize(size: 15)).isActive = true
         priceTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         priceTextField.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: AppConstants.setupExtraMultiplierSize(size: 0.6)).isActive = true
