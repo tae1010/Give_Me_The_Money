@@ -40,7 +40,7 @@ class PersonPriceView: UIView {
     
     let disposeBag = DisposeBag()
     
-    var test = [String]()
+    var test = [String]() // table view cell
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,7 +48,6 @@ class PersonPriceView: UIView {
         personTableView.dataSource = self
         personTableView.delegate = self
         personTableView.rowHeight = UITableView.automaticDimension
-//        personTableView.estimatedRowHeight = 50
         
         let tapBackGroundViewGesture = UITapGestureRecognizer()
         self.priceLabel.addGestureRecognizer(tapBackGroundViewGesture)
