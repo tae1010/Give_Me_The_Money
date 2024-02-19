@@ -45,11 +45,7 @@ class SetTitleViewController: UIViewController {
     let makeButton = CustomMakeButton(title: "만들기", isEnabled: true)
     
     var type: SideButtonMode?
-    
-//    init(titleType: SideButtonMode) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.type = titleType
-//    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }

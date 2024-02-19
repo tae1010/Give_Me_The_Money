@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 
 protocol SettingViewControllerDelegate {
+    func presentToUserPresetViewController()
     func dismissToMainViewController()
 }
 
@@ -32,7 +33,7 @@ class SettingPopUpViewController: UIViewController {
         return button
     }()
     
-    let usageUserButton: UIButton = {
+    let settingUsageButton: UIButton = {
         let button = UIButton()
         button.setTitle("용도 관리하기", for: .normal)
         button.titleLabel?.font = .nanumSquareNeoBold(size: 17)
@@ -41,11 +42,8 @@ class SettingPopUpViewController: UIViewController {
         return button
     }()
     
-
-    
     var delegate: SettingViewControllerDelegate?
     let disposeBag = DisposeBag()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +56,14 @@ class SettingPopUpViewController: UIViewController {
         tapBackGroundViewGesture.rx.event.bind(onNext: { recognizer in
             self.delegate?.dismissToMainViewController()
         }).disposed(by: disposeBag)
+        
+        settingUserButton.rx.tap.bind(onNext: {
+            self.dismiss(animated: true) {
+                self.delegate?.presentToUserPresetViewController()
+            }
+        }).disposed(by: disposeBag)
+
+        
     }
 }
 
@@ -67,7 +73,7 @@ extension SettingPopUpViewController {
 //        popUpStackView.addSubview(settingUserButton)
         self.view.addSubview(popUpView)
         self.view.addSubview(settingUserButton)
-        self.view.addSubview(usageUserButton)
+        self.view.addSubview(settingUsageButton)
         setLayout()
     }
     
@@ -82,9 +88,9 @@ extension SettingPopUpViewController {
         settingUserButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
         settingUserButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        usageUserButton.topAnchor.constraint(equalTo: settingUserButton.bottomAnchor).isActive = true
-        usageUserButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
-        usageUserButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
-        usageUserButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor).isActive = true
+        settingUsageButton.topAnchor.constraint(equalTo: settingUserButton.bottomAnchor).isActive = true
+        settingUsageButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
+        settingUsageButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
+        settingUsageButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor).isActive = true
     }
 }

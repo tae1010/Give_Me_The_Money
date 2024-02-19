@@ -8,26 +8,25 @@
 import Foundation
 
 protocol SettingCoordinatorDelegate {
-    func popViewController()
+    func presentToUserPresetViewController()
     func dismissToMainViewController()
 }
 
 class SettingCoordinator: BaseCoordinator, SettingViewControllerDelegate {
- 
+
     var delegate: SettingCoordinatorDelegate?
 
     // MARK: - Start
-    
     override func start() {
         let settingVC = SettingPopUpViewController()
-        print("눌렀")
         settingVC.delegate = self
         settingVC.modalPresentationStyle = .overCurrentContext
         navigationController.present(settingVC, animated: false)
     }
     
-    func popViewController() {
-        delegate?.popViewController()
+    func presentToUserPresetViewController() {
+        delegate?.dismissToMainViewController() // 기존 모달 창 닫기
+        delegate?.presentToUserPresetViewController()
     }
     
     func dismissToMainViewController() {

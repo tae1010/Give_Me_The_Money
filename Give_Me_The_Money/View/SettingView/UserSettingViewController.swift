@@ -10,6 +10,8 @@ import UIKit
 
 class UserSettingViewController: UIViewController {
     
+    let preSetTitleLabel
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

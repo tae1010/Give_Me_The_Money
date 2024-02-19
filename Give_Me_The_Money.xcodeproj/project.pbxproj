@@ -41,6 +41,9 @@
 		9374C7962B70F71200C324A2 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7952B70F71200C324A2 /* SettingCoordinator.swift */; };
 		9374C7992B74D87400C324A2 /* UsageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7982B74D87400C324A2 /* UsageSettingViewController.swift */; };
 		9374C79B2B74D88300C324A2 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C79A2B74D88300C324A2 /* UserSettingViewController.swift */; };
+		9374C79D2B7CA7CB00C324A2 /* UserPreSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C79C2B7CA7CB00C324A2 /* UserPreSetViewController.swift */; };
+		9374C79F2B7CB26000C324A2 /* UserPreSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C79E2B7CB25F00C324A2 /* UserPreSetView.swift */; };
+		9374C7A32B83508600C324A2 /* UserPreSetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7A22B83508600C324A2 /* UserPreSetCoordinator.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -128,6 +131,9 @@
 		9374C7952B70F71200C324A2 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		9374C7982B74D87400C324A2 /* UsageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageSettingViewController.swift; sourceTree = "<group>"; };
 		9374C79A2B74D88300C324A2 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		9374C79C2B7CA7CB00C324A2 /* UserPreSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreSetViewController.swift; sourceTree = "<group>"; };
+		9374C79E2B7CB25F00C324A2 /* UserPreSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreSetView.swift; sourceTree = "<group>"; };
+		9374C7A22B83508600C324A2 /* UserPreSetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreSetCoordinator.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -341,8 +347,10 @@
 			isa = PBXGroup;
 			children = (
 				9374C7932B70EF1500C324A2 /* SettingPopUpViewController.swift */,
-				9374C7982B74D87400C324A2 /* UsageSettingViewController.swift */,
+				9374C79C2B7CA7CB00C324A2 /* UserPreSetViewController.swift */,
+				9374C79E2B7CB25F00C324A2 /* UserPreSetView.swift */,
 				9374C79A2B74D88300C324A2 /* UserSettingViewController.swift */,
+				9374C7982B74D87400C324A2 /* UsageSettingViewController.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -419,6 +427,7 @@
 				9374C78C2B6CB7FF00C324A2 /* MainCoordinator.swift */,
 				9374C78E2B6CBFC500C324A2 /* SetTitleCoordinator.swift */,
 				9374C7952B70F71200C324A2 /* SettingCoordinator.swift */,
+				9374C7A22B83508600C324A2 /* UserPreSetCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -694,6 +703,7 @@
 				93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */,
 				934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */,
 				93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */,
+				9374C7A32B83508600C324A2 /* UserPreSetCoordinator.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
 				9360696F29EBC7C900CF9001 /* PeopleCell.swift in Sources */,
 				93F0135C29D6B090003731C1 /* UseCell.swift in Sources */,
@@ -711,7 +721,9 @@
 				9374C78D2B6CB7FF00C324A2 /* MainCoordinator.swift in Sources */,
 				93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */,
 				9360698D2A06454900CF9001 /* SetTitleViewController.swift in Sources */,
+				9374C79F2B7CB26000C324A2 /* UserPreSetView.swift in Sources */,
 				93F7E52F29DD66AA0002F193 /* UsageLabelView.swift in Sources */,
+				9374C79D2B7CA7CB00C324A2 /* UserPreSetViewController.swift in Sources */,
 				9360698A2A05508F00CF9001 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

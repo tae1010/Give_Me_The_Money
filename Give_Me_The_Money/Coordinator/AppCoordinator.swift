@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 
 
-class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate {
+class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate, UserPreSetCoordinatorDelegate {
+    func presentViewDismissAndStart() {
+        print("???????")
+    }
+    
     
     override func start() {
         showMainViewController()
@@ -35,7 +39,14 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
         coordinator.start()
         childCoordinators.append(coordinator)
     }
-        
+    
+    func presentToUserPresetViewController() {
+        let coordinator = UserPreSetCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
     func popViewController() {
         navigationController.dismiss(animated: true)
         childCoordinators.removeLast()
