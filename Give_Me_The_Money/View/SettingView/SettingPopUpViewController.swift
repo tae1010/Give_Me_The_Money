@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol SettingViewControllerDelegate {
-    func presentToUserPresetViewController()
+    func presentToUserPresetPopUpViewController()
     func dismissToMainViewController()
 }
 
@@ -59,18 +59,15 @@ class SettingPopUpViewController: UIViewController {
         
         settingUserButton.rx.tap.bind(onNext: {
             self.dismiss(animated: true) {
-                self.delegate?.presentToUserPresetViewController()
+                self.delegate?.presentToUserPresetPopUpViewController()
             }
         }).disposed(by: disposeBag)
-
-        
     }
 }
 
 extension SettingPopUpViewController {
     
     func setUI() {
-//        popUpStackView.addSubview(settingUserButton)
         self.view.addSubview(popUpView)
         self.view.addSubview(settingUserButton)
         self.view.addSubview(settingUsageButton)

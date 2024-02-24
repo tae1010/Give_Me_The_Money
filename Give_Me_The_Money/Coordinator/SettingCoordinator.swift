@@ -24,7 +24,7 @@ class SettingCoordinator: BaseCoordinator, SettingViewControllerDelegate {
         navigationController.present(settingVC, animated: false)
     }
     
-    func presentToUserPresetViewController() {
+    func presentToUserPresetPopUpViewController() {
         delegate?.dismissToMainViewController() // 기존 모달 창 닫기
         delegate?.presentToUserPresetViewController()
     }

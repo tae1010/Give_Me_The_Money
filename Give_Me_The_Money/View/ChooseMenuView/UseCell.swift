@@ -62,14 +62,6 @@ class UseCell: UICollectionViewCell {
         
         contentView.backgroundColor = .white
         
-        
-        
-//        layer.masksToBounds = false
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOffset = CGSize(width: -2, height: 2)
-//        layer.shadowOpacity = 0.3
-//        layer.shadowRadius = 5
-        
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
         contentView.layer.borderColor = UIColor.lightPrimaryCGColor

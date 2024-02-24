@@ -10,6 +10,7 @@ import Foundation
 protocol UserPreSetCoordinatorDelegate {
     func dismissToMainViewController()
     func presentViewDismissAndStart()
+    func presentToUserSettingViewController()
 }
 
 class UserPreSetCoordinator: BaseCoordinator, UserPreSetViewControllerDelegate {
@@ -19,10 +20,10 @@ class UserPreSetCoordinator: BaseCoordinator, UserPreSetViewControllerDelegate {
     // MARK: - Start
     
     override func start() {
-        let userPreSetVC = UserPreSetViewController()
+        let userPreSetVC = UserPreSetPopUpViewController()
         userPreSetVC.delegate = self
         userPreSetVC.modalPresentationStyle = .overCurrentContext
-        navigationController.pushViewController(userPreSetVC, animated: false)
+        navigationController.present(userPreSetVC, animated: false)
     }
     
     func presentViewDismissAndStart() {
@@ -31,6 +32,10 @@ class UserPreSetCoordinator: BaseCoordinator, UserPreSetViewControllerDelegate {
 
     func dismissToMainViewController() {
         delegate?.dismissToMainViewController()
+    }
+    
+    func presentToUserSettingViewController() {
+        delegate?.presentToUserSettingViewController()
     }
     
 }

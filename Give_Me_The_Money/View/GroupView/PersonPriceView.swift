@@ -52,6 +52,7 @@ class PersonPriceView: UIView {
         let tapBackGroundViewGesture = UITapGestureRecognizer()
         self.priceLabel.addGestureRecognizer(tapBackGroundViewGesture)
         
+        // 인원 추가
         tapBackGroundViewGesture.rx.event.bind(onNext: { recognizer in
             self.test.insert("추가됨", at: 0)
             print(self.test)
@@ -111,6 +112,4 @@ extension PersonPriceView: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }

@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 
 
-class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate, UserPreSetCoordinatorDelegate {
+class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate, UserPreSetCoordinatorDelegate, UserSettingCoordinatorDelegate {
+
+    
+    
     func presentViewDismissAndStart() {
         print("???????")
     }
@@ -47,12 +50,24 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
         childCoordinators.append(coordinator)
     }
     
+    func presentToUserSettingViewController() {
+        let coordinator = UserSettingCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
     func popViewController() {
         navigationController.dismiss(animated: true)
         childCoordinators.removeLast()
     }
     
     func dismissToMainViewController() {
+        navigationController.dismiss(animated: false)
+        childCoordinators.removeLast()
+    }
+    
+    func dismissUserSettingView() {
         navigationController.dismiss(animated: false)
         childCoordinators.removeLast()
     }
