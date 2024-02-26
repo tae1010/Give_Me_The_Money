@@ -14,7 +14,7 @@ class SettingCell: UITableViewCell {
         let label = UILabel()
         label.text = "사람"
         label.textColor = .black
-        label.font = .nanumSquareNeoBold(size: 15)
+        label.font = .nanumSquareNeoBold(size: 17)
         return label
     }()
 
@@ -62,7 +62,9 @@ extension SettingCell {
         nonCheckImage.centerYAnchor.constraint(equalTo: personLabel.centerYAnchor).isActive = true
         nonCheckImage.leadingAnchor.constraint(equalTo: personLabel.trailingAnchor, constant: AppConstants.setupWidthExtraConstantSize(size: 15)).isActive = true
         nonCheckImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        nonCheckImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: AppConstants.setupExtraMultiplierSize(size: 0.6)).isActive = true
+        nonCheckImage.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        nonCheckImage.heightAnchor.constraint(equalToConstant: 18).isActive = true
+//        nonCheckImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: AppConstants.setupExtraMultiplierSize(size: 0.6)).isActive = true
     }
     
 }

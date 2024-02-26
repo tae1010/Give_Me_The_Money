@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 protocol UserSettingViewControllerDelegate {
-    func dismissToUSerSettingView()
+    func dismissToUserSettingView()
 }
 
 class UserSettingViewController: UIViewController {
@@ -37,7 +37,7 @@ class UserSettingViewController: UIViewController {
     let addButton: UIButton = {
         let button = UIButton()
         button.setTitle("추가", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -46,13 +46,17 @@ class UserSettingViewController: UIViewController {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
-        tableView.register(SettingCell.self, forCellReuseIdentifier: "PersonCell")
+        tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")
         return tableView
     }()
     
     let disposeBag = DisposeBag()
     
-    var test = BehaviorRelay<[String]>(value: ["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"])
+    let items = Observable.just([
+        "First Item",
+        "Second Item",
+        "Third Item"
+    ])
     
     var delegate: UserSettingViewControllerDelegate?
     
@@ -61,12 +65,18 @@ class UserSettingViewController: UIViewController {
         print("user setting View viewDidLoad")
         self.view.backgroundColor = .white
         setUI()
-        test
+        
+        backButton.rx.tap.bind(onNext: {
+            self.delegate?.dismissToUserSettingView()
+        }).disposed(by: disposeBag)
+        
+        items
             .bind(to: personTableView.rx.items(cellIdentifier: "SettingCell", cellType: SettingCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = "\(element) @ row \(row)"
+//                cell.textLabel?.text = "\(element) @ row \(row)"
             }
             .disposed(by: disposeBag)
 
+        
         
         // cell 클릭
         personTableView.rx.itemSelected.bind(onNext: { indexPath in
@@ -117,7 +127,6 @@ extension UserSettingViewController {
         
         self.userTextField.topAnchor.constraint(equalTo: userSettingTitleLabel.bottomAnchor, constant: 50).isActive = true
         self.userTextField.leadingAnchor.constraint(equalTo: userSettingTitleLabel.leadingAnchor).isActive = true
-//        self.userTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
         
         self.addButton.centerYAnchor.constraint(equalTo: userTextField.centerYAnchor).isActive = true
         self.addButton.leadingAnchor.constraint(equalTo: userTextField.trailingAnchor, constant: 10).isActive = true
@@ -126,16 +135,6 @@ extension UserSettingViewController {
         self.personTableView.topAnchor.constraint(equalTo: userTextField.bottomAnchor, constant: 10).isActive = true
         self.personTableView.leadingAnchor.constraint(equalTo: userSettingTitleLabel.leadingAnchor).isActive = true
         self.personTableView.trailingAnchor.constraint(equalTo: addButton.trailingAnchor).isActive = true
-//        self.personTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.personTableView.heightAnchor.constraint(greaterThanOrEqualToConstant: AppConstants.setupWidthExtraConstantSize(size: 0)).isActive = true
-        
-        
-//        personTableView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: AppConstants.setupExtraConstantSize(size: 20)).isActive = true
-//        personTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-//        personTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-//        personTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//        personTableView.heightAnchor.constraint(greaterThanOrEqualToConstant: AppConstants.setupWidthExtraConstantSize(size: 0)).isActive = true
-        
-        
+        self.personTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 }

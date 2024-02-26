@@ -57,7 +57,7 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
         childCoordinators.append(coordinator)
     }
     
-    func popViewController() {
+    func dismissViewController() {
         navigationController.dismiss(animated: true)
         childCoordinators.removeLast()
     }
@@ -68,7 +68,7 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
     }
     
     func dismissUserSettingView() {
-        navigationController.dismiss(animated: false)
+        navigationController.dismiss(animated: true)
         childCoordinators.removeLast()
     }
     

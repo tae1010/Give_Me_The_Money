@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol SetTitleCoordinatorDelegate {
-    func popViewController()
+    func dismissViewController()
 }
 
 class SetTitleCoordinator: BaseCoordinator, SetTitleViewControllerDelegate {
@@ -26,11 +26,11 @@ class SetTitleCoordinator: BaseCoordinator, SetTitleViewControllerDelegate {
     }
     
     func popViewController() {
-        delegate?.popViewController()
+        delegate?.dismissViewController()
     }
     
     func dismissToMainViewController() {
-        delegate?.popViewController()
+        delegate?.dismissViewController()
     }
     
 }

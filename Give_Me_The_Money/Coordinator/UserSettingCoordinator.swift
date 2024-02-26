@@ -24,7 +24,7 @@ class UserSettingCoordinator: BaseCoordinator, UserSettingViewControllerDelegate
         navigationController.present(userSettingVC, animated: false)
     }
     
-    func dismissToUSerSettingView() {
+    func dismissToUserSettingView() {
         delegate?.dismissUserSettingView()
     }
     
