@@ -70,7 +70,7 @@ extension SettingPopUpViewController {
     func setUI() {
         self.view.addSubview(popUpView)
         self.view.addSubview(settingUserButton)
-        self.view.addSubview(settingUsageButton)
+//        self.view.addSubview(settingUsageButton)
         setLayout()
     }
     
@@ -78,16 +78,16 @@ extension SettingPopUpViewController {
         popUpView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         popUpView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         popUpView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        popUpView.heightAnchor.constraint(equalToConstant: 100).isActive = true // 스택뷰에 버튼 추가할 때마다 constant +50
+        popUpView.heightAnchor.constraint(equalToConstant: 50).isActive = true // 스택뷰에 버튼 추가할 때마다 constant +50
         
         settingUserButton.topAnchor.constraint(equalTo: popUpView.topAnchor).isActive = true
         settingUserButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
         settingUserButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
         settingUserButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        settingUsageButton.topAnchor.constraint(equalTo: settingUserButton.bottomAnchor).isActive = true
-        settingUsageButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
-        settingUsageButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
-        settingUsageButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor).isActive = true
+//        settingUsageButton.topAnchor.constraint(equalTo: settingUserButton.bottomAnchor).isActive = true
+//        settingUsageButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor).isActive = true
+//        settingUsageButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor).isActive = true
+//        settingUsageButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor).isActive = true
     }
 }

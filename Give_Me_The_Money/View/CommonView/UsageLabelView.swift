@@ -45,10 +45,6 @@ class UsageLabelView: UIView {
         self.layer.cornerRadius = AppConstants.setupNormalConstantSize(size: 15)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: AppConstants.setupExtraConstantSize(size: 30)).isActive = true
-        
-        
-        
-        
     }
 
 }

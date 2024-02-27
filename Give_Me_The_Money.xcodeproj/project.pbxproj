@@ -17,6 +17,7 @@
 		930F378829BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F378729BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift */; };
 		930F378A29BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */; };
 		933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */; };
+		934BF2C12B8DEDD300F9E207 /* UsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934BF2C02B8DEDD300F9E207 /* UsageCell.swift */; };
 		934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */; };
 		934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCF29CADBE800490EF6 /* AppConstant.swift */; };
 		9360692129E140DC00CF9001 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692029E140DC00CF9001 /* MainCell.swift */; };
@@ -108,6 +109,7 @@
 		930F378729BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_The_MoneyUITests.swift; sourceTree = "<group>"; };
 		930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_The_MoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAddButton.swift; sourceTree = "<group>"; };
+		934BF2C02B8DEDD300F9E207 /* UsageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageCell.swift; sourceTree = "<group>"; };
 		934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIColor.swift; sourceTree = "<group>"; };
 		934F1DCF29CADBE800490EF6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		9360692029E140DC00CF9001 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				9360692329E1595000CF9001 /* MakeGroupViewController.swift */,
 				9360692529E2ABEE00CF9001 /* ChooseUsageView.swift */,
+				934BF2C02B8DEDD300F9E207 /* UsageCell.swift */,
 				9360696A29E6A49D00CF9001 /* ChoosePriceView.swift */,
 				9360696C29EBC25300CF9001 /* ChoosePeopleView.swift */,
 				9360696E29EBC7C800CF9001 /* PeopleCell.swift */,
@@ -697,6 +700,7 @@
 				9374C7962B70F71200C324A2 /* SettingCoordinator.swift in Sources */,
 				9360698829FFA81900CF9001 /* Extension_ViewController.swift in Sources */,
 				9360698629FBE9BE00CF9001 /* PersonPriceView.swift in Sources */,
+				934BF2C12B8DEDD300F9E207 /* UsageCell.swift in Sources */,
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
