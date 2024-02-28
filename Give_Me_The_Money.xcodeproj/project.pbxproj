@@ -16,8 +16,10 @@
 		930F377E29BDDF1100457CAD /* Give_Me_The_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F377D29BDDF1100457CAD /* Give_Me_The_MoneyTests.swift */; };
 		930F378829BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F378729BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift */; };
 		930F378A29BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */; };
-		933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */; };
+		933CE9ED29BF1C3B007A3558 /* CircleAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* CircleAddButton.swift */; };
 		934BF2C12B8DEDD300F9E207 /* UsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934BF2C02B8DEDD300F9E207 /* UsageCell.swift */; };
+		934BF2C42B8F56A900F9E207 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934BF2C32B8F56A900F9E207 /* DetailViewController.swift */; };
+		934BF2C62B8F581100F9E207 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934BF2C52B8F581000F9E207 /* DetailCell.swift */; };
 		934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */; };
 		934F1DD029CADBE800490EF6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F1DCF29CADBE800490EF6 /* AppConstant.swift */; };
 		9360692129E140DC00CF9001 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360692029E140DC00CF9001 /* MainCell.swift */; };
@@ -108,8 +110,10 @@
 		930F378329BDDF1100457CAD /* Give_Me_The_MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Give_Me_The_MoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		930F378729BDDF1100457CAD /* Give_Me_The_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_The_MoneyUITests.swift; sourceTree = "<group>"; };
 		930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_The_MoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAddButton.swift; sourceTree = "<group>"; };
+		933CE9EC29BF1C3B007A3558 /* CircleAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAddButton.swift; sourceTree = "<group>"; };
 		934BF2C02B8DEDD300F9E207 /* UsageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageCell.swift; sourceTree = "<group>"; };
+		934BF2C32B8F56A900F9E207 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		934BF2C52B8F581000F9E207 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		934F1DCD29CACAED00490EF6 /* Extension_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIColor.swift; sourceTree = "<group>"; };
 		934F1DCF29CADBE800490EF6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		9360692029E140DC00CF9001 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				9360692729E2AFB100CF9001 /* CommonView */,
 				933CE9EB29BF1C26007A3558 /* MainView */,
 				93F0134B29D2F143003731C1 /* ChooseMenuView */,
+				934BF2C22B8F551E00F9E207 /* DetailView */,
 				9360698B2A0644BC00CF9001 /* SetTitleView */,
 				9360692229E1591300CF9001 /* GroupView */,
 				9374C7922B70EEE600C324A2 /* SettingView */,
@@ -293,12 +298,21 @@
 			children = (
 				930F376A29BDDF0F00457CAD /* MainViewController.swift */,
 				93F7E52C29DAB5A30002F193 /* MainStatusView.swift */,
-				933CE9EC29BF1C3B007A3558 /* MainAddButton.swift */,
 				93F7E53329DE8FEF0002F193 /* ChartView.swift */,
 				93F7E53529DFF8F20002F193 /* MainView.swift */,
 				9360692029E140DC00CF9001 /* MainCell.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		934BF2C22B8F551E00F9E207 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				934BF2C32B8F56A900F9E207 /* DetailViewController.swift */,
+				933CE9EC29BF1C3B007A3558 /* CircleAddButton.swift */,
+				934BF2C52B8F581000F9E207 /* DetailCell.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		934F1DCC29CACAD700490EF6 /* Extension */ = {
@@ -692,7 +706,7 @@
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
 				9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */,
 				93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */,
-				933CE9ED29BF1C3B007A3558 /* MainAddButton.swift in Sources */,
+				933CE9ED29BF1C3B007A3558 /* CircleAddButton.swift in Sources */,
 				9374C7992B74D87400C324A2 /* UsageSettingViewController.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
@@ -705,6 +719,8 @@
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
 				93F0134029CC62D2003731C1 /* CustomMakeButton.swift in Sources */,
+				934BF2C62B8F581100F9E207 /* DetailCell.swift in Sources */,
+				934BF2C42B8F56A900F9E207 /* DetailViewController.swift in Sources */,
 				9374C79B2B74D88300C324A2 /* UserSettingViewController.swift in Sources */,
 				930F376729BDDF0F00457CAD /* AppDelegate.swift in Sources */,
 				93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */,

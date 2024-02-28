@@ -46,7 +46,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     let mainView = MainView()
     let usageLabelView = UsageLabelView()
-    let mainAddButton = MainAddButton()
+    let mainAddButton = CircleAddButton()
     
     let viewModel: GroupViewModel
     
