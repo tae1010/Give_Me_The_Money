@@ -9,10 +9,8 @@ import Foundation
 import UIKit
 
 
-class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate, UserPreSetCoordinatorDelegate, UserSettingCoordinatorDelegate {
+class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordinatorDelegate, SettingCoordinatorDelegate, UserPreSetCoordinatorDelegate, UserSettingCoordinatorDelegate, DetailCoordinatorDelegate, MakeGroupCoordinatorDelegate {
 
-    
-    
     func presentViewDismissAndStart() {
         print("???????")
     }
@@ -24,6 +22,13 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
     
     func showMainViewController() {
         let coordinator = MainCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
+    func pushToMakeGroupViewController() {
+        let coordinator = MakeGroupCoordinator(navigationController: navigationController)
         coordinator.delegate = self
         coordinator.start()
         childCoordinators.append(coordinator)
@@ -50,11 +55,23 @@ class AppCoordinator: BaseCoordinator, MainCoordinatorDelegate, SetTitleCoordina
         childCoordinators.append(coordinator)
     }
     
-    func presentToUserSettingViewController() {
+    func pushToUserSettingViewController() {
         let coordinator = UserSettingCoordinator(navigationController: navigationController)
         coordinator.delegate = self
         coordinator.start()
         childCoordinators.append(coordinator)
+    }
+    
+    func pushToDetailViewController() {
+        let coordinator = DetailCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
+    func popViewController() {
+        navigationController.popViewController(animated: true)
+        childCoordinators.removeLast()
     }
     
     func dismissViewController() {

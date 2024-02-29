@@ -12,6 +12,7 @@ import RxSwift
 protocol MainViewControllerDelegate: AnyObject {
     func pushToSetTitleViewController()
     func pushToSettingViewController()
+    func pushToDetailViewController()
 }
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
@@ -43,8 +44,20 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     let addButton = UsageLabelView(text: "Add", backGroundColor: UIColor.lightPrimaryColor, labelColor: .black, necessaryWidth: true)
+    
+    let mainCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 0)
+        layout.minimumLineSpacing = 12
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .veryveryLightGrey
+        collectionView.register(MainCell.self, forCellWithReuseIdentifier: "MainCell")
+        return collectionView
+    }()
 
-    let mainView = MainView()
+//    let mainView = MainView()
     let usageLabelView = UsageLabelView()
     let mainAddButton = CircleAddButton()
     
@@ -85,6 +98,27 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             self.delegate?.pushToSettingViewController()
         }).disposed(by: disposeBag)
         
+        mainCollectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        
+        // bind mainCollectionView
+        viewModel.choosePeople
+            .bind(to: mainCollectionView.rx.items(cellIdentifier: "MainCell", cellType: MainCell.self)) { index, item, cell in
+                cell.titleLabel.text = "일본 여행"
+                cell.totalPrice.text = "$ 1,020,000"
+            }
+            .disposed(by: disposeBag)
+        
+        Observable.zip(mainCollectionView.rx.modelSelected(String.self), mainCollectionView.rx.itemSelected)
+            .subscribe(onNext: { [weak self] (item, indexPath) in
+                guard let self = self else { return }
+                print(indexPath)
+                delegate?.pushToDetailViewController()
+                
+            }, onError: { _ in
+                print("에러")
+            }).disposed(by: disposeBag)
         
 //        // tap mainButton
 //        mainAddButton.rx.tap.bind(onNext: {
@@ -109,7 +143,7 @@ extension MainViewController {
         view.addSubview(logoView)
         view.addSubview(addButton)
         view.addSubview(settingView)
-        view.addSubview(mainView)
+        view.addSubview(mainCollectionView)
         view.addSubview(usageLabelView)
         
         setLayout()
@@ -119,7 +153,7 @@ extension MainViewController {
         logoView.translatesAutoresizingMaskIntoConstraints = false
         addButton.translatesAutoresizingMaskIntoConstraints = false
         settingView.translatesAutoresizingMaskIntoConstraints = false
-        mainView.translatesAutoresizingMaskIntoConstraints = false
+        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
         usageLabelView.translatesAutoresizingMaskIntoConstraints = false
         
         logoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
@@ -138,19 +172,16 @@ extension MainViewController {
 //        mainAddButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
 //        mainAddButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: -30)).isActive = true
         
-        mainView.topAnchor.constraint(equalTo: self.settingView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 8)).isActive = true
-        mainView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        mainView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        mainView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        mainCollectionView.topAnchor.constraint(equalTo: self.settingView.bottomAnchor, constant: AppConstants.setupNormalConstantSize(size: 8)).isActive = true
+        mainCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        mainCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        mainCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
 
              
     }
     
     func configureUI() {
         self.view.backgroundColor = UIColor.white
-        
-        mainView.layer.cornerRadius = 30
-        mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     func tabUI() {
@@ -163,4 +194,20 @@ extension MainViewController {
     }
     
 
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as? MainCell else {
+            return .zero
+        }
+        cell.titleLabel.text = "dummy"
+        cell.editLabel.text = "dummy"
+        cell.totalPrice.text = "dummy"
+        
+        let height = cell.titleLabel.frame.height + cell.editLabel.frame.height + cell.totalPrice.frame.height
+
+        return CGSize(width: collectionView.frame.width, height: height +  110)
+    }
 }

@@ -64,6 +64,16 @@ class MainView: UIView, UIScrollViewDelegate {
                 cell.totalPrice.text = "$ 1,020,000"
             }
             .disposed(by: disposeBag)
+        
+        Observable.zip(mainCollectionView.rx.modelSelected(String.self), mainCollectionView.rx.itemSelected)
+            .subscribe(onNext: { [weak self] (item, indexPath) in
+                guard let self = self else { return }
+                print(indexPath)
+                
+                
+            }, onError: { _ in
+                print("에러")
+            }).disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) {

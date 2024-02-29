@@ -10,6 +10,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+protocol MakeGroupViewControllerDelegate {
+    func dismissToViewController()
+}
+
 class MakeGroupViewController: UIViewController {
     
     // 스크롤뷰
@@ -48,6 +52,8 @@ class MakeGroupViewController: UIViewController {
     
     let tapChooseUsageView = UITapGestureRecognizer() // 뒤로가기 버튼 클릭 제스쳐
     
+    var delegate: MakeGroupViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -57,7 +63,7 @@ class MakeGroupViewController: UIViewController {
         
         backButton.rx.tap.bind(onNext: {
             print("뒤로가기 클릭")
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.dismissToViewController()
         }).disposed(by: disposeBag)
         
         

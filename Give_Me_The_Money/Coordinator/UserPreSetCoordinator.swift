@@ -10,7 +10,7 @@ import Foundation
 protocol UserPreSetCoordinatorDelegate {
     func dismissToMainViewController()
     func presentViewDismissAndStart()
-    func presentToUserSettingViewController()
+    func pushToUserSettingViewController()
 }
 
 class UserPreSetCoordinator: BaseCoordinator, UserPreSetViewControllerDelegate {
@@ -35,7 +35,7 @@ class UserPreSetCoordinator: BaseCoordinator, UserPreSetViewControllerDelegate {
     }
     
     func presentToUserSettingViewController() {
-        delegate?.presentToUserSettingViewController()
+        delegate?.pushToUserSettingViewController()
     }
     
 }

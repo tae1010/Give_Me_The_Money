@@ -33,5 +33,7 @@ extension UIColor {
     class var noSelectColor: UIColor { return UIColor(named: "noSelectColor")! }
     class var noSelectCGColor: CGColor { return UIColor.noSelectColor.cgColor }
     
+    class var backGroundGrayColor: UIColor { return UIColor(named: "backGroundGrayColor")! }
+    class var backGroundGrayCGColor: CGColor { return UIColor.backGroundGrayColor.cgColor }
     
 }
