@@ -10,6 +10,7 @@ import UIKit
 
 protocol SetTitleCoordinatorDelegate {
     func dismissViewController()
+    func pushToMakeGroupViewController()
 }
 
 class SetTitleCoordinator: BaseCoordinator, SetTitleViewControllerDelegate {
@@ -23,6 +24,10 @@ class SetTitleCoordinator: BaseCoordinator, SetTitleViewControllerDelegate {
         setTitleVC.delegate = self
         setTitleVC.modalPresentationStyle = .overCurrentContext
         navigationController.present(setTitleVC, animated: false)
+    }
+    
+    func pushToMakeGroupViewController() {
+        delegate?.pushToMakeGroupViewController()
     }
     
     func popViewController() {

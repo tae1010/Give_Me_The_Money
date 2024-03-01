@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol SetTitleViewControllerDelegate: AnyObject {
-//    func presentChooseMenuViewController()
+    func pushToMakeGroupViewController()
     func dismissToMainViewController()
 }
 
@@ -139,18 +139,9 @@ extension SetTitleViewController {
         
         makeButton.clickAction = {
             self.darkView.alpha = 0.0
-            
-            guard let pvc = self.presentingViewController else { return }
-            
-            let makeGroupViewController = MakeGroupViewController()
-            let navigationController = UINavigationController(rootViewController: makeGroupViewController)
-
-            navigationController.modalPresentationStyle = .fullScreen
-            navigationController.isNavigationBarHidden = true
-
             // 기존팝업창은 지우고 reallyCheckPopup창을 띄움
             self.dismiss(animated: true) {
-                pvc.present(navigationController, animated: true)
+                self.delegate?.pushToMakeGroupViewController()
             }
         }
     }
