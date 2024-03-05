@@ -11,7 +11,7 @@ import UIKit
 
 class MainStatusView: UIView {
     
-    let chartView = ChartView(circleSize: AppConstants.ScreenWidth / 8)
+    let chartView = ChartView(circleSize: AppConstants.screenWidth / 8)
     
     let statusTitleLabel: UILabel = {
         let label = UILabel()

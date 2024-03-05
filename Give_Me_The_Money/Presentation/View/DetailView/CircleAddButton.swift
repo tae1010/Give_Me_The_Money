@@ -35,10 +35,10 @@ extension CircleAddButton {
          
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.09).isActive = true
+        self.widthAnchor.constraint(equalToConstant: AppConstants.screenHeight * 0.09).isActive = true
         self.heightAnchor.constraint(equalTo: self.widthAnchor).isActive = true
 
-        self.layer.cornerRadius = AppConstants.ScreenHeight * 0.09 / 2
+        self.layer.cornerRadius = AppConstants.screenHeight * 0.09 / 2
         self.layer.masksToBounds = true
         
         self.layer.shadowColor = UIColor.black.cgColor // 색깔

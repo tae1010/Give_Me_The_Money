@@ -257,13 +257,9 @@
 		930F376529BDDF0E00457CAD /* Give_Me_The_Money */ = {
 			isa = PBXGroup;
 			children = (
-				93F0134C29D2F5CD003731C1 /* Coordinator */,
-				93F0134329D2C095003731C1 /* Model */,
-				93F0133529CC5D76003731C1 /* Assets */,
-				93F0133229CC32D3003731C1 /* AppDelegate */,
-				934F1DCC29CACAD700490EF6 /* Extension */,
-				93F0134629D2CD07003731C1 /* ViewModel */,
-				933CE9EA29BF1C13007A3558 /* View */,
+				93252A752B96FB2600B3EAD7 /* Data */,
+				93252A762B96FB3500B3EAD7 /* Domain */,
+				93252A772B96FB3F00B3EAD7 /* Presentation */,
 				930F377429BDDF1000457CAD /* Info.plist */,
 			);
 			path = Give_Me_The_Money;
@@ -284,6 +280,51 @@
 				930F378929BDDF1100457CAD /* Give_Me_The_MoneyUITestsLaunchTests.swift */,
 			);
 			path = Give_Me_The_MoneyUITests;
+			sourceTree = "<group>";
+		};
+		93252A752B96FB2600B3EAD7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				93F0134329D2C095003731C1 /* Model */,
+				93252A7A2B9700CD00B3EAD7 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		93252A762B96FB3500B3EAD7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		93252A772B96FB3F00B3EAD7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				93F0133229CC32D3003731C1 /* Application */,
+				93F0133529CC5D76003731C1 /* Resouces */,
+				93252A792B96FB6E00B3EAD7 /* Util */,
+				93F0134629D2CD07003731C1 /* ViewModel */,
+				933CE9EA29BF1C13007A3558 /* View */,
+				93F0134C29D2F5CD003731C1 /* Coordinator */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		93252A792B96FB6E00B3EAD7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				934F1DCC29CACAD700490EF6 /* Extension */,
+				934F1DCF29CADBE800490EF6 /* AppConstant.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		93252A7A2B9700CD00B3EAD7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		933CE9EA29BF1C13007A3558 /* View */ = {
@@ -382,23 +423,22 @@
 			path = SettingView;
 			sourceTree = "<group>";
 		};
-		93F0133229CC32D3003731C1 /* AppDelegate */ = {
+		93F0133229CC32D3003731C1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				934F1DCF29CADBE800490EF6 /* AppConstant.swift */,
 				930F376629BDDF0F00457CAD /* AppDelegate.swift */,
 				930F376829BDDF0F00457CAD /* SceneDelegate.swift */,
 			);
-			path = AppDelegate;
+			path = Application;
 			sourceTree = "<group>";
 		};
-		93F0133529CC5D76003731C1 /* Assets */ = {
+		93F0133529CC5D76003731C1 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
 				93F0133E29CC5D9C003731C1 /* Font */,
 				930F376F29BDDF1000457CAD /* Assets.xcassets */,
 			);
-			path = Assets;
+			path = Resouces;
 			sourceTree = "<group>";
 		};
 		93F0133E29CC5D9C003731C1 /* Font */ = {

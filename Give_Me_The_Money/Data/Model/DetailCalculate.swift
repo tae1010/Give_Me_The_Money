@@ -14,4 +14,5 @@ struct DetailCalculate {
     var user: Users
     var userPrice: Int
     var remainPrice: Int
+    var date: Date
 }

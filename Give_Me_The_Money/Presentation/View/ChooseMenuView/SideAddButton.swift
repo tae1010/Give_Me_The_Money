@@ -112,8 +112,8 @@ extension SideAddButton {
     // add Button 모양 지정
     func setLayOut() {
         
-        self.widthAnchor.constraint(equalToConstant: AppConstants.ScreenWidth * 0.9).isActive = true
-        self.heightAnchor.constraint(equalToConstant: AppConstants.ScreenHeight * 0.4 / 3).isActive = true
+        self.widthAnchor.constraint(equalToConstant: AppConstants.screenWidth * 0.9).isActive = true
+        self.heightAnchor.constraint(equalToConstant: AppConstants.screenHeight * 0.4 / 3).isActive = true
         
         checkImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         checkImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppConstants.setupNormalConstantSize(size: 20)).isActive = true

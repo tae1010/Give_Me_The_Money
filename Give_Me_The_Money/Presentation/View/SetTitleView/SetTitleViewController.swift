@@ -110,7 +110,7 @@ extension SetTitleViewController {
         darkView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         darkView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        setTitleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: AppConstants.ScreenHeight / 1.8).isActive = true
+        setTitleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: AppConstants.screenHeight / 1.8).isActive = true
         setTitleView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         setTitleView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         setTitleView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true

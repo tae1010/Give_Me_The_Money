@@ -12,8 +12,8 @@ struct AppConstants {
     
     static let isiPad = UIDevice.current.userInterfaceIdiom == .pad
     
-    static let ScreenWidth = UIScreen.main.bounds.width
-    static let ScreenHeight = UIScreen.main.bounds.height
+    static let screenWidth = UIScreen.main.bounds.width
+    static let screenHeight = UIScreen.main.bounds.height
     
     // 아이패드, 아이폰 각각 constant 크기 다르게 설정
     static func setupNormalConstantSize(size: CGFloat) -> CGFloat {
