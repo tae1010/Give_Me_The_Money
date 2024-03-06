@@ -12,5 +12,5 @@ struct Users {
 }
 
 struct PreSet {
-    
+    var names: [String]
 }

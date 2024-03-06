@@ -19,6 +19,7 @@
 		93252A702B90A09100B3EAD7 /* MakeGroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93252A6F2B90A09100B3EAD7 /* MakeGroupCoordinator.swift */; };
 		93252A722B91F49200B3EAD7 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93252A712B91F49200B3EAD7 /* Calculate.swift */; };
 		93252A742B91F4CF00B3EAD7 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93252A732B91F4CF00B3EAD7 /* Users.swift */; };
+		93252A7C2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93252A7B2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift */; };
 		933CE9ED29BF1C3B007A3558 /* CircleAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CE9EC29BF1C3B007A3558 /* CircleAddButton.swift */; };
 		934BF2C12B8DEDD300F9E207 /* UsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934BF2C02B8DEDD300F9E207 /* UsageCell.swift */; };
 		934BF2C42B8F56A900F9E207 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934BF2C32B8F56A900F9E207 /* DetailViewController.swift */; };
@@ -61,7 +62,6 @@
 		93F0133D29CC5D8F003731C1 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */; };
 		93F0134029CC62D2003731C1 /* CustomMakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133F29CC62D2003731C1 /* CustomMakeButton.swift */; };
 		93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134129D1940A003731C1 /* Extension_UIFont.swift */; };
-		93F0134529D2C0A9003731C1 /* DetailCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134429D2C0A9003731C1 /* DetailCalculate.swift */; };
 		93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134729D2CD1C003731C1 /* GroupViewModel.swift */; };
 		93F0134A29D2D680003731C1 /* ChooseMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */; };
 		93F0134E29D2F5DD003731C1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0134D29D2F5DD003731C1 /* Coordinator.swift */; };
@@ -117,6 +117,7 @@
 		93252A6F2B90A09100B3EAD7 /* MakeGroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGroupCoordinator.swift; sourceTree = "<group>"; };
 		93252A712B91F49200B3EAD7 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		93252A732B91F4CF00B3EAD7 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		93252A7B2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCalculateRepository.swift; sourceTree = "<group>"; };
 		933CE9EC29BF1C3B007A3558 /* CircleAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAddButton.swift; sourceTree = "<group>"; };
 		934BF2C02B8DEDD300F9E207 /* UsageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageCell.swift; sourceTree = "<group>"; };
 		934BF2C32B8F56A900F9E207 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		93F0133929CC5D8F003731C1 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
 		93F0133F29CC62D2003731C1 /* CustomMakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMakeButton.swift; sourceTree = "<group>"; };
 		93F0134129D1940A003731C1 /* Extension_UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIFont.swift; sourceTree = "<group>"; };
-		93F0134429D2C0A9003731C1 /* DetailCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCalculate.swift; sourceTree = "<group>"; };
 		93F0134729D2CD1C003731C1 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		93F0134929D2D680003731C1 /* ChooseMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewModel.swift; sourceTree = "<group>"; };
 		93F0134D29D2F5DD003731C1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -323,6 +323,7 @@
 		93252A7A2B9700CD00B3EAD7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				93252A7B2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -461,7 +462,6 @@
 			isa = PBXGroup;
 			children = (
 				93252A712B91F49200B3EAD7 /* Calculate.swift */,
-				93F0134429D2C0A9003731C1 /* DetailCalculate.swift */,
 				93252A732B91F4CF00B3EAD7 /* Users.swift */,
 			);
 			path = Model;
@@ -755,7 +755,6 @@
 				9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */,
 				9374C78B2B6CB66F00C324A2 /* AppCoordinator.swift in Sources */,
 				9362125B2A2340CE000C4890 /* PeopleViewModel.swift in Sources */,
-				93F0134529D2C0A9003731C1 /* DetailCalculate.swift in Sources */,
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
 				9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */,
 				93F7E52D29DAB5A30002F193 /* MainStatusView.swift in Sources */,
@@ -793,6 +792,7 @@
 				9360692129E140DC00CF9001 /* MainCell.swift in Sources */,
 				93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */,
 				9374C78F2B6CBFC500C324A2 /* SetTitleCoordinator.swift in Sources */,
+				93252A7C2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift in Sources */,
 				930F376929BDDF0F00457CAD /* SceneDelegate.swift in Sources */,
 				93F0134829D2CD1C003731C1 /* GroupViewModel.swift in Sources */,
 				9374C7942B70EF1500C324A2 /* SettingPopUpViewController.swift in Sources */,
