@@ -131,29 +131,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 //            self.present(navigationController, animated: true)
 //        }).disposed(by: disposeBag)
         
-        let repository = SQLiteCalculateRepository()
-
-        // 새로운 계산 정보 생성
-        let newCalculate = Calculate(id: 2, usage: "식비", price: 50000, user: Users(name: "hi"), userPrice: 20000, remainPrice: 30000, date: Date())
-
-        // 새로운 계산 정보 저장
-        do {
-            try repository.create(calculate: newCalculate)
-            print("새로운 계산 정보가 성공적으로 저장되었습니다.")
-        } catch {
-            print("계산 정보를 저장하는 동안 오류가 발생했습니다: \(error)")
-        }
-
-        // 모든 계산 정보 읽기
-        do {
-            let calculates = try repository.read()
-            print("모든 계산 정보:")
-            for calculate in calculates {
-                print("ID: \(calculate.id), Usage: \(calculate.usage), Price: \(calculate.price), User Price: \(calculate.userPrice), Remain Price: \(calculate.remainPrice), Date: \(calculate.date)")
-            }
-        } catch {
-            print("계산 정보를 읽어오는 동안 오류가 발생했습니다: \(error)")
-        }
+        CalculateUseCase()
     }
     
 }

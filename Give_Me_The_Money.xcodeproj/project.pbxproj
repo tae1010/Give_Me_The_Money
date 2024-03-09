@@ -53,6 +53,7 @@
 		9374C7A32B83508600C324A2 /* UserPreSetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7A22B83508600C324A2 /* UserPreSetCoordinator.swift */; };
 		9374C7A52B8384A400C324A2 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7A42B8384A400C324A2 /* SettingCell.swift */; };
 		9374C7A72B838E2A00C324A2 /* UserSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7A62B838E2A00C324A2 /* UserSettingCoordinator.swift */; };
+		939FBE7E2B9C47D60079FA6C /* CalculateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -151,6 +152,7 @@
 		9374C7A22B83508600C324A2 /* UserPreSetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreSetCoordinator.swift; sourceTree = "<group>"; };
 		9374C7A42B8384A400C324A2 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		9374C7A62B838E2A00C324A2 /* UserSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingCoordinator.swift; sourceTree = "<group>"; };
+		939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateUseCase.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		93252A762B96FB3500B3EAD7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				939FBE7C2B9C47190079FA6C /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -422,6 +425,14 @@
 				9374C7A42B8384A400C324A2 /* SettingCell.swift */,
 			);
 			path = SettingView;
+			sourceTree = "<group>";
+		};
+		939FBE7C2B9C47190079FA6C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		93F0133229CC32D3003731C1 /* Application */ = {
@@ -770,6 +781,7 @@
 				934BF2C12B8DEDD300F9E207 /* UsageCell.swift in Sources */,
 				9360692B29E2B32E00CF9001 /* CloseButton.swift in Sources */,
 				9360692429E1595000CF9001 /* MakeGroupViewController.swift in Sources */,
+				939FBE7E2B9C47D60079FA6C /* CalculateUseCase.swift in Sources */,
 				93F7E53429DE8FEF0002F193 /* ChartView.swift in Sources */,
 				93F0134029CC62D2003731C1 /* CustomMakeButton.swift in Sources */,
 				934BF2C62B8F581100F9E207 /* DetailCell.swift in Sources */,
