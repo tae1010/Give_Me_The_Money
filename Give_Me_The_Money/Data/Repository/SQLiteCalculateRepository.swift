@@ -10,10 +10,10 @@ import RxSwift
 import SQLite3
 
 protocol CalculateRepository {
-    func create(calculate: Calculate) -> Completable
-    func read() -> Single<[Calculate]>
-    func update(calculate: Calculate) -> Completable
-    func delete(id: Int) -> Completable
+    func create(calculate: MainCalculate) -> Completable
+    func read() -> Single<[MainCalculate]>
+    func update(calculate: MainCalculate) -> Completable
+    func delete(id: Int) -> MainCalculate
 }
 
 class SQLiteCalculateRepository: CalculateRepository {
@@ -67,7 +67,7 @@ class SQLiteCalculateRepository: CalculateRepository {
         _ = executeQuery(query: query).subscribe()
     }
 
-    func create(calculate: Calculate) -> Completable {
+    func create(calculate: MainCalculate) -> Completable {
         let query = """
                 INSERT INTO Calculate (id, usage, price, user, userPrice, remainPrice, date)
                 VALUES ('\(calculate.id)', '\(calculate.usage)', '\(calculate.price)', '\(calculate.user)', '\(calculate.userPrice)', '\(calculate.remainPrice)', '\(calculate.date)')
@@ -75,7 +75,7 @@ class SQLiteCalculateRepository: CalculateRepository {
         return executeQuery(query: query)
     }
 
-    func read() -> Single<[Calculate]> {
+    func read() -> Single<[MainCalculate]> {
         return Single.create { [weak self] single in
             guard let self = self else { return Disposables.create() }
             var calculates = [Calculate]()
@@ -109,7 +109,7 @@ class SQLiteCalculateRepository: CalculateRepository {
         }
     }
 
-    func update(calculate: Calculate) -> Completable {
+    func update(calculate: MainCalculate) -> Completable {
         let query = """
                     UPDATE Calculate
                     SET usage = '\(calculate.usage), price = \(calculate.price), userName = \(calculate.user), userPrice = \(calculate.userPrice), remainPrice = \(calculate.remainPrice), date = \(calculate.date)'

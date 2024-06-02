@@ -19,6 +19,12 @@ class CalculateUseCase {
     
     func readCalculate() {
         repository.read()
+            .map { calculates -> [MainCalculate] in
+                // 필요한 데이터만 추출하여 반환
+                return calculates.map { calculate in
+                    return [MainCalculate(id: calculate.id, titleUsage: "", calculate: 0)]
+                }
+            }
             .subscribe(onSuccess: { calculates in
                 print("계산 정보:")
                 for calculate in calculates {

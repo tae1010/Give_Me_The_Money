@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct MainCalculate {
+    var id: Int // id
+    var titleUsage: String
+    var calculate: [Calculate]
+    // totalPrice는 calculate에서 price값을 모두 더하는 로직으로...
+}
+
 struct Calculate {
     var id: Int // id
     var usage: String // ex) 숙박비, 교통비...

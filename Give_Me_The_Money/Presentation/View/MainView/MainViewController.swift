@@ -131,7 +131,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 //            self.present(navigationController, animated: true)
 //        }).disposed(by: disposeBag)
         
-        CalculateUseCase()
     }
     
 }
