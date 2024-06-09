@@ -9,49 +9,44 @@ import Foundation
 import RxSwift
 import SQLite3
 
-protocol CalculateRepository {
-    func create(calculate: MainCalculate) -> Completable
-    func read() -> Single<[MainCalculate]>
-    func update(calculate: MainCalculate) -> Completable
-    func delete(id: Int) -> MainCalculate
+enum DatabaseError: Error {
+    case queryExecutionFailed(String)
 }
 
-class SQLiteCalculateRepository: CalculateRepository {
+class SQLiteCalculateRepository: Repository {
+    
+    typealias Entity = Calculate // Repository protocol에서 associatedtype을 Calculate로 지정
+    
     private let dbPath: String
     private var db: OpaquePointer?
+    private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     private let disposeBag = DisposeBag()
 
     init() {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         self.dbPath = documentsDirectory.appendingPathComponent("database.sqlite").path
         if sqlite3_open(dbPath, &db) != SQLITE_OK {
             print("Error opening SQLite database.")
         }
         createTable()
     }
-
-    deinit {
-        sqlite3_close(db)
-    }
-
-    private func executeQuery(query: String) -> Completable {
-        return Completable.create { [weak self] completable in
-            guard let self = self else { return Disposables.create() }
-            var statement: OpaquePointer?
-            if sqlite3_prepare_v2(self.db, query, -1, &statement, nil) == SQLITE_OK {
-                if sqlite3_step(statement) == SQLITE_DONE {
-                    completable(.completed)
-                } else {
-                    completable(.error(SQLiteError.executeError(message: "Error executing SQL statement.")))
-                }
+    
+    // 쿼리 실행
+    // Completable은 성공과 실패만 처리 (completete, error)
+    func executeQuery(query: String) -> Completable {
+        return Completable.create { completable in
+            if sqlite3_exec(self.db, query, nil, nil, nil) != SQLITE_OK {
+                let errorMsg = String(cString: sqlite3_errmsg(self.db))
+                print("쿼리 실행 실패: \(errorMsg)")
+                completable(.error(DatabaseError.queryExecutionFailed(errorMsg)))
             } else {
-                completable(.error(SQLiteError.prepareError(message: "Error preparing SQL statement.")))
+                print("쿼리 실행 성공!")
+                completable(.completed)
             }
-            sqlite3_finalize(statement)
             return Disposables.create()
         }
     }
-
+    
+    // 테이블 생성
     private func createTable() {
         let query = """
                     CREATE TABLE IF NOT EXISTS Calculate (
@@ -66,61 +61,29 @@ class SQLiteCalculateRepository: CalculateRepository {
                     """
         _ = executeQuery(query: query).subscribe()
     }
-
-    func create(calculate: MainCalculate) -> Completable {
+    
+    func insert(calculate: Calculate) -> Completable {
         let query = """
-                INSERT INTO Calculate (id, usage, price, user, userPrice, remainPrice, date)
-                VALUES ('\(calculate.id)', '\(calculate.usage)', '\(calculate.price)', '\(calculate.user)', '\(calculate.userPrice)', '\(calculate.remainPrice)', '\(calculate.date)')
-                """
-        return executeQuery(query: query)
-    }
-
-    func read() -> Single<[MainCalculate]> {
-        return Single.create { [weak self] single in
-            guard let self = self else { return Disposables.create() }
-            var calculates = [Calculate]()
-            let query = "SELECT * FROM Calculate"
-            var statement: OpaquePointer?
-            if sqlite3_prepare_v2(self.db, query, -1, &statement, nil) == SQLITE_OK {
-                defer { sqlite3_finalize(statement) }
-                while sqlite3_step(statement) == SQLITE_ROW {
-                    let id = Int(sqlite3_column_int(statement, 1))
-                    let usage = String(cString: sqlite3_column_text(statement, 2))
-                    let price = Int(sqlite3_column_int(statement, 3))
-                    let userName = String(cString: sqlite3_column_text(statement, 4))
-                    let userPrice = Int(sqlite3_column_int(statement, 5))
-                    let remainPrice = Int(sqlite3_column_int(statement, 6))
-                    var date: Date?
-                    if let dateString = sqlite3_column_text(statement, 7) {
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd"
-                        date = dateFormatter.date(from: String(cString: dateString))
-                    }
-                    let user = Users(name: userName)
-                    let calculate = Calculate(id: id, usage: usage, price: price, user: user, userPrice: userPrice, remainPrice: remainPrice, date: date ?? Date())
-                    calculates.append(calculate)
-                }
-                single(.success(calculates))
-            } else {
-                let error = SQLiteError.prepareError(message: "Error preparing SQL statement.")
-                single(.failure(error))
-            }
-            return Disposables.create()
-        }
-    }
-
-    func update(calculate: MainCalculate) -> Completable {
-        let query = """
-                    UPDATE Calculate
-                    SET usage = '\(calculate.usage), price = \(calculate.price), userName = \(calculate.user), userPrice = \(calculate.userPrice), remainPrice = \(calculate.remainPrice), date = \(calculate.date)'
-                    WHERE id = \(calculate.id)
+                    INSERT INTO Calculate (id, usage, price, user, userPrice, remainPrice, date)
+                        VALUES ('\(calculate.id)', '\(calculate.usage)', '\(calculate.price)', '\(calculate.user)', '\(calculate.userPrice)', '\(calculate.remainPrice)', '\(calculate.date)')
                     """
         return executeQuery(query: query)
     }
-
-    func delete(id: Int) -> Completable {
-        let query = "DELETE FROM Calculate WHERE id = \(id)"
-        return executeQuery(query: query)
+    
+    func read(by id: String) -> Calculate? {
+        <#code#>
+    }
+    
+    func update(_ item: Calculate) {
+        <#code#>
+    }
+    
+    func delete(by id: String) {
+        <#code#>
+    }
+    
+    deinit {
+        sqlite3_close(db)
     }
 }
 

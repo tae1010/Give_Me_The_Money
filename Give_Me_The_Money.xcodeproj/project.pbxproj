@@ -55,6 +55,7 @@
 		9374C7A72B838E2A00C324A2 /* UserSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7A62B838E2A00C324A2 /* UserSettingCoordinator.swift */; };
 		939FBE7E2B9C47D60079FA6C /* CalculateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */; };
 		939FBE812B9C79A20079FA6C /* MainCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FBE802B9C79A20079FA6C /* MainCalculate.swift */; };
+		93ADC4FF2C11BF8100857094 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADC4FE2C11BF8100857094 /* Repository.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -155,6 +156,7 @@
 		9374C7A62B838E2A00C324A2 /* UserSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingCoordinator.swift; sourceTree = "<group>"; };
 		939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateUseCase.swift; sourceTree = "<group>"; };
 		939FBE802B9C79A20079FA6C /* MainCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalculate.swift; sourceTree = "<group>"; };
+		93ADC4FE2C11BF8100857094 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		93252A7A2B9700CD00B3EAD7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				93ADC4FE2C11BF8100857094 /* Repository.swift */,
 				93252A7B2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift */,
 			);
 			path = Repository;
@@ -784,6 +787,7 @@
 				9374C7992B74D87400C324A2 /* UsageSettingViewController.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
+				93ADC4FF2C11BF8100857094 /* Repository.swift in Sources */,
 				93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */,
 				934BF2C82B90685E00F9E207 /* DetailCoordinator.swift in Sources */,
 				9374C7962B70F71200C324A2 /* SettingCoordinator.swift in Sources */,
