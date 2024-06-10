@@ -17,6 +17,8 @@ protocol MainViewControllerDelegate: AnyObject {
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
     
+    let asd: SQLiteCalculateRepository = SQLiteCalculateRepository()
+    
     let Scroller: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +71,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     init(viewModel: GroupViewModel) {
         self.viewModel = viewModel
+//        self.asd = SQLiteCalculateRepository()
         super.init(nibName: nil, bundle: nil)
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -80,6 +85,20 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         setUI()
         tabUI()
+        
+        asd.insert(Calculate(id: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
+        asd.insert(Calculate(id: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
+        asd.insert(Calculate(id: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
+        
+        asd.update(Calculate(id: 40, usage: "10", price: 5, user: Users(name: "5"), userPrice: 5, remainPrice: 5, date: Date()))
+        
+        if let data = asd.read() {
+            for calculate in data {
+                print(calculate)
+            }
+        }
+        
+//        asd.delete(by: "1")
         
         self.navigationController?.isNavigationBarHidden = true
         
