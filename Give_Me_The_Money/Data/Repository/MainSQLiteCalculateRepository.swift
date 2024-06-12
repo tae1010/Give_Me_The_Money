@@ -1,24 +1,20 @@
 //
-//  DefaultCalculateRepository.swift
+//  MainSQLiteCalculateRepository.swift
 //  Give_Me_The_Money
 //
-//  Created by 김정태 on 3/5/24.
+//  Created by 김정태 on 6/12/24.
 //
 
 import Foundation
 import RxSwift
 import SQLite3
 
-enum DatabaseError: Error {
-    case prepareError(message: String)
-    case queryExecutionFailed(String)
-}
 
-class SQLiteCalculateRepository: CalculateRepositoryProtocol {
+class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
     
     typealias Entity = Calculate // Repository protocol에서 associatedtype을 Calculate로 지정
     
-    let tableName: String = "Calculate"
+    let tableName: String = "MainCalculate"
     private let dbPath: String
     private var db: OpaquePointer?
     private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! // 기기 로컬 위치
@@ -96,7 +92,7 @@ class SQLiteCalculateRepository: CalculateRepositoryProtocol {
     }
     
     // calculate db 데이터를 calculateData에 저장
-    func read() -> [Calculate]? {
+    func read() -> Calculate? {
         let query = "SELECT * FROM \(tableName)"
         var statement: OpaquePointer?
         
@@ -110,20 +106,19 @@ class SQLiteCalculateRepository: CalculateRepositoryProtocol {
         
         while(sqlite3_step(statement) == SQLITE_ROW) {
             let id = Int(sqlite3_column_int(statement, 0))
-            let mainCalculateId = Int(sqlite3_column_int(statement, 1))
-            let usage = String(cString: sqlite3_column_text(statement, 2))
-            let price = Int(sqlite3_column_int(statement, 3))
-            let userName = String(cString: sqlite3_column_text(statement, 4))
-            let userPrice = Int(sqlite3_column_int(statement, 5))
-            let remainPrice = Int(sqlite3_column_int(statement, 6))
+            let usage = String(cString: sqlite3_column_text(statement, 1))
+            let price = Int(sqlite3_column_int(statement, 2))
+            let userName = String(cString: sqlite3_column_text(statement, 3))
+            let userPrice = Int(sqlite3_column_int(statement, 4))
+            let remainPrice = Int(sqlite3_column_int(statement, 5))
             var date: Date?
-            if let dateString = sqlite3_column_text(statement, 7) {
+            if let dateString = sqlite3_column_text(statement, 6) {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 date = dateFormatter.date(from: String(cString: dateString))
             }
             let user = Users(name: userName)
-            let calculate = Calculate(id: id, mainCaluclateId: mainCalculateId, usage: usage, price: price, user: user, userPrice: userPrice, remainPrice: remainPrice, date: date ?? Date())
+            let calculate = Calculate(id: id, usage: usage, price: price, user: user, userPrice: userPrice, remainPrice: remainPrice, date: date ?? Date())
             print(calculate, "calculate 각각 확인")
             print("머고")
             self.calculateData?.append(calculate)

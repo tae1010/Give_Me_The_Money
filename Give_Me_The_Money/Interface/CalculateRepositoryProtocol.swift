@@ -8,7 +8,7 @@
 import Foundation
 
 // Entity로 매개 변수 타입을 protocol을 사용하기 전까지는 지정하지 않음 (Any와 비슷?)
-protocol Repository {
+protocol CalculateRepositoryProtocol {
     associatedtype Entity
     
     func insert(_ item: Entity)

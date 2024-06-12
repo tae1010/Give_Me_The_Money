@@ -1,16 +1,16 @@
-////
-////  CalculateUseCase.swift
-////  Give_Me_The_Money
-////
-////  Created by 김정태 on 3/9/24.
-////
 //
-//import Foundation
-//import UIKit
-//import RxSwift
+//  CalculateUseCase.swift
+//  Give_Me_The_Money
 //
+//  Created by 김정태 on 3/9/24.
+//
+
+import Foundation
+import UIKit
+import RxSwift
+
 //class CalculateUseCase {
-//    let repository = SQLiteCalculateRepository()
+//    let calculateRepository = SQLiteCalculateRepository()
 //    let disposeBag = DisposeBag()
 //    
 //    init() {
@@ -18,7 +18,7 @@
 //    }
 //    
 //    func readCalculate() {
-//        repository.read()
+//        calculateRepository.read()
 //            .map { calculates -> [MainCalculate] in
 //                // 필요한 데이터만 추출하여 반환
 //                return calculates.map { calculate in
@@ -35,6 +35,4 @@
 //            })
 //            .disposed(by: disposeBag)
 //    }
-//    
-//    
 //}

@@ -55,8 +55,10 @@
 		9374C7A72B838E2A00C324A2 /* UserSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9374C7A62B838E2A00C324A2 /* UserSettingCoordinator.swift */; };
 		939FBE7E2B9C47D60079FA6C /* CalculateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */; };
 		939FBE812B9C79A20079FA6C /* MainCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FBE802B9C79A20079FA6C /* MainCalculate.swift */; };
-		93ADC4FF2C11BF8100857094 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADC4FE2C11BF8100857094 /* Repository.swift */; };
+		93ADC4FF2C11BF8100857094 /* CalculateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADC4FE2C11BF8100857094 /* CalculateRepositoryProtocol.swift */; };
 		93ADC5012C16F5B600857094 /* Extension_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADC5002C16F5B600857094 /* Extension_Date.swift */; };
+		93ADC5042C198BC600857094 /* MainCalculateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADC5032C198BC600857094 /* MainCalculateRepositoryProtocol.swift */; };
+		93ADC5062C198FC100857094 /* MainSQLiteCalculateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADC5052C198FC100857094 /* MainSQLiteCalculateRepository.swift */; };
 		93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EA31C52A07B8B900CAF551 /* CustomTextField.swift */; };
 		93F0133129CB0D3A003731C1 /* SideAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133029CB0D3A003731C1 /* SideAddButton.swift */; };
 		93F0133429CC4184003731C1 /* ChooseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */; };
@@ -157,8 +159,10 @@
 		9374C7A62B838E2A00C324A2 /* UserSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingCoordinator.swift; sourceTree = "<group>"; };
 		939FBE7D2B9C47D60079FA6C /* CalculateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateUseCase.swift; sourceTree = "<group>"; };
 		939FBE802B9C79A20079FA6C /* MainCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalculate.swift; sourceTree = "<group>"; };
-		93ADC4FE2C11BF8100857094 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		93ADC4FE2C11BF8100857094 /* CalculateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		93ADC5002C16F5B600857094 /* Extension_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Date.swift; sourceTree = "<group>"; };
+		93ADC5032C198BC600857094 /* MainCalculateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalculateRepositoryProtocol.swift; sourceTree = "<group>"; };
+		93ADC5052C198FC100857094 /* MainSQLiteCalculateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSQLiteCalculateRepository.swift; sourceTree = "<group>"; };
 		93EA31C52A07B8B900CAF551 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		93F0133029CB0D3A003731C1 /* SideAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAddButton.swift; sourceTree = "<group>"; };
 		93F0133329CC4184003731C1 /* ChooseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 			children = (
 				93252A752B96FB2600B3EAD7 /* Data */,
 				93252A762B96FB3500B3EAD7 /* Domain */,
+				93ADC5022C17131500857094 /* Interface */,
 				93252A772B96FB3F00B3EAD7 /* Presentation */,
 				930F377429BDDF1000457CAD /* Info.plist */,
 			);
@@ -333,8 +338,8 @@
 		93252A7A2B9700CD00B3EAD7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				93ADC4FE2C11BF8100857094 /* Repository.swift */,
 				93252A7B2B971AF800B3EAD7 /* SQLiteCalculateRepository.swift */,
+				93ADC5052C198FC100857094 /* MainSQLiteCalculateRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -450,6 +455,15 @@
 				939FBE802B9C79A20079FA6C /* MainCalculate.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		93ADC5022C17131500857094 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				93ADC4FE2C11BF8100857094 /* CalculateRepositoryProtocol.swift */,
+				93ADC5032C198BC600857094 /* MainCalculateRepositoryProtocol.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		93F0133229CC32D3003731C1 /* Application */ = {
@@ -782,6 +796,7 @@
 				93252A702B90A09100B3EAD7 /* MakeGroupCoordinator.swift in Sources */,
 				9360696D29EBC25300CF9001 /* ChoosePeopleView.swift in Sources */,
 				9374C78B2B6CB66F00C324A2 /* AppCoordinator.swift in Sources */,
+				93ADC5042C198BC600857094 /* MainCalculateRepositoryProtocol.swift in Sources */,
 				9362125B2A2340CE000C4890 /* PeopleViewModel.swift in Sources */,
 				93F0134229D1940A003731C1 /* Extension_UIFont.swift in Sources */,
 				9360698429FACF2D00CF9001 /* Extension_String.swift in Sources */,
@@ -790,7 +805,7 @@
 				9374C7992B74D87400C324A2 /* UsageSettingViewController.swift in Sources */,
 				930F376B29BDDF0F00457CAD /* MainViewController.swift in Sources */,
 				93F7E53629DFF8F20002F193 /* MainView.swift in Sources */,
-				93ADC4FF2C11BF8100857094 /* Repository.swift in Sources */,
+				93ADC4FF2C11BF8100857094 /* CalculateRepositoryProtocol.swift in Sources */,
 				93EA31C62A07B8B900CAF551 /* CustomTextField.swift in Sources */,
 				934BF2C82B90685E00F9E207 /* DetailCoordinator.swift in Sources */,
 				9374C7962B70F71200C324A2 /* SettingCoordinator.swift in Sources */,
@@ -817,6 +832,7 @@
 				93ADC5012C16F5B600857094 /* Extension_Date.swift in Sources */,
 				934F1DCE29CACAED00490EF6 /* Extension_UIColor.swift in Sources */,
 				9360696F29EBC7C900CF9001 /* PeopleCell.swift in Sources */,
+				93ADC5062C198FC100857094 /* MainSQLiteCalculateRepository.swift in Sources */,
 				93F0135C29D6B090003731C1 /* UseCell.swift in Sources */,
 				9360692929E2AFCF00CF9001 /* BackButton.swift in Sources */,
 				9360692629E2ABEF00CF9001 /* ChooseUsageView.swift in Sources */,
