@@ -123,7 +123,7 @@ class SQLiteCalculateRepository: CalculateRepositoryProtocol {
                 date = dateFormatter.date(from: String(cString: dateString))
             }
             let user = Users(name: userName)
-            let calculate = Calculate(id: id, mainCaluclateId: mainCalculateId, usage: usage, price: price, user: user, userPrice: userPrice, remainPrice: remainPrice, date: date ?? Date())
+            let calculate = Calculate(id: id, mainCalculateId: mainCalculateId, usage: usage, price: price, user: user, userPrice: userPrice, remainPrice: remainPrice, date: date ?? Date())
             print(calculate, "calculate 각각 확인")
             print("머고")
             self.calculateData?.append(calculate)

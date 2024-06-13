@@ -86,11 +86,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         setUI()
         tabUI()
         
-        asd.insert(Calculate(id: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
-        asd.insert(Calculate(id: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
-        asd.insert(Calculate(id: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
-        
-        asd.update(Calculate(id: 40, usage: "10", price: 5, user: Users(name: "5"), userPrice: 5, remainPrice: 5, date: Date()))
+        asd.insert(Calculate(id: 0, mainCalculateId: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
+        asd.insert(Calculate(id: 0, mainCalculateId: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
+        asd.insert(Calculate(id: 0, mainCalculateId: 0, usage: "2", price: 1, user: Users(name: "1"), userPrice: 1, remainPrice: 1, date: Date()))
         
         if let data = asd.read() {
             for calculate in data {

@@ -121,7 +121,6 @@ extension MainStatusView {
         priceStatusStackView.trailingAnchor.constraint(equalTo: statusTitleLabel.trailingAnchor).isActive = true
         
         self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
-        
     }
     
     

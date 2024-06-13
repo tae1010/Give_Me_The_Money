@@ -12,7 +12,7 @@ import SQLite3
 
 class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
     
-    typealias Entity = Calculate // Repository protocol에서 associatedtype을 Calculate로 지정
+    typealias Entity = MainCalculate // Repository protocol에서 associatedtype을 Calculate로 지정
     
     let tableName: String = "MainCalculate"
     private let dbPath: String
@@ -20,7 +20,7 @@ class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
     private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! // 기기 로컬 위치
     private let disposeBag = DisposeBag()
     
-    var calculateData: [Calculate]?
+    var mainCalculateData: [MainCalculate]?
     
     init() {
         self.dbPath = documentsDirectory.appendingPathComponent("database.sqlite").path
@@ -53,30 +53,22 @@ class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
                     CREATE TABLE IF NOT EXISTS \(tableName) (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         usage TEXT,
-                        price INTEGER,
-                        user TEXT,
-                        userPrice INTEGER,
-                        remainPrice INTEGER,
-                        date TEXT
+                        totalPrice INTEGER
                     );
                     """
         _ = executeQuery(query: query).subscribe()
     }
     
-    func insert(_ calculate: Calculate) {
+    func insert(_ mainCalculate: MainCalculate) {
         let query = """
-                    INSERT INTO \(tableName) (usage, price, user, userPrice, remainPrice, date)
-                        VALUES (?, ?, ?, ?, ?, ?)
+                    INSERT INTO \(tableName) (usage, totalPrice)
+                        VALUES (?, ?)
                     """
         var statement: OpaquePointer?
         
         if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
-            sqlite3_bind_text(statement, 1, (calculate.usage as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(statement, 2, Int32(calculate.price))
-            sqlite3_bind_text(statement, 3, (calculate.user.name as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(statement, 4, Int32(calculate.userPrice))
-            sqlite3_bind_int(statement, 5, Int32(calculate.remainPrice))
-            sqlite3_bind_text(statement, 6, (calculate.date.toString() as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 1, (mainCalculate.titleUsage as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(statement, 2, Int32(mainCalculate.totalPrice))
             
             if sqlite3_step(statement) != SQLITE_DONE {
                 let errorMsg = String(cString: sqlite3_errmsg(db))
@@ -92,7 +84,7 @@ class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
     }
     
     // calculate db 데이터를 calculateData에 저장
-    func read() -> Calculate? {
+    func read() -> [MainCalculate]? {
         let query = "SELECT * FROM \(tableName)"
         var statement: OpaquePointer?
         
@@ -102,38 +94,28 @@ class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
             return nil
         }
         
-        self.calculateData = []
+        self.mainCalculateData = []
         
         while(sqlite3_step(statement) == SQLITE_ROW) {
             let id = Int(sqlite3_column_int(statement, 0))
-            let usage = String(cString: sqlite3_column_text(statement, 1))
-            let price = Int(sqlite3_column_int(statement, 2))
-            let userName = String(cString: sqlite3_column_text(statement, 3))
-            let userPrice = Int(sqlite3_column_int(statement, 4))
-            let remainPrice = Int(sqlite3_column_int(statement, 5))
-            var date: Date?
-            if let dateString = sqlite3_column_text(statement, 6) {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                date = dateFormatter.date(from: String(cString: dateString))
-            }
-            let user = Users(name: userName)
-            let calculate = Calculate(id: id, usage: usage, price: price, user: user, userPrice: userPrice, remainPrice: remainPrice, date: date ?? Date())
-            print(calculate, "calculate 각각 확인")
-            print("머고")
-            self.calculateData?.append(calculate)
+            let titleUsage = String(cString: sqlite3_column_text(statement, 1))
+            let totalPrice = Int(sqlite3_column_int(statement, 2))
+            
+            let mainCalculate = MainCalculate(id: id, titleUsage: titleUsage, totalPrice: totalPrice)
+            
+            self.mainCalculateData?.append(mainCalculate)
         }
         
         sqlite3_finalize(statement)
         print("success read data!")
-        print(self.calculateData, "전체 확인")
-        return calculateData
+        
+        return mainCalculateData
     }
     
-    func update(_ calculate: Calculate) {
+    func update(_ mainCalculate: MainCalculate) {
         let query = """
                     UPDATE \(tableName)
-                    SET usage = ?, price = ?, user = ?, userPrice = ?, remainPrice = ?, date = ?
+                    SET titleUsage = ?, totalPrice = ?
                     WHERE id = ?
                     """
         var statement: OpaquePointer?
@@ -145,13 +127,9 @@ class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
         }
         
         // 매개변수를 바인딩
-        sqlite3_bind_text(statement, 1, (calculate.usage as NSString).utf8String, -1, nil)
-        sqlite3_bind_int(statement, 2, Int32(calculate.price))
-        sqlite3_bind_text(statement, 3, (calculate.user.name as NSString).utf8String, -1, nil)
-        sqlite3_bind_int(statement, 4, Int32(calculate.userPrice))
-        sqlite3_bind_int(statement, 5, Int32(calculate.remainPrice))
-        sqlite3_bind_text(statement, 6, (calculate.date.toString() as NSString).utf8String, -1, nil)
-        sqlite3_bind_int(statement, 7, Int32(calculate.id))
+        sqlite3_bind_text(statement, 1, (mainCalculate.titleUsage as NSString).utf8String, -1, nil)
+        sqlite3_bind_int(statement, 2, Int32(mainCalculate.totalPrice))
+        sqlite3_bind_int(statement, 3, Int32(mainCalculate.id))
         
         // 쿼리 실행
         guard sqlite3_step(statement) == SQLITE_DONE else {
@@ -167,7 +145,7 @@ class MainSQLiteCalculateRepository: MainCalculateRepositoryProtocol {
     }
     
     // 테이블 초기화 메서드 - 데이터 삭제
-    func delete(by id: String) {
+    func delete(id: String) {
         let query = "DELETE FROM \(tableName)"
         _ = executeQuery(query: query)
     }
